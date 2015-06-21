@@ -21,6 +21,14 @@ class DataModel {
         speaker = AVSpeechSynthesizer()
     }
     
+    func getImage(index: Int) -> UIImage {
+        return imageData[index]
+    }
+    
+    func getLabel(index: Int) -> String {
+        return labelData[index]
+    }
+    
     func add(image: UIImage, label: String) {
         imageData.append(image)
         labelData.append(label)
