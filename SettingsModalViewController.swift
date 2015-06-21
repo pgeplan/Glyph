@@ -10,16 +10,14 @@ import UIKit
 
 class SettingsModalViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
+    // Image View attribute
     @IBOutlet var imagePicker: UIImageView!
-
     
     let picker = UIImagePickerController()
     
-    
+    // Text Field for User to add Picture Label
     @IBOutlet var textField: UITextField!
    
-    
-    
     @IBAction func shootPhoto(sender: UIButton) {
         if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
             picker.allowsEditing = false
