@@ -13,6 +13,7 @@
 		6C40F35A1B36416700DF17D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C40F3591B36416700DF17D9 /* Images.xcassets */; };
 		6C40F35D1B36416700DF17D9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C40F35B1B36416700DF17D9 /* LaunchScreen.xib */; };
 		6C40F3691B36416700DF17D9 /* ImageSpeakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C40F3681B36416700DF17D9 /* ImageSpeakTests.swift */; };
+		6C40F3751B364BF000DF17D9 /* SettingsModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C40F3741B364BF000DF17D9 /* SettingsModalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		6C40F3621B36416700DF17D9 /* ImageSpeakTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageSpeakTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C40F3671B36416700DF17D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C40F3681B36416700DF17D9 /* ImageSpeakTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSpeakTests.swift; sourceTree = "<group>"; };
+		6C40F3741B364BF000DF17D9 /* SettingsModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsModalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		6C40F3441B36416700DF17D9 = {
 			isa = PBXGroup;
 			children = (
+				6C40F3741B364BF000DF17D9 /* SettingsModalViewController.swift */,
 				6C40F34F1B36416700DF17D9 /* ImageSpeak */,
 				6C40F3651B36416700DF17D9 /* ImageSpeakTests */,
 				6C40F34E1B36416700DF17D9 /* Products */,
@@ -214,6 +217,7 @@
 			files = (
 				6C40F3551B36416700DF17D9 /* ViewController.swift in Sources */,
 				6C40F3531B36416700DF17D9 /* AppDelegate.swift in Sources */,
+				6C40F3751B364BF000DF17D9 /* SettingsModalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +415,7 @@
 				6C40F36E1B36416700DF17D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6C40F36F1B36416700DF17D9 /* Build configuration list for PBXNativeTarget "ImageSpeakTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +424,7 @@
 				6C40F3711B36416700DF17D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
