@@ -40,6 +40,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier("hi", forIndexPath: indexPath) as! CollectionCell
         cell.iView?.image = data.getImage(indexPath.row)
+        cell.label.text = data.getLabel(indexPath.row)
         return cell
         
     }
