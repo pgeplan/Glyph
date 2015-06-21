@@ -8,15 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDataSource {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet var collection: UICollectionView!
 
+    let data: DataModel = DataModel()
     
     
-    let data: [String] = ["one.jpg", "two.jpg", "three.jpg", "four.jpg", "five.jpg"]
+//    let data: [String] = ["one.jpg", "two.jpg", "three.jpg", "four.jpg", "five.jpg"]
     override func viewDidLoad() {
         super.viewDidLoad()
+        data.add(UIImage(named: "one.jpg")!, label: "one")
+        data.add(UIImage(named: "two.jpg")!, label: "two")
+        data.add(UIImage(named: "three.jpg")!, label: "three")
+        data.add(UIImage(named: "four.jpg")!, label: "four")
+        data.add(UIImage(named: "five.jpg")!, label: "five")
+
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -32,11 +39,15 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier("hi", forIndexPath: indexPath) as! CollectionCell
-        cell.iView?.image = UIImage(named: data[indexPath.row])
+        cell.iView?.image = data.getImage(indexPath.row)
         return cell
         
     }
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        data.speakAtIndex(indexPath.row)
+        collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+    }
 
 }
 

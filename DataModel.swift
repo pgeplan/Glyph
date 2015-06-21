@@ -14,11 +14,13 @@ class DataModel {
     var imageData: [UIImage]
     var labelData: [String]
     let speaker: AVSpeechSynthesizer
+    var count: Int
     
     init() {
         imageData = []
         labelData = []
         speaker = AVSpeechSynthesizer()
+        count = 0
     }
     
     func getImage(index: Int) -> UIImage {
@@ -32,11 +34,13 @@ class DataModel {
     func add(image: UIImage, label: String) {
         imageData.append(image)
         labelData.append(label)
+        count += 1
     }
     
     func remove(index: Int) {
         imageData.removeAtIndex(index)
         labelData.removeAtIndex(index)
+        count -= 1
     }
     
     func speakAtIndex(index: Int) {

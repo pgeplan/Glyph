@@ -19,6 +19,7 @@
 		E894AEB51B3645A600B27031 /* four.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E894AEB41B3645A600B27031 /* four.jpg */; };
 		E894AEB71B3645AE00B27031 /* five.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E894AEB61B3645AE00B27031 /* five.jpg */; };
 		E894AEB91B365CDD00B27031 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E894AEB81B365CDD00B27031 /* CollectionCell.swift */; };
+		E894AEBF1B37310C00B27031 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E894AEBE1B37310C00B27031 /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		E894AEB41B3645A600B27031 /* four.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = four.jpg; path = ../../../images/four.jpg; sourceTree = "<group>"; };
 		E894AEB61B3645AE00B27031 /* five.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = five.jpg; path = ../../../images/five.jpg; sourceTree = "<group>"; };
 		E894AEB81B365CDD00B27031 /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		E894AEBE1B37310C00B27031 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		E894AE801B36403A00B27031 = {
 			isa = PBXGroup;
 			children = (
+				E894AEBE1B37310C00B27031 /* DataModel.swift */,
 				E894AE8B1B36403A00B27031 /* CollectionViewDemo */,
 				E894AEA11B36403A00B27031 /* CollectionViewDemoTests */,
 				E894AE8A1B36403A00B27031 /* Products */,
@@ -236,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E894AE911B36403A00B27031 /* ViewController.swift in Sources */,
+				E894AEBF1B37310C00B27031 /* DataModel.swift in Sources */,
 				E894AE8F1B36403A00B27031 /* AppDelegate.swift in Sources */,
 				E894AEB91B365CDD00B27031 /* CollectionCell.swift in Sources */,
 			);
@@ -433,6 +437,7 @@
 				E894AEAA1B36403A00B27031 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E894AEAB1B36403A00B27031 /* Build configuration list for PBXNativeTarget "CollectionViewDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -441,6 +446,7 @@
 				E894AEAD1B36403A00B27031 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
