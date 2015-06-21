@@ -9,7 +9,7 @@
 import UIKit
 
 class SettingsModalViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
-
+    var data = DataModel()
     // Image View attribute
     @IBOutlet var imagePicker: UIImageView!
     
@@ -61,9 +61,19 @@ class SettingsModalViewController: UIViewController, UIImagePickerControllerDele
         // Do any additional setup after loading the view.
         picker.delegate = self
     }
-    @IBAction func settingsDone(sender: UIButton) {
-
-        dismissViewControllerAnimated(true, completion: nil)
+    
+    
+    @IBOutlet weak var addButton: UIButton!
+//    @IBAction func settingsDone(sender: UIButton) {
+//        mainView.data.add(imagePicker.image!, label: textField.text)
+//
+//        dismissViewControllerAnimated(true, completion: nil)
+//    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var destination = segue.destinationViewController as! MainViewController
+        data.add(imagePicker.image!, label: textField.text)
+        destination.data = data
     }
 
     override func didReceiveMemoryWarning() {
@@ -85,7 +95,6 @@ class SettingsModalViewController: UIViewController, UIImagePickerControllerDele
         dismissViewControllerAnimated(true, completion: nil)
         
     }
-    
     
     
     

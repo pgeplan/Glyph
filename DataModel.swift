@@ -28,6 +28,9 @@ class DataModel {
     }
     
     func getLabel(index: Int) -> String {
+        if labelData.isEmpty {
+            return "nil"
+        }
         return labelData[index]
     }
     
@@ -45,6 +48,7 @@ class DataModel {
     
     func speakAtIndex(index: Int) {
         let speech = AVSpeechUtterance(string: labelData[index])
+        speech.rate = 0.1
         speaker.speakUtterance(speech)
     }
     

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aMU-jc-qou">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,20 +18,119 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygd-VT-1lE">
-                                <rect key="frame" x="146" y="71" width="33" height="30"/>
-                                <state key="normal" title="Add ">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <rect key="frame" x="117" y="99" width="79" height="48"/>
+                                <state key="normal" title="Add "/>
                                 <connections>
                                     <segue destination="Zps-DQ-cQG" kind="presentation" identifier="Settings" id="WRB-JO-qF7"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vZM-Oh-BO0">
+                                <rect key="frame" x="0.0" y="28" width="606" height="44"/>
+                                <items>
+                                    <navigationItem title="Settings" id="BGG-xO-WVq">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="7qI-ge-5am">
+                                            <connections>
+                                                <segue destination="aMU-jc-qou" kind="show" identifier="backToMain" id="RmW-nj-WsP"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="addButton" destination="Ygd-VT-1lE" id="gtq-an-f2A"/>
+                        <outlet property="settingsBackButton" destination="7qI-ge-5am" id="Hns-hL-gqv"/>
+                        <outlet property="settingsNavBar" destination="vZM-Oh-BO0" id="JOY-CA-1tp"/>
+                        <outlet property="settingsNavItem" destination="BGG-xO-WVq" id="jaa-9R-r5E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="151"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="GOf-1x-eXO">
+            <objects>
+                <viewController id="aMU-jc-qou" customClass="MainViewController" customModule="ImageSpeak" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qm1-tA-wfM"/>
+                        <viewControllerLayoutGuide type="bottom" id="u04-4o-Gnv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XYz-ig-jMU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6P8-7Q-OMz">
+                                <rect key="frame" x="-4" y="28" width="609" height="44"/>
+                                <items>
+                                    <navigationItem title="Image Speech" id="i4M-BG-I5U">
+                                        <barButtonItem key="rightBarButtonItem" title="settings" id="Eax-sn-fkx">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="Zob-ke-RNG"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="f7D-S1-gPJ">
+                                <rect key="frame" x="30" y="100" width="540" height="470"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Yib-vh-edU">
+                                    <size key="itemSize" width="100" height="120"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="basic1" id="2SM-uK-SkB" customClass="BasicCollectionCell" customModule="ImageSpeak" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Raj-xJ-fYZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vl2-G2-bxx">
+                                                    <rect key="frame" x="0.0" y="100" width="100" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="imageView" destination="Raj-xJ-fYZ" id="4nA-ae-71q"/>
+                                            <outlet property="textLabel" destination="Vl2-G2-bxx" id="sTM-zt-BPd"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="aMU-jc-qou" id="zgc-7e-l7p"/>
+                                    <outlet property="delegate" destination="aMU-jc-qou" id="bMp-gP-zan"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6P8-7Q-OMz" firstAttribute="leading" secondItem="XYz-ig-jMU" secondAttribute="leadingMargin" id="N8y-yV-317"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6P8-7Q-OMz" secondAttribute="trailing" id="aod-QS-sie"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mainCollection" destination="f7D-S1-gPJ" id="ULx-bY-1as"/>
+                        <outlet property="navBar" destination="6P8-7Q-OMz" id="NB5-14-uje"/>
+                        <outlet property="navBarSettingsButton" destination="Eax-sn-fkx" id="y2s-QQ-2iG"/>
+                        <outlet property="navBarTitle" destination="i4M-BG-I5U" id="Pg6-Z0-f48"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b97-LC-Vaj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-351" y="151"/>
         </scene>
         <!--Settings Modal View Controller-->
         <scene sceneID="GXx-Cq-PGd">
@@ -96,26 +196,27 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wca-zJ-FR5">
-                                <rect key="frame" x="201" y="392" width="198" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Add Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <rect key="frame" x="205" y="374" width="148" height="51"/>
+                                <state key="normal" title="Add Button"/>
                                 <connections>
-                                    <action selector="settingsDone:" destination="Zps-DQ-cQG" eventType="touchUpInside" id="M8r-Kx-H6s"/>
+                                    <segue destination="aMU-jc-qou" kind="show" id="RMr-eC-jNw"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="Wca-zJ-FR5" id="wrn-vM-t5X"/>
                         <outlet property="imagePicker" destination="C3B-Aq-IkE" id="xvG-f9-uNH"/>
                         <outlet property="textField" destination="9sN-l2-gC8" id="ydv-jg-ZYA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D97-fn-MnT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="812" y="362"/>
+            <point key="canvasLocation" x="936" y="334"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="RmW-nj-WsP"/>
+    </inferredMetricsTieBreakers>
 </document>
