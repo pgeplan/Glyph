@@ -3,7 +3,6 @@
 //  ImageSpeak
 //
 //  Created by Paige Plander on 6/20/15.
-//  Copyright (c) 2015 Paige Plander. All rights reserved.
 //
 
 import UIKit
