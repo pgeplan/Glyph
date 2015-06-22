@@ -1,15 +1,15 @@
 //
-//  MainViewController.swift
+//  RemoveViewController.swift
 //  ImageSpeak
 //
-//  Created by Anwar Baroudi on 6/21/15.
+//  Created by Paige Plander on 6/21/15.
 //  Copyright (c) 2015 Paige Plander. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class RemoveViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var navBarTitle: UINavigationItem!
@@ -44,14 +44,33 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         return cell
     }
     
+    
+    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        data.speakAtIndex(indexPath.row)
-        collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+        
+        let removeActionHandler = { (action:UIAlertAction!) -> Void in
+            self.data.remove(indexPath.row)
+            self.mainCollection.reloadData()
+            
+        }
+        
+        
+        let alertController = UIAlertController(title: "Remove Icon", message:
+            "Delete this Icon?", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Remove", style: UIAlertActionStyle.Default,handler: removeActionHandler))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var destination = segue.destinationViewController as! ViewController
+        
+        var destination = segue.destinationViewController as! MainViewController
         destination.data = data
     }
-    
 }
+
+
+
+
+

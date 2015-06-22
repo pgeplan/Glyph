@@ -17,13 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygd-VT-1lE">
-                                <rect key="frame" x="117" y="99" width="79" height="48"/>
-                                <state key="normal" title="Add "/>
-                                <connections>
-                                    <segue destination="Zps-DQ-cQG" kind="presentation" identifier="Settings" id="WRB-JO-qF7"/>
-                                </connections>
-                            </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vZM-Oh-BO0">
                                 <rect key="frame" x="0.0" y="28" width="606" height="44"/>
                                 <items>
@@ -36,6 +29,22 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaL-jP-ziE">
+                                <rect key="frame" x="133" y="155" width="90" height="30"/>
+                                <state key="normal" title="Remove Icon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="9ia-46-GDw" kind="show" identifier="Remove" id="mKu-fv-2yh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygd-VT-1lE">
+                                <rect key="frame" x="133" y="99" width="79" height="48"/>
+                                <state key="normal" title="Add Icon"/>
+                                <connections>
+                                    <segue destination="Zps-DQ-cQG" kind="presentation" identifier="Settings" id="WRB-JO-qF7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -48,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="151"/>
+            <point key="canvasLocation" x="387" y="109"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="GOf-1x-eXO">
@@ -66,7 +75,7 @@
                                 <rect key="frame" x="-4" y="28" width="609" height="44"/>
                                 <items>
                                     <navigationItem title="Image Speech" id="i4M-BG-I5U">
-                                        <barButtonItem key="rightBarButtonItem" title="settings" id="Eax-sn-fkx">
+                                        <barButtonItem key="rightBarButtonItem" title="Settings" id="Eax-sn-fkx">
                                             <connections>
                                                 <segue destination="BYZ-38-t0r" kind="show" id="Zob-ke-RNG"/>
                                             </connections>
@@ -131,6 +140,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b97-LC-Vaj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-351" y="151"/>
+        </scene>
+        <!--Remove View Controller-->
+        <scene sceneID="dOO-bp-P6j">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RRe-8a-jHI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="9ia-46-GDw" customClass="RemoveViewController" customModule="ImageSpeak" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G30-ma-K5W"/>
+                        <viewControllerLayoutGuide type="bottom" id="gaT-kQ-oQT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oUm-FU-Kae">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qG5-2s-Sfg">
+                                <rect key="frame" x="-9" y="15" width="609" height="44"/>
+                                <items>
+                                    <navigationItem title="Image Speech" id="t7N-zE-a82">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="EQd-Ku-KPh">
+                                            <connections>
+                                                <segue destination="aMU-jc-qou" kind="presentation" identifier="RemoveDone" animates="NO" id="EfJ-GM-sss"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BXo-IP-to4">
+                                <rect key="frame" x="30" y="88" width="540" height="470"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qDS-fy-lOQ">
+                                    <size key="itemSize" width="100" height="120"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="basic1" id="fCB-CP-7jY" customClass="BasicCollectionCell" customModule="ImageSpeak" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="abU-ug-abC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxP-jK-on4">
+                                                    <rect key="frame" x="0.0" y="100" width="100" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="imageView" destination="abU-ug-abC" id="sIO-Dt-VVs"/>
+                                            <outlet property="textLabel" destination="oxP-jK-on4" id="z6c-6w-4si"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="9ia-46-GDw" id="4bq-Mv-uQi"/>
+                                    <outlet property="delegate" destination="9ia-46-GDw" id="dOI-Gd-FzJ"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mainCollection" destination="BXo-IP-to4" id="xwL-9X-LxO"/>
+                        <outlet property="navBar" destination="qG5-2s-Sfg" id="Kc3-vV-cEw"/>
+                        <outlet property="navBarSettingsButton" destination="EQd-Ku-KPh" id="RHT-sd-F33"/>
+                        <outlet property="navBarTitle" destination="t7N-zE-a82" id="n06-E5-Joy"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-83" y="954"/>
         </scene>
         <!--Settings Modal View Controller-->
         <scene sceneID="GXx-Cq-PGd">
@@ -213,10 +300,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D97-fn-MnT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="936" y="334"/>
+            <point key="canvasLocation" x="1118" y="34"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="RmW-nj-WsP"/>
+        <segue reference="EfJ-GM-sss"/>
     </inferredMetricsTieBreakers>
 </document>

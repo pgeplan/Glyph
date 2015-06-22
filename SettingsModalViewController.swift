@@ -71,6 +71,7 @@ class SettingsModalViewController: UIViewController, UIImagePickerControllerDele
 //    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         var destination = segue.destinationViewController as! MainViewController
         data.add(imagePicker.image!, label: textField.text)
         destination.data = data

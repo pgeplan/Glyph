@@ -33,7 +33,11 @@ class ViewController: UIViewController {
         } else if segue.identifier == "backToMain" {
             var destination = segue.destinationViewController as! MainViewController
             destination.data = data
+        } else if segue.identifier == "Remove" {
+            var destination = segue.destinationViewController as! RemoveViewController
+            destination.data = data
         }
+        
         
     }
 

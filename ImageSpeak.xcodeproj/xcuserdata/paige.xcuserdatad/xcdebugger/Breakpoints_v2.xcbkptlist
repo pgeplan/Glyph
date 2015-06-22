@@ -6,7 +6,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SettingsModalViewController.swift"
@@ -16,6 +16,84 @@
             startingLineNumber = "19"
             endingLineNumber = "19"
             landmarkName = "SettingsModalViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ImageSpeak.SettingsModalViewController.textField.setter : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITextField&gt;"
+                  moduleName = "ImageSpeak"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paige/Documents/ios/ImageSpeech/SettingsModalViewController.swift"
+                  timestampString = "456628519.354674"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ImageSpeak.SettingsModalViewController.textField.materializeForSet : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UITextField&gt;"
+                  moduleName = "ImageSpeak"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paige/Documents/ios/ImageSpeech/SettingsModalViewController.swift"
+                  timestampString = "456628519.354839"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ImageSpeak.SettingsModalViewController.init (ImageSpeak.SettingsModalViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; ImageSpeak.SettingsModalViewController"
+                  moduleName = "ImageSpeak"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paige/Documents/ios/ImageSpeech/SettingsModalViewController.swift"
+                  timestampString = "456628519.355019"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "185">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ImageSpeak.SettingsModalViewController.init (ImageSpeak.SettingsModalViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; ImageSpeak.SettingsModalViewController"
+                  moduleName = "ImageSpeak"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paige/Documents/ios/ImageSpeech/SettingsModalViewController.swift"
+                  timestampString = "456628519.355191"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "115">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageSpeak/BasicCollectionCell.swift"
+            timestampString = "456625995.564765"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "BasicCollectionCell"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C10BADD1B378EF00027A2D6 /* RemoveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C10BADC1B378EF00027A2D6 /* RemoveViewController.swift */; };
 		6C40F3531B36416700DF17D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C40F3521B36416700DF17D9 /* AppDelegate.swift */; };
 		6C40F3551B36416700DF17D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C40F3541B36416700DF17D9 /* ViewController.swift */; };
 		6C40F3581B36416700DF17D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C40F3561B36416700DF17D9 /* Main.storyboard */; };
@@ -18,7 +19,6 @@
 		E894AEC31B3750AD00B27031 /* addButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E894AEC21B3750AD00B27031 /* addButton.png */; };
 		E894AEC51B37577800B27031 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E894AEC41B37577800B27031 /* MainViewController.swift */; };
 		E894AEC71B375BE900B27031 /* BasicCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E894AEC61B375BE900B27031 /* BasicCollectionCell.swift */; };
-		E894AECB1B37756500B27031 /* molly.png in Resources */ = {isa = PBXBuildFile; fileRef = E894AECA1B37756400B27031 /* molly.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C10BADC1B378EF00027A2D6 /* RemoveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveViewController.swift; sourceTree = "<group>"; };
 		6C40F34D1B36416700DF17D9 /* ImageSpeak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageSpeak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C40F3511B36416700DF17D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C40F3521B36416700DF17D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,7 +48,6 @@
 		E894AEC21B3750AD00B27031 /* addButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addButton.png; sourceTree = "<group>"; };
 		E894AEC41B37577800B27031 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E894AEC61B375BE900B27031 /* BasicCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCollectionCell.swift; sourceTree = "<group>"; };
-		E894AECA1B37756400B27031 /* molly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = molly.png; path = ../../../molly.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +94,10 @@
 				6C40F3541B36416700DF17D9 /* ViewController.swift */,
 				6C40F3741B364BF000DF17D9 /* SettingsModalViewController.swift */,
 				6C40F3561B36416700DF17D9 /* Main.storyboard */,
+				6C10BADC1B378EF00027A2D6 /* RemoveViewController.swift */,
 				E894AEC61B375BE900B27031 /* BasicCollectionCell.swift */,
 				E894AEC41B37577800B27031 /* MainViewController.swift */,
 				E894AEC21B3750AD00B27031 /* addButton.png */,
-				E894AECA1B37756400B27031 /* molly.png */,
 				6C40F3591B36416700DF17D9 /* Images.xcassets */,
 				6C40F35B1B36416700DF17D9 /* LaunchScreen.xib */,
 				6C40F3501B36416700DF17D9 /* Supporting Files */,
@@ -211,7 +211,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C40F3581B36416700DF17D9 /* Main.storyboard in Resources */,
-				E894AECB1B37756500B27031 /* molly.png in Resources */,
 				6C40F35D1B36416700DF17D9 /* LaunchScreen.xib in Resources */,
 				6C40F35A1B36416700DF17D9 /* Images.xcassets in Resources */,
 				E894AEC31B3750AD00B27031 /* addButton.png in Resources */,
@@ -236,6 +235,7 @@
 				E894AEBD1B372C0400B27031 /* DataModel.swift in Sources */,
 				E894AEC71B375BE900B27031 /* BasicCollectionCell.swift in Sources */,
 				6C40F3531B36416700DF17D9 /* AppDelegate.swift in Sources */,
+				6C10BADD1B378EF00027A2D6 /* RemoveViewController.swift in Sources */,
 				6C40F3751B364BF000DF17D9 /* SettingsModalViewController.swift in Sources */,
 				E894AEC51B37577800B27031 /* MainViewController.swift in Sources */,
 			);
