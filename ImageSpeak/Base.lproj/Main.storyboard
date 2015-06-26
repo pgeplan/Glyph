@@ -276,22 +276,10 @@
                         <viewControllerLayoutGuide type="top" id="2BC-dq-T10"/>
                         <viewControllerLayoutGuide type="bottom" id="IFq-vu-INd"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xPi-a4-9vd">
+                    <view key="view" contentMode="center" id="xPi-a4-9vd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C3B-Aq-IkE">
-                                <rect key="frame" x="196" y="125" width="215" height="215"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="215" id="ikD-9b-5rT"/>
-                                    <constraint firstAttribute="width" constant="215" id="weW-aV-axn"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="ikD-9b-5rT"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qS3-11-oGG">
                                 <rect key="frame" x="155" y="348" width="77" height="30"/>
                                 <state key="normal" title="Take Photo">
@@ -363,10 +351,26 @@
                                     <constraint firstAttribute="width" constant="202" id="dvk-RB-ZW8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Zps-DQ-cQG" id="vBz-9k-i9K"/>
+                                </connections>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C3B-Aq-IkE">
+                                <rect key="frame" x="196" y="125" width="215" height="215"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="215" id="ikD-9b-5rT"/>
+                                    <constraint firstAttribute="width" constant="215" id="weW-aV-axn"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ikD-9b-5rT"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="9sN-l2-gC8" firstAttribute="top" secondItem="Ls6-Vr-GId" secondAttribute="bottom" constant="28" id="0Ss-Fa-aLE"/>
                             <constraint firstItem="C3B-Aq-IkE" firstAttribute="centerX" secondItem="9sN-l2-gC8" secondAttribute="centerX" constant="-49.5" id="1mY-ON-Tt4"/>
@@ -393,6 +397,9 @@
                             <constraint firstItem="RYv-zA-Ryo" firstAttribute="top" secondItem="C3B-Aq-IkE" secondAttribute="bottom" constant="8" id="x79-Il-Utt"/>
                             <constraint firstItem="IFq-vu-INd" firstAttribute="top" secondItem="Wca-zJ-FR5" secondAttribute="bottom" constant="118" id="yAK-kt-rhR"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="aFw-j8-rb8" appends="YES" id="UWx-th-ldg"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="addButton" destination="Wca-zJ-FR5" id="wrn-vM-t5X"/>
@@ -401,6 +408,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D97-fn-MnT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aFw-j8-rb8">
+                    <connections>
+                        <action selector="resign" destination="Zps-DQ-cQG" id="0tl-rT-BIx"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1136" y="-35"/>
         </scene>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsModalViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class SettingsModalViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate {
     var data = DataModel()
     // Image View attribute
     @IBOutlet var imagePicker: UIImageView!
@@ -28,6 +28,8 @@ class SettingsModalViewController: UIViewController, UIImagePickerControllerDele
             noCamera()
         }
     }
+    
+    
     
     func returnImage() -> UIImage {
         return imagePicker.image!
@@ -61,7 +63,14 @@ class SettingsModalViewController: UIViewController, UIImagePickerControllerDele
         // Do any additional setup after loading the view.
         picker.delegate = self
     }
+    @IBAction func resign() {
+        self.view.endEditing(true)
+    }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     @IBOutlet weak var addButton: UIButton!
 //    @IBAction func settingsDone(sender: UIButton) {
