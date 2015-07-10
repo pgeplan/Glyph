@@ -15,6 +15,8 @@
 		6C40F35D1B36416700DF17D9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C40F35B1B36416700DF17D9 /* LaunchScreen.xib */; };
 		6C40F3691B36416700DF17D9 /* ImageSpeakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C40F3681B36416700DF17D9 /* ImageSpeakTests.swift */; };
 		6C40F3751B364BF000DF17D9 /* SettingsModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C40F3741B364BF000DF17D9 /* SettingsModalViewController.swift */; };
+		6CFEF58C1B4F9FB600131549 /* glyph.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CFEF58B1B4F9FB600131549 /* glyph.png */; };
+		6CFEF58E1B4FA04100131549 /* glyphSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CFEF58D1B4FA04100131549 /* glyphSmall.png */; };
 		E894AEBD1B372C0400B27031 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E894AEBC1B372C0400B27031 /* DataModel.swift */; };
 		E894AEC31B3750AD00B27031 /* addButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E894AEC21B3750AD00B27031 /* addButton.png */; };
 		E894AEC51B37577800B27031 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E894AEC41B37577800B27031 /* MainViewController.swift */; };
@@ -44,6 +46,8 @@
 		6C40F3671B36416700DF17D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C40F3681B36416700DF17D9 /* ImageSpeakTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSpeakTests.swift; sourceTree = "<group>"; };
 		6C40F3741B364BF000DF17D9 /* SettingsModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsModalViewController.swift; path = ../SettingsModalViewController.swift; sourceTree = "<group>"; };
+		6CFEF58B1B4F9FB600131549 /* glyph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyph.png; sourceTree = "<group>"; };
+		6CFEF58D1B4FA04100131549 /* glyphSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphSmall.png; sourceTree = "<group>"; };
 		E894AEBC1B372C0400B27031 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		E894AEC21B3750AD00B27031 /* addButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addButton.png; sourceTree = "<group>"; };
 		E894AEC41B37577800B27031 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +75,8 @@
 		6C40F3441B36416700DF17D9 = {
 			isa = PBXGroup;
 			children = (
+				6CFEF58D1B4FA04100131549 /* glyphSmall.png */,
+				6CFEF58B1B4F9FB600131549 /* glyph.png */,
 				E894AEBC1B372C0400B27031 /* DataModel.swift */,
 				6C40F34F1B36416700DF17D9 /* ImageSpeak */,
 				6C40F3651B36416700DF17D9 /* ImageSpeakTests */,
@@ -211,10 +217,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CFEF58E1B4FA04100131549 /* glyphSmall.png in Resources */,
 				6C40F3581B36416700DF17D9 /* Main.storyboard in Resources */,
 				6C40F35D1B36416700DF17D9 /* LaunchScreen.xib in Resources */,
 				6C40F35A1B36416700DF17D9 /* Images.xcassets in Resources */,
 				E894AEC31B3750AD00B27031 /* addButton.png in Resources */,
+				6CFEF58C1B4F9FB600131549 /* glyph.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
