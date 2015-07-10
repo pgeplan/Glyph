@@ -18,13 +18,26 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     var data = DataModel()
     
     
+    let gradient = CAGradientLayer()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+       
         if mainCollection != nil {
             mainCollection.reloadData()
         }
+        
+        var view: UIView = UIView(frame: CGRectMake(0.0, 0.0, 320.0, 50.0))
+        
+        gradient.frame = view.bounds
+        gradient.colors = [UIColor.whiteColor().CGColor, UIColor.blackColor().CGColor]
+        view.layer.insertSublayer(gradient, atIndex: 0)
+        
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     

@@ -15,6 +15,43 @@
 		6C40F35D1B36416700DF17D9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C40F35B1B36416700DF17D9 /* LaunchScreen.xib */; };
 		6C40F3691B36416700DF17D9 /* ImageSpeakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C40F3681B36416700DF17D9 /* ImageSpeakTests.swift */; };
 		6C40F3751B364BF000DF17D9 /* SettingsModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C40F3741B364BF000DF17D9 /* SettingsModalViewController.swift */; };
+		6C4D45821B3D32A700C9A4EA /* 1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C4D453F1B3D32A700C9A4EA /* 1@2x.png */; };
+		6C4D45831B3D32A700C9A4EA /* 2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C4D45401B3D32A700C9A4EA /* 2@2x.png */; };
+		6C4D45841B3D32A700C9A4EA /* 3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C4D45411B3D32A700C9A4EA /* 3@2x.png */; };
+		6C4D45851B3D32A700C9A4EA /* 4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C4D45421B3D32A700C9A4EA /* 4@2x.png */; };
+		6C4D45861B3D32A700C9A4EA /* 5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C4D45431B3D32A700C9A4EA /* 5@2x.png */; };
+		6C4D45871B3D32A700C9A4EA /* AnalogousViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D45451B3D32A700C9A4EA /* AnalogousViewController.m */; };
+		6C4D45881B3D32A700C9A4EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D45471B3D32A700C9A4EA /* AppDelegate.m */; };
+		6C4D45891B3D32A700C9A4EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C4D45481B3D32A700C9A4EA /* Main.storyboard */; };
+		6C4D458A1B3D32A700C9A4EA /* Chameleon Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D454A1B3D32A700C9A4EA /* Chameleon Readme.md */; };
+		6C4D458B1B3D32A700C9A4EA /* ChameleonDemo-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C4D454B1B3D32A700C9A4EA /* ChameleonDemo-Info.plist */; };
+		6C4D458C1B3D32A700C9A4EA /* ComplementaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D454E1B3D32A700C9A4EA /* ComplementaryViewController.m */; };
+		6C4D458D1B3D32A700C9A4EA /* dice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C4D454F1B3D32A700C9A4EA /* dice@2x.png */; };
+		6C4D458E1B3D32A700C9A4EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C4D45501B3D32A700C9A4EA /* InfoPlist.strings */; };
+		6C4D458F1B3D32A700C9A4EA /* GradientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D45531B3D32A700C9A4EA /* GradientViewController.m */; };
+		6C4D45901B3D32A700C9A4EA /* icons license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6C4D45541B3D32A700C9A4EA /* icons license.txt */; };
+		6C4D45911B3D32A700C9A4EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C4D45551B3D32A700C9A4EA /* Images.xcassets */; };
+		6C4D45921B3D32A700C9A4EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D45561B3D32A700C9A4EA /* main.m */; };
+		6C4D45931B3D32A700C9A4EA /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D45581B3D32A700C9A4EA /* MainNavigationController.m */; };
+		6C4D45941B3D32A700C9A4EA /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D455A1B3D32A700C9A4EA /* MainViewController.m */; };
+		6C4D45951B3D32A700C9A4EA /* Row1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D455C1B3D32A700C9A4EA /* Row1ViewController.m */; };
+		6C4D45961B3D32A700C9A4EA /* Row2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D455E1B3D32A700C9A4EA /* Row2ViewController.m */; };
+		6C4D45971B3D32A700C9A4EA /* Row4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D45601B3D32A700C9A4EA /* Row4ViewController.m */; };
+		6C4D45981B3D32A700C9A4EA /* TriadicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D45621B3D32A700C9A4EA /* TriadicViewController.m */; };
+		6C4D45991B3D32A700C9A4EA /* ChameleonDemoTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C4D45671B3D32A700C9A4EA /* ChameleonDemoTests-Info.plist */; };
+		6C4D459A1B3D32A700C9A4EA /* ChameleonDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D45681B3D32A700C9A4EA /* ChameleonDemoTests.m */; };
+		6C4D459B1B3D32A700C9A4EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C4D45691B3D32A700C9A4EA /* InfoPlist.strings */; };
+		6C4D459C1B3D32A700C9A4EA /* ChameleonFramework.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 6C4D456B1B3D32A700C9A4EA /* ChameleonFramework.podspec */; };
+		6C4D459D1B3D32A700C9A4EA /* Chameleon.dmg in Resources */ = {isa = PBXBuildFile; fileRef = 6C4D456D1B3D32A700C9A4EA /* Chameleon.dmg */; };
+		6C4D459E1B3D32A700C9A4EA /* LICENSE.md in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D456E1B3D32A700C9A4EA /* LICENSE.md */; };
+		6C4D459F1B3D32A700C9A4EA /* LICENSE.md in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D456F1B3D32A700C9A4EA /* LICENSE.md */; };
+		6C4D45A01B3D32A700C9A4EA /* ChameleonStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D45761B3D32A700C9A4EA /* ChameleonStatusBar.m */; };
+		6C4D45A11B3D32A700C9A4EA /* NSArray+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D45781B3D32A700C9A4EA /* NSArray+Chameleon.m */; };
+		6C4D45A21B3D32A700C9A4EA /* UIColor+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D457A1B3D32A700C9A4EA /* UIColor+Chameleon.m */; };
+		6C4D45A31B3D32A700C9A4EA /* UIColor+CIELAB.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D457C1B3D32A700C9A4EA /* UIColor+CIELAB.m */; };
+		6C4D45A41B3D32A700C9A4EA /* UIViewController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D457E1B3D32A700C9A4EA /* UIViewController+Chameleon.m */; };
+		6C4D45A51B3D32A700C9A4EA /* ChameleonShorthand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D45801B3D32A700C9A4EA /* ChameleonShorthand.swift */; };
+		6C4D45A61B3D32A700C9A4EA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D45811B3D32A700C9A4EA /* README.md */; };
 		E894AEBD1B372C0400B27031 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E894AEBC1B372C0400B27031 /* DataModel.swift */; };
 		E894AEC31B3750AD00B27031 /* addButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E894AEC21B3750AD00B27031 /* addButton.png */; };
 		E894AEC51B37577800B27031 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E894AEC41B37577800B27031 /* MainViewController.swift */; };
@@ -28,6 +65,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 6C40F34C1B36416700DF17D9;
 			remoteInfo = ImageSpeak;
+		};
+		6C4D45A91B3D32A800C9A4EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C4D45631B3D32A700C9A4EA /* ChameleonDemo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0CC0046019812351008E24FD;
+			remoteInfo = ChameleonDemo;
+		};
+		6C4D45AB1B3D32A800C9A4EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C4D45631B3D32A700C9A4EA /* ChameleonDemo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0CC0048119812352008E24FD;
+			remoteInfo = ChameleonDemoTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -44,6 +95,63 @@
 		6C40F3671B36416700DF17D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C40F3681B36416700DF17D9 /* ImageSpeakTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSpeakTests.swift; sourceTree = "<group>"; };
 		6C40F3741B364BF000DF17D9 /* SettingsModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsModalViewController.swift; path = ../SettingsModalViewController.swift; sourceTree = "<group>"; };
+		6C4D453A1B3D319100C9A4EA /* ChameleonShorthand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChameleonShorthand.swift; sourceTree = "<group>"; };
+		6C4D453F1B3D32A700C9A4EA /* 1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1@2x.png"; sourceTree = "<group>"; };
+		6C4D45401B3D32A700C9A4EA /* 2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2@2x.png"; sourceTree = "<group>"; };
+		6C4D45411B3D32A700C9A4EA /* 3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3@2x.png"; sourceTree = "<group>"; };
+		6C4D45421B3D32A700C9A4EA /* 4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4@2x.png"; sourceTree = "<group>"; };
+		6C4D45431B3D32A700C9A4EA /* 5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5@2x.png"; sourceTree = "<group>"; };
+		6C4D45441B3D32A700C9A4EA /* AnalogousViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalogousViewController.h; sourceTree = "<group>"; };
+		6C4D45451B3D32A700C9A4EA /* AnalogousViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalogousViewController.m; sourceTree = "<group>"; };
+		6C4D45461B3D32A700C9A4EA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6C4D45471B3D32A700C9A4EA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6C4D45491B3D32A700C9A4EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6C4D454A1B3D32A700C9A4EA /* Chameleon Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "Chameleon Readme.md"; sourceTree = "<group>"; };
+		6C4D454B1B3D32A700C9A4EA /* ChameleonDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ChameleonDemo-Info.plist"; sourceTree = "<group>"; };
+		6C4D454C1B3D32A700C9A4EA /* ChameleonDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ChameleonDemo-Prefix.pch"; sourceTree = "<group>"; };
+		6C4D454D1B3D32A700C9A4EA /* ComplementaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplementaryViewController.h; sourceTree = "<group>"; };
+		6C4D454E1B3D32A700C9A4EA /* ComplementaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplementaryViewController.m; sourceTree = "<group>"; };
+		6C4D454F1B3D32A700C9A4EA /* dice@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dice@2x.png"; sourceTree = "<group>"; };
+		6C4D45511B3D32A700C9A4EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6C4D45521B3D32A700C9A4EA /* GradientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientViewController.h; sourceTree = "<group>"; };
+		6C4D45531B3D32A700C9A4EA /* GradientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientViewController.m; sourceTree = "<group>"; };
+		6C4D45541B3D32A700C9A4EA /* icons license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "icons license.txt"; sourceTree = "<group>"; };
+		6C4D45551B3D32A700C9A4EA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6C4D45561B3D32A700C9A4EA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6C4D45571B3D32A700C9A4EA /* MainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
+		6C4D45581B3D32A700C9A4EA /* MainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
+		6C4D45591B3D32A700C9A4EA /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		6C4D455A1B3D32A700C9A4EA /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		6C4D455B1B3D32A700C9A4EA /* Row1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Row1ViewController.h; sourceTree = "<group>"; };
+		6C4D455C1B3D32A700C9A4EA /* Row1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Row1ViewController.m; sourceTree = "<group>"; };
+		6C4D455D1B3D32A700C9A4EA /* Row2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Row2ViewController.h; sourceTree = "<group>"; };
+		6C4D455E1B3D32A700C9A4EA /* Row2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Row2ViewController.m; sourceTree = "<group>"; };
+		6C4D455F1B3D32A700C9A4EA /* Row4ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Row4ViewController.h; sourceTree = "<group>"; };
+		6C4D45601B3D32A700C9A4EA /* Row4ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Row4ViewController.m; sourceTree = "<group>"; };
+		6C4D45611B3D32A700C9A4EA /* TriadicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriadicViewController.h; sourceTree = "<group>"; };
+		6C4D45621B3D32A700C9A4EA /* TriadicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriadicViewController.m; sourceTree = "<group>"; };
+		6C4D45631B3D32A700C9A4EA /* ChameleonDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = ChameleonDemo.xcodeproj; sourceTree = "<group>"; };
+		6C4D45671B3D32A700C9A4EA /* ChameleonDemoTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ChameleonDemoTests-Info.plist"; sourceTree = "<group>"; };
+		6C4D45681B3D32A700C9A4EA /* ChameleonDemoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChameleonDemoTests.m; sourceTree = "<group>"; };
+		6C4D456A1B3D32A700C9A4EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6C4D456B1B3D32A700C9A4EA /* ChameleonFramework.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChameleonFramework.podspec; sourceTree = "<group>"; };
+		6C4D456D1B3D32A700C9A4EA /* Chameleon.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chameleon.dmg; sourceTree = "<group>"; };
+		6C4D456E1B3D32A700C9A4EA /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		6C4D456F1B3D32A700C9A4EA /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		6C4D45731B3D32A700C9A4EA /* Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chameleon.h; sourceTree = "<group>"; };
+		6C4D45741B3D32A700C9A4EA /* ChameleonMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChameleonMacros.h; sourceTree = "<group>"; };
+		6C4D45751B3D32A700C9A4EA /* ChameleonStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChameleonStatusBar.h; sourceTree = "<group>"; };
+		6C4D45761B3D32A700C9A4EA /* ChameleonStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChameleonStatusBar.m; sourceTree = "<group>"; };
+		6C4D45771B3D32A700C9A4EA /* NSArray+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Chameleon.h"; sourceTree = "<group>"; };
+		6C4D45781B3D32A700C9A4EA /* NSArray+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Chameleon.m"; sourceTree = "<group>"; };
+		6C4D45791B3D32A700C9A4EA /* UIColor+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Chameleon.h"; sourceTree = "<group>"; };
+		6C4D457A1B3D32A700C9A4EA /* UIColor+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Chameleon.m"; sourceTree = "<group>"; };
+		6C4D457B1B3D32A700C9A4EA /* UIColor+CIELAB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CIELAB.h"; sourceTree = "<group>"; };
+		6C4D457C1B3D32A700C9A4EA /* UIColor+CIELAB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CIELAB.m"; sourceTree = "<group>"; };
+		6C4D457D1B3D32A700C9A4EA /* UIViewController+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Chameleon.h"; sourceTree = "<group>"; };
+		6C4D457E1B3D32A700C9A4EA /* UIViewController+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Chameleon.m"; sourceTree = "<group>"; };
+		6C4D45801B3D32A700C9A4EA /* ChameleonShorthand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChameleonShorthand.swift; sourceTree = "<group>"; };
+		6C4D45811B3D32A700C9A4EA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E894AEBC1B372C0400B27031 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		E894AEC21B3750AD00B27031 /* addButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addButton.png; sourceTree = "<group>"; };
 		E894AEC41B37577800B27031 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				E894AEBC1B372C0400B27031 /* DataModel.swift */,
+				6C4D453A1B3D319100C9A4EA /* ChameleonShorthand.swift */,
+				6C4D453C1B3D32A700C9A4EA /* Chameleon-master */,
 				6C40F34F1B36416700DF17D9 /* ImageSpeak */,
 				6C40F3651B36416700DF17D9 /* ImageSpeakTests */,
 				6C40F34E1B36416700DF17D9 /* Products */,
@@ -130,6 +240,142 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6C4D453C1B3D32A700C9A4EA /* Chameleon-master */ = {
+			isa = PBXGroup;
+			children = (
+				6C4D453D1B3D32A700C9A4EA /* ChameleonDemo */,
+				6C4D456B1B3D32A700C9A4EA /* ChameleonFramework.podspec */,
+				6C4D456C1B3D32A700C9A4EA /* Extras */,
+				6C4D456F1B3D32A700C9A4EA /* LICENSE.md */,
+				6C4D45701B3D32A700C9A4EA /* Pod */,
+				6C4D45811B3D32A700C9A4EA /* README.md */,
+			);
+			path = "Chameleon-master";
+			sourceTree = "<group>";
+		};
+		6C4D453D1B3D32A700C9A4EA /* ChameleonDemo */ = {
+			isa = PBXGroup;
+			children = (
+				6C4D453E1B3D32A700C9A4EA /* ChameleonDemo */,
+				6C4D45631B3D32A700C9A4EA /* ChameleonDemo.xcodeproj */,
+				6C4D45661B3D32A700C9A4EA /* ChameleonDemoTests */,
+			);
+			path = ChameleonDemo;
+			sourceTree = "<group>";
+		};
+		6C4D453E1B3D32A700C9A4EA /* ChameleonDemo */ = {
+			isa = PBXGroup;
+			children = (
+				6C4D453F1B3D32A700C9A4EA /* 1@2x.png */,
+				6C4D45401B3D32A700C9A4EA /* 2@2x.png */,
+				6C4D45411B3D32A700C9A4EA /* 3@2x.png */,
+				6C4D45421B3D32A700C9A4EA /* 4@2x.png */,
+				6C4D45431B3D32A700C9A4EA /* 5@2x.png */,
+				6C4D45441B3D32A700C9A4EA /* AnalogousViewController.h */,
+				6C4D45451B3D32A700C9A4EA /* AnalogousViewController.m */,
+				6C4D45461B3D32A700C9A4EA /* AppDelegate.h */,
+				6C4D45471B3D32A700C9A4EA /* AppDelegate.m */,
+				6C4D45481B3D32A700C9A4EA /* Main.storyboard */,
+				6C4D454A1B3D32A700C9A4EA /* Chameleon Readme.md */,
+				6C4D454B1B3D32A700C9A4EA /* ChameleonDemo-Info.plist */,
+				6C4D454C1B3D32A700C9A4EA /* ChameleonDemo-Prefix.pch */,
+				6C4D454D1B3D32A700C9A4EA /* ComplementaryViewController.h */,
+				6C4D454E1B3D32A700C9A4EA /* ComplementaryViewController.m */,
+				6C4D454F1B3D32A700C9A4EA /* dice@2x.png */,
+				6C4D45501B3D32A700C9A4EA /* InfoPlist.strings */,
+				6C4D45521B3D32A700C9A4EA /* GradientViewController.h */,
+				6C4D45531B3D32A700C9A4EA /* GradientViewController.m */,
+				6C4D45541B3D32A700C9A4EA /* icons license.txt */,
+				6C4D45551B3D32A700C9A4EA /* Images.xcassets */,
+				6C4D45561B3D32A700C9A4EA /* main.m */,
+				6C4D45571B3D32A700C9A4EA /* MainNavigationController.h */,
+				6C4D45581B3D32A700C9A4EA /* MainNavigationController.m */,
+				6C4D45591B3D32A700C9A4EA /* MainViewController.h */,
+				6C4D455A1B3D32A700C9A4EA /* MainViewController.m */,
+				6C4D455B1B3D32A700C9A4EA /* Row1ViewController.h */,
+				6C4D455C1B3D32A700C9A4EA /* Row1ViewController.m */,
+				6C4D455D1B3D32A700C9A4EA /* Row2ViewController.h */,
+				6C4D455E1B3D32A700C9A4EA /* Row2ViewController.m */,
+				6C4D455F1B3D32A700C9A4EA /* Row4ViewController.h */,
+				6C4D45601B3D32A700C9A4EA /* Row4ViewController.m */,
+				6C4D45611B3D32A700C9A4EA /* TriadicViewController.h */,
+				6C4D45621B3D32A700C9A4EA /* TriadicViewController.m */,
+			);
+			path = ChameleonDemo;
+			sourceTree = "<group>";
+		};
+		6C4D45641B3D32A700C9A4EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6C4D45AA1B3D32A800C9A4EA /* ChameleonDemo.app */,
+				6C4D45AC1B3D32A800C9A4EA /* ChameleonDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6C4D45661B3D32A700C9A4EA /* ChameleonDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				6C4D45671B3D32A700C9A4EA /* ChameleonDemoTests-Info.plist */,
+				6C4D45681B3D32A700C9A4EA /* ChameleonDemoTests.m */,
+				6C4D45691B3D32A700C9A4EA /* InfoPlist.strings */,
+			);
+			path = ChameleonDemoTests;
+			sourceTree = "<group>";
+		};
+		6C4D456C1B3D32A700C9A4EA /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				6C4D456D1B3D32A700C9A4EA /* Chameleon.dmg */,
+				6C4D456E1B3D32A700C9A4EA /* LICENSE.md */,
+			);
+			path = Extras;
+			sourceTree = "<group>";
+		};
+		6C4D45701B3D32A700C9A4EA /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				6C4D45711B3D32A700C9A4EA /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		6C4D45711B3D32A700C9A4EA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6C4D45721B3D32A700C9A4EA /* Objective-C */,
+				6C4D457F1B3D32A700C9A4EA /* Swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		6C4D45721B3D32A700C9A4EA /* Objective-C */ = {
+			isa = PBXGroup;
+			children = (
+				6C4D45731B3D32A700C9A4EA /* Chameleon.h */,
+				6C4D45741B3D32A700C9A4EA /* ChameleonMacros.h */,
+				6C4D45751B3D32A700C9A4EA /* ChameleonStatusBar.h */,
+				6C4D45761B3D32A700C9A4EA /* ChameleonStatusBar.m */,
+				6C4D45771B3D32A700C9A4EA /* NSArray+Chameleon.h */,
+				6C4D45781B3D32A700C9A4EA /* NSArray+Chameleon.m */,
+				6C4D45791B3D32A700C9A4EA /* UIColor+Chameleon.h */,
+				6C4D457A1B3D32A700C9A4EA /* UIColor+Chameleon.m */,
+				6C4D457B1B3D32A700C9A4EA /* UIColor+CIELAB.h */,
+				6C4D457C1B3D32A700C9A4EA /* UIColor+CIELAB.m */,
+				6C4D457D1B3D32A700C9A4EA /* UIViewController+Chameleon.h */,
+				6C4D457E1B3D32A700C9A4EA /* UIViewController+Chameleon.m */,
+			);
+			path = "Objective-C";
+			sourceTree = "<group>";
+		};
+		6C4D457F1B3D32A700C9A4EA /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				6C4D45801B3D32A700C9A4EA /* ChameleonShorthand.swift */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -174,6 +420,7 @@
 		6C40F3451B36416700DF17D9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Paige Plander";
 				TargetAttributes = {
@@ -197,6 +444,12 @@
 			mainGroup = 6C40F3441B36416700DF17D9;
 			productRefGroup = 6C40F34E1B36416700DF17D9 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6C4D45641B3D32A700C9A4EA /* Products */;
+					ProjectRef = 6C4D45631B3D32A700C9A4EA /* ChameleonDemo.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				6C40F34C1B36416700DF17D9 /* ImageSpeak */,
@@ -205,14 +458,46 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		6C4D45AA1B3D32A800C9A4EA /* ChameleonDemo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ChameleonDemo.app;
+			remoteRef = 6C4D45A91B3D32A800C9A4EA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6C4D45AC1B3D32A800C9A4EA /* ChameleonDemoTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChameleonDemoTests.xctest;
+			remoteRef = 6C4D45AB1B3D32A800C9A4EA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		6C40F34B1B36416700DF17D9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C4D45861B3D32A700C9A4EA /* 5@2x.png in Resources */,
+				6C4D45891B3D32A700C9A4EA /* Main.storyboard in Resources */,
 				6C40F3581B36416700DF17D9 /* Main.storyboard in Resources */,
+				6C4D458E1B3D32A700C9A4EA /* InfoPlist.strings in Resources */,
+				6C4D45991B3D32A700C9A4EA /* ChameleonDemoTests-Info.plist in Resources */,
+				6C4D459B1B3D32A700C9A4EA /* InfoPlist.strings in Resources */,
+				6C4D45851B3D32A700C9A4EA /* 4@2x.png in Resources */,
 				6C40F35D1B36416700DF17D9 /* LaunchScreen.xib in Resources */,
+				6C4D45911B3D32A700C9A4EA /* Images.xcassets in Resources */,
+				6C4D45821B3D32A700C9A4EA /* 1@2x.png in Resources */,
+				6C4D45831B3D32A700C9A4EA /* 2@2x.png in Resources */,
+				6C4D458B1B3D32A700C9A4EA /* ChameleonDemo-Info.plist in Resources */,
+				6C4D459C1B3D32A700C9A4EA /* ChameleonFramework.podspec in Resources */,
 				6C40F35A1B36416700DF17D9 /* Images.xcassets in Resources */,
+				6C4D45901B3D32A700C9A4EA /* icons license.txt in Resources */,
+				6C4D459D1B3D32A700C9A4EA /* Chameleon.dmg in Resources */,
+				6C4D458D1B3D32A700C9A4EA /* dice@2x.png in Resources */,
+				6C4D45841B3D32A700C9A4EA /* 3@2x.png in Resources */,
 				E894AEC31B3750AD00B27031 /* addButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,11 +518,33 @@
 			files = (
 				6C40F3551B36416700DF17D9 /* ViewController.swift in Sources */,
 				E894AEBD1B372C0400B27031 /* DataModel.swift in Sources */,
+				6C4D459A1B3D32A700C9A4EA /* ChameleonDemoTests.m in Sources */,
+				6C4D45961B3D32A700C9A4EA /* Row2ViewController.m in Sources */,
+				6C4D45871B3D32A700C9A4EA /* AnalogousViewController.m in Sources */,
+				6C4D45941B3D32A700C9A4EA /* MainViewController.m in Sources */,
+				6C4D45971B3D32A700C9A4EA /* Row4ViewController.m in Sources */,
+				6C4D45881B3D32A700C9A4EA /* AppDelegate.m in Sources */,
 				E894AEC71B375BE900B27031 /* BasicCollectionCell.swift in Sources */,
+				6C4D459E1B3D32A700C9A4EA /* LICENSE.md in Sources */,
 				6C40F3531B36416700DF17D9 /* AppDelegate.swift in Sources */,
+				6C4D45A61B3D32A700C9A4EA /* README.md in Sources */,
+				6C4D458C1B3D32A700C9A4EA /* ComplementaryViewController.m in Sources */,
+				6C4D459F1B3D32A700C9A4EA /* LICENSE.md in Sources */,
+				6C4D45A21B3D32A700C9A4EA /* UIColor+Chameleon.m in Sources */,
 				6C10BADD1B378EF00027A2D6 /* RemoveViewController.swift in Sources */,
 				6C40F3751B364BF000DF17D9 /* SettingsModalViewController.swift in Sources */,
+				6C4D45951B3D32A700C9A4EA /* Row1ViewController.m in Sources */,
 				E894AEC51B37577800B27031 /* MainViewController.swift in Sources */,
+				6C4D45A31B3D32A700C9A4EA /* UIColor+CIELAB.m in Sources */,
+				6C4D458A1B3D32A700C9A4EA /* Chameleon Readme.md in Sources */,
+				6C4D45A11B3D32A700C9A4EA /* NSArray+Chameleon.m in Sources */,
+				6C4D45A51B3D32A700C9A4EA /* ChameleonShorthand.swift in Sources */,
+				6C4D45921B3D32A700C9A4EA /* main.m in Sources */,
+				6C4D45A01B3D32A700C9A4EA /* ChameleonStatusBar.m in Sources */,
+				6C4D45981B3D32A700C9A4EA /* TriadicViewController.m in Sources */,
+				6C4D458F1B3D32A700C9A4EA /* GradientViewController.m in Sources */,
+				6C4D45931B3D32A700C9A4EA /* MainNavigationController.m in Sources */,
+				6C4D45A41B3D32A700C9A4EA /* UIViewController+Chameleon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +581,30 @@
 				6C40F35C1B36416700DF17D9 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		6C4D45481B3D32A700C9A4EA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C4D45491B3D32A700C9A4EA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6C4D45501B3D32A700C9A4EA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C4D45511B3D32A700C9A4EA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6C4D45691B3D32A700C9A4EA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C4D456A1B3D32A700C9A4EA /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
