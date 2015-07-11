@@ -11,12 +11,10 @@
 		6C40F3531B36416700DF17D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C40F3521B36416700DF17D9 /* AppDelegate.swift */; };
 		6C40F3551B36416700DF17D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C40F3541B36416700DF17D9 /* ViewController.swift */; };
 		6C40F3581B36416700DF17D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C40F3561B36416700DF17D9 /* Main.storyboard */; };
-		6C40F35A1B36416700DF17D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C40F3591B36416700DF17D9 /* Images.xcassets */; };
 		6C40F35D1B36416700DF17D9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C40F35B1B36416700DF17D9 /* LaunchScreen.xib */; };
 		6C40F3691B36416700DF17D9 /* ImageSpeakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C40F3681B36416700DF17D9 /* ImageSpeakTests.swift */; };
 		6C40F3751B364BF000DF17D9 /* SettingsModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C40F3741B364BF000DF17D9 /* SettingsModalViewController.swift */; };
-		6CFEF58C1B4F9FB600131549 /* glyph.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CFEF58B1B4F9FB600131549 /* glyph.png */; };
-		6CFEF58E1B4FA04100131549 /* glyphSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CFEF58D1B4FA04100131549 /* glyphSmall.png */; };
+		6CBC29B11B50C20900BD6BC4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CBC29B01B50C20900BD6BC4 /* Images.xcassets */; };
 		E894AEBD1B372C0400B27031 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E894AEBC1B372C0400B27031 /* DataModel.swift */; };
 		E894AEC31B3750AD00B27031 /* addButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E894AEC21B3750AD00B27031 /* addButton.png */; };
 		E894AEC51B37577800B27031 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E894AEC41B37577800B27031 /* MainViewController.swift */; };
@@ -40,14 +38,12 @@
 		6C40F3521B36416700DF17D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C40F3541B36416700DF17D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6C40F3571B36416700DF17D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6C40F3591B36416700DF17D9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6C40F35C1B36416700DF17D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6C40F3621B36416700DF17D9 /* ImageSpeakTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageSpeakTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C40F3671B36416700DF17D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C40F3681B36416700DF17D9 /* ImageSpeakTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSpeakTests.swift; sourceTree = "<group>"; };
 		6C40F3741B364BF000DF17D9 /* SettingsModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsModalViewController.swift; path = ../SettingsModalViewController.swift; sourceTree = "<group>"; };
-		6CFEF58B1B4F9FB600131549 /* glyph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyph.png; sourceTree = "<group>"; };
-		6CFEF58D1B4FA04100131549 /* glyphSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphSmall.png; sourceTree = "<group>"; };
+		6CBC29B01B50C20900BD6BC4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		E894AEBC1B372C0400B27031 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		E894AEC21B3750AD00B27031 /* addButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addButton.png; sourceTree = "<group>"; };
 		E894AEC41B37577800B27031 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -75,8 +71,6 @@
 		6C40F3441B36416700DF17D9 = {
 			isa = PBXGroup;
 			children = (
-				6CFEF58D1B4FA04100131549 /* glyphSmall.png */,
-				6CFEF58B1B4F9FB600131549 /* glyph.png */,
 				E894AEBC1B372C0400B27031 /* DataModel.swift */,
 				6C40F34F1B36416700DF17D9 /* ImageSpeak */,
 				6C40F3651B36416700DF17D9 /* ImageSpeakTests */,
@@ -96,6 +90,7 @@
 		6C40F34F1B36416700DF17D9 /* ImageSpeak */ = {
 			isa = PBXGroup;
 			children = (
+				6CBC29B01B50C20900BD6BC4 /* Images.xcassets */,
 				6C40F3521B36416700DF17D9 /* AppDelegate.swift */,
 				6C40F3541B36416700DF17D9 /* ViewController.swift */,
 				6C40F3741B364BF000DF17D9 /* SettingsModalViewController.swift */,
@@ -104,7 +99,6 @@
 				E894AEC61B375BE900B27031 /* BasicCollectionCell.swift */,
 				E894AEC41B37577800B27031 /* MainViewController.swift */,
 				E894AEC21B3750AD00B27031 /* addButton.png */,
-				6C40F3591B36416700DF17D9 /* Images.xcassets */,
 				6C40F35B1B36416700DF17D9 /* LaunchScreen.xib */,
 				6C40F3501B36416700DF17D9 /* Supporting Files */,
 			);
@@ -217,12 +211,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CFEF58E1B4FA04100131549 /* glyphSmall.png in Resources */,
 				6C40F3581B36416700DF17D9 /* Main.storyboard in Resources */,
 				6C40F35D1B36416700DF17D9 /* LaunchScreen.xib in Resources */,
-				6C40F35A1B36416700DF17D9 /* Images.xcassets in Resources */,
+				6CBC29B11B50C20900BD6BC4 /* Images.xcassets in Resources */,
 				E894AEC31B3750AD00B27031 /* addButton.png in Resources */,
-				6CFEF58C1B4F9FB600131549 /* glyph.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,7 +366,6 @@
 		6C40F36D1B36416700DF17D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ImageSpeak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -385,7 +376,6 @@
 		6C40F36E1B36416700DF17D9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ImageSpeak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
