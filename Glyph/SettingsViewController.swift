@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SettingsViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var settingsNavBar: UINavigationBar!
     @IBOutlet weak var settingsNavItem: UINavigationItem!

@@ -9,6 +9,8 @@ class AddIconViewController: UIViewController, UIImagePickerControllerDelegate,U
     // Image View attribute
     @IBOutlet var imagePicker: UIImageView!
     
+    var img: UIImage?
+    
     @IBOutlet weak var addButton: UIButton!
     
     let picker = UIImagePickerController()
@@ -72,14 +74,33 @@ class AddIconViewController: UIViewController, UIImagePickerControllerDelegate,U
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
         if segue.identifier == "backToSettings" {
-            var destination = segue.destinationViewController as! ViewController
+            var destination = segue.destinationViewController as! SettingsViewController
         }
         else {
-            var destination = segue.destinationViewController as! MainViewController
-            data.add(imagePicker.image!, label: textField.text!)
-            destination.data = data
+            if let img = imagePicker.image {
+                if textField.text != "" {
+                    var destination = segue.destinationViewController as! MainViewController
+                    data.add(imagePicker.image!, label: textField.text!)
+                    destination.data = data
+                }
+                else {
+                    notifyUserOfError("Icon must have both an Image and a Name", popUpMessage: "Please add the name of the Image to the 'Image Name' box", popUpButtonLabel: "Okay")
+                }
+            }
+            else {
+               notifyUserOfError("Icon must have both an Image and a Name", popUpMessage: "Please add a photo by using the 'Take Photo' option, or by selecting an image from your device's Library", popUpButtonLabel: "Okay")
+            }
         }
     }
+    
+    func notifyUserOfError(popUpTitle: String, popUpMessage: String, popUpButtonLabel: String) -> Void {
+            let removeActionHandler = { (action:UIAlertAction!) -> Void in
+            }
+            let alertController = UIAlertController(title: popUpTitle, message: popUpMessage, preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: popUpButtonLabel, style: UIAlertActionStyle.Default,handler: nil))
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -103,6 +124,7 @@ class AddIconViewController: UIViewController, UIImagePickerControllerDelegate,U
         sizeOfImageView.size = smallPicture.size
         imagePicker.frame = sizeOfImageView
         imagePicker.image = smallPicture
+        img = imagePicker.image
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
     

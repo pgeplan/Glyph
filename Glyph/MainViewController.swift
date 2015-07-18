@@ -46,7 +46,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destination = segue.destinationViewController as! ViewController
+        let destination = segue.destinationViewController as! SettingsViewController
         destination.data = data
     }
     
