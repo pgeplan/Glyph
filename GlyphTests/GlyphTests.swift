@@ -1,6 +1,6 @@
 //
-//  ImageSpeakTests.swift
-//  ImageSpeakTests
+//  GlyphTests.swift
+//  GlyphTests
 //
 //  Created by Paige Plander on 6/20/15.
 //  Copyright (c) 2015 Paige Plander. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit
 import XCTest
 
-class ImageSpeakTests: XCTestCase {
+class GlyphTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

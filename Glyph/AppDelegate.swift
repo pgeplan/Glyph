@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  ImageSpeak
+//  Glyph
 //
 //  Created by Paige Plander on 6/20/15.
 //

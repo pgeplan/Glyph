@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageSpeak" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Glyph" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -75,7 +75,7 @@
         <!--Main View Controller-->
         <scene sceneID="GOf-1x-eXO">
             <objects>
-                <viewController id="aMU-jc-qou" customClass="MainViewController" customModule="ImageSpeak" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aMU-jc-qou" customClass="MainViewController" customModule="Glyph" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qm1-tA-wfM"/>
                         <viewControllerLayoutGuide type="bottom" id="u04-4o-Gnv"/>
@@ -106,7 +106,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="basic1" id="biv-Em-M4s" customClass="BasicCollectionCell" customModule="ImageSpeak" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="basic1" id="biv-Em-M4s" customClass="BasicCollectionCell" customModule="Glyph" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -174,7 +174,7 @@
         <!--Remove View Controller-->
         <scene sceneID="dOO-bp-P6j">
             <objects>
-                <viewController id="9ia-46-GDw" customClass="RemoveViewController" customModule="ImageSpeak" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9ia-46-GDw" customClass="RemoveViewController" customModule="Glyph" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G30-ma-K5W"/>
                         <viewControllerLayoutGuide type="bottom" id="gaT-kQ-oQT"/>
@@ -193,7 +193,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="basic1" id="fCB-CP-7jY" customClass="BasicCollectionCell" customModule="ImageSpeak" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="basic1" id="fCB-CP-7jY" customClass="BasicCollectionCell" customModule="Glyph" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -273,7 +273,7 @@
         <!--Settings Modal View Controller-->
         <scene sceneID="GXx-Cq-PGd">
             <objects>
-                <viewController id="Zps-DQ-cQG" customClass="SettingsModalViewController" customModule="ImageSpeak" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Zps-DQ-cQG" customClass="SettingsModalViewController" customModule="Glyph" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2BC-dq-T10"/>
                         <viewControllerLayoutGuide type="bottom" id="IFq-vu-INd"/>
