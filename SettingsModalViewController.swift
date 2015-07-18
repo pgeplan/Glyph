@@ -78,10 +78,19 @@ class SettingsModalViewController: UIViewController, UIImagePickerControllerDele
 //    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+
+        if segue.identifier == "backToSettings" {
+            var destination = segue.destinationViewController as! ViewController
+            
+        }
+        else {
+            var destination = segue.destinationViewController as! MainViewController
+            data.add(imagePicker.image!, label: textField.text!)
+            destination.data = data
+            
+        }
         
-        let destination = segue.destinationViewController as! MainViewController
-        data.add(imagePicker.image!, label: textField.text!)
-        destination.data = data
+        
     }
 
     override func didReceiveMemoryWarning() {

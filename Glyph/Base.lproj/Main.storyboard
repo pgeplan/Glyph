@@ -296,7 +296,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="aMU-jc-qou" kind="show" id="RMr-eC-jNw"/>
+                                    <segue destination="aMU-jc-qou" kind="show" identifier="backToMain" id="RMr-eC-jNw"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ls6-Vr-GId">
@@ -305,7 +305,7 @@
                                     <navigationItem title="Add Icon" id="Uxe-yx-mlV">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="5hj-BJ-bWW">
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="pB0-7y-Loe"/>
+                                                <segue destination="BYZ-38-t0r" kind="show" identifier="backToSettings" id="pB0-7y-Loe"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -402,7 +402,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1136" y="-35"/>
+            <point key="canvasLocation" x="1316" y="-109"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
