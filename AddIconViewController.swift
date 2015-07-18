@@ -4,7 +4,7 @@
 
 import UIKit
 
-class SettingsModalViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate {
+class AddIconViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate {
     var data = DataModel()
     // Image View attribute
     @IBOutlet var imagePicker: UIImageView!

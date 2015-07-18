@@ -46,7 +46,7 @@
                                 </constraints>
                                 <state key="normal" title="Add Icon"/>
                                 <connections>
-                                    <segue destination="Zps-DQ-cQG" kind="presentation" identifier="Settings" id="WRB-JO-qF7"/>
+                                    <segue destination="Zps-DQ-cQG" kind="presentation" identifier="AddIcon" id="WRB-JO-qF7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -90,7 +90,7 @@
                                     <navigationItem title="Image Speech" id="i4M-BG-I5U">
                                         <barButtonItem key="rightBarButtonItem" title="Settings" id="Eax-sn-fkx">
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="Zob-ke-RNG"/>
+                                                <segue destination="BYZ-38-t0r" kind="show" identifier="Settings" id="Zob-ke-RNG"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -270,10 +270,10 @@
             </objects>
             <point key="canvasLocation" x="-83" y="954"/>
         </scene>
-        <!--Settings Modal View Controller-->
+        <!--Add Icon View Controller-->
         <scene sceneID="GXx-Cq-PGd">
             <objects>
-                <viewController id="Zps-DQ-cQG" customClass="SettingsModalViewController" customModule="Glyph" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Zps-DQ-cQG" customClass="AddIconViewController" customModule="Glyph" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2BC-dq-T10"/>
                         <viewControllerLayoutGuide type="bottom" id="IFq-vu-INd"/>

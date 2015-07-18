@@ -13,7 +13,7 @@
 		6C40F3581B36416700DF17D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C40F3561B36416700DF17D9 /* Main.storyboard */; };
 		6C40F35D1B36416700DF17D9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C40F35B1B36416700DF17D9 /* LaunchScreen.xib */; };
 		6C40F3691B36416700DF17D9 /* GlyphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C40F3681B36416700DF17D9 /* GlyphTests.swift */; };
-		6C40F3751B364BF000DF17D9 /* SettingsModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C40F3741B364BF000DF17D9 /* SettingsModalViewController.swift */; };
+		6C40F3751B364BF000DF17D9 /* AddIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C40F3741B364BF000DF17D9 /* AddIconViewController.swift */; };
 		6CBC29B11B50C20900BD6BC4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CBC29B01B50C20900BD6BC4 /* Images.xcassets */; };
 		E894AEBD1B372C0400B27031 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E894AEBC1B372C0400B27031 /* DataModel.swift */; };
 		E894AEC31B3750AD00B27031 /* addButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E894AEC21B3750AD00B27031 /* addButton.png */; };
@@ -42,7 +42,7 @@
 		6C40F3621B36416700DF17D9 /* GlyphTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlyphTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C40F3671B36416700DF17D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C40F3681B36416700DF17D9 /* GlyphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlyphTests.swift; sourceTree = "<group>"; };
-		6C40F3741B364BF000DF17D9 /* SettingsModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsModalViewController.swift; path = ../SettingsModalViewController.swift; sourceTree = "<group>"; };
+		6C40F3741B364BF000DF17D9 /* AddIconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddIconViewController.swift; path = ../AddIconViewController.swift; sourceTree = "<group>"; };
 		6CBC29B01B50C20900BD6BC4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		E894AEBC1B372C0400B27031 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		E894AEC21B3750AD00B27031 /* addButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addButton.png; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 				6CBC29B01B50C20900BD6BC4 /* Images.xcassets */,
 				6C40F3521B36416700DF17D9 /* AppDelegate.swift */,
 				6C40F3541B36416700DF17D9 /* ViewController.swift */,
-				6C40F3741B364BF000DF17D9 /* SettingsModalViewController.swift */,
+				6C40F3741B364BF000DF17D9 /* AddIconViewController.swift */,
 				6C40F3561B36416700DF17D9 /* Main.storyboard */,
 				6C10BADC1B378EF00027A2D6 /* RemoveViewController.swift */,
 				E894AEC61B375BE900B27031 /* BasicCollectionCell.swift */,
@@ -237,7 +237,7 @@
 				E894AEC71B375BE900B27031 /* BasicCollectionCell.swift in Sources */,
 				6C40F3531B36416700DF17D9 /* AppDelegate.swift in Sources */,
 				6C10BADD1B378EF00027A2D6 /* RemoveViewController.swift in Sources */,
-				6C40F3751B364BF000DF17D9 /* SettingsModalViewController.swift in Sources */,
+				6C40F3751B364BF000DF17D9 /* AddIconViewController.swift in Sources */,
 				E894AEC51B37577800B27031 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

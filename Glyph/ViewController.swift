@@ -27,8 +27,8 @@ class ViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "Settings" {
-            let destination = segue.destinationViewController as! SettingsModalViewController
+        if segue.identifier == "AddIcon" {
+            let destination = segue.destinationViewController as! AddIconViewController
             destination.data = data
         } else if segue.identifier == "backToMain" {
             let destination = segue.destinationViewController as! MainViewController
