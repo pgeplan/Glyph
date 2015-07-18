@@ -10,6 +10,7 @@ import UIKit
 
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var filterButton: UIBarButtonItem!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var navBarTitle: UINavigationItem!
     @IBOutlet weak var navBarSettingsButton: UIBarButtonItem!
@@ -46,8 +47,18 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destination = segue.destinationViewController as! SettingsViewController
-        destination.data = data
+        
+        if segue.identifier == "MainToSettings" {
+            let destination = segue.destinationViewController as! SettingsViewController
+            destination.data = data
+        }
+        // Need to add to this once Anwar finishes Filter
+        else if segue.identifier == "MainToFilter" {
+      
+            
+        }
+
+        
     }
     
 }

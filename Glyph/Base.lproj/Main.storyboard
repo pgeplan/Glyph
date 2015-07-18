@@ -87,10 +87,11 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6P8-7Q-OMz">
                                 <rect key="frame" x="-4" y="20" width="609" height="44"/>
                                 <items>
-                                    <navigationItem title="Image Speech" id="i4M-BG-I5U">
+                                    <navigationItem title="Glyph" id="i4M-BG-I5U">
+                                        <barButtonItem key="leftBarButtonItem" title="Filter" id="sk5-TK-8CU"/>
                                         <barButtonItem key="rightBarButtonItem" title="Settings" id="Eax-sn-fkx">
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" identifier="Settings" id="Zob-ke-RNG"/>
+                                                <segue destination="BYZ-38-t0r" kind="show" identifier="MainToSettings" id="Zob-ke-RNG"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -161,6 +162,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="filterButton" destination="sk5-TK-8CU" id="Hww-ov-IvM"/>
                         <outlet property="mainCollection" destination="aec-Nh-Tfy" id="vEo-jA-F4E"/>
                         <outlet property="navBar" destination="6P8-7Q-OMz" id="NB5-14-uje"/>
                         <outlet property="navBarSettingsButton" destination="Eax-sn-fkx" id="y2s-QQ-2iG"/>
@@ -406,7 +408,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pB0-7y-Loe"/>
+        <segue reference="Zob-ke-RNG"/>
         <segue reference="RmW-nj-WsP"/>
     </inferredMetricsTieBreakers>
 </document>
