@@ -30,7 +30,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             mainCollection.reloadData()
         }
         
-        var view: UIView = UIView(frame: CGRectMake(0.0, 0.0, 320.0, 50.0))
+        let view: UIView = UIView(frame: CGRectMake(0.0, 0.0, 320.0, 50.0))
         
         gradient.frame = view.bounds
         gradient.colors = [UIColor.whiteColor().CGColor, UIColor.blackColor().CGColor]
@@ -63,7 +63,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var destination = segue.destinationViewController as! ViewController
+        let destination = segue.destinationViewController as! ViewController
         destination.data = data
     }
     

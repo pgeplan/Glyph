@@ -65,7 +65,7 @@ class RemoveViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        var destination = segue.destinationViewController as! MainViewController
+        let destination = segue.destinationViewController as! MainViewController
         destination.data = data
     }
 }

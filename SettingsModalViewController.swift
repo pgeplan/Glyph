@@ -29,14 +29,12 @@ class SettingsModalViewController: UIViewController, UIImagePickerControllerDele
         }
     }
     
-    
-    
     func returnImage() -> UIImage {
         return imagePicker.image!
     }
     
     func returnImageName() -> String {
-        return textField.text
+        return textField.text!
     }
     
     func noCamera(){
@@ -81,8 +79,8 @@ class SettingsModalViewController: UIViewController, UIImagePickerControllerDele
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        var destination = segue.destinationViewController as! MainViewController
-        data.add(imagePicker.image!, label: textField.text)
+        let destination = segue.destinationViewController as! MainViewController
+        data.add(imagePicker.image!, label: textField.text!)
         destination.data = data
     }
 
@@ -92,13 +90,35 @@ class SettingsModalViewController: UIViewController, UIImagePickerControllerDele
     }
     
     //MARK: Delegates
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-        var chosenImage: AnyObject? = info[UIImagePickerControllerOriginalImage]
-        // shrinks image to a viewable size
-        imagePicker.contentMode = .ScaleAspectFit
-        imagePicker.image = (chosenImage as! UIImage)
-        dismissViewControllerAnimated(true, completion: nil)
+    
+//    optional func imagePickerController(picker: UIImagePickerController,
+//        didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+//        if let chosenImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+//            // shrinks image to a viewable size
+//            imagePicker.contentMode = .ScaleAspectFit
+//            imagePicker.image = (chosenImage as UIImage)
+//            }
+//        picker.dismissViewControllerAnimated(true, completion: nil)
+//    }
+    func scaleImageWith(newImage:UIImage, and newSize:CGSize)->UIImage{
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
+        newImage.drawInRect(CGRectMake(0, 0, newSize.width, newSize.height))
+        UIGraphicsEndImageContext()
+        
+        return newImage
     }
+    
+    // http://stackoverflow.com/questions/27833075/swift-uilabel-programmatically-updates-after-uibutton-pressed
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        let pickedImage: UIImage = (info as NSDictionary).objectForKey(UIImagePickerControllerOriginalImage) as! UIImage
+        let smallPicture = scaleImageWith(pickedImage, and: CGSizeMake(250, 250))
+        var sizeOfImageView:CGRect = imagePicker.frame
+        sizeOfImageView.size = smallPicture.size
+        imagePicker.frame = sizeOfImageView
+        imagePicker.image = smallPicture
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     
     // Executes if the user wants to cancel (inside choose Photo)
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {

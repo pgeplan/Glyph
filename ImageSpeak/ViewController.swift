@@ -28,13 +28,13 @@ class ViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "Settings" {
-            var destination = segue.destinationViewController as! SettingsModalViewController
+            let destination = segue.destinationViewController as! SettingsModalViewController
             destination.data = data
         } else if segue.identifier == "backToMain" {
-            var destination = segue.destinationViewController as! MainViewController
+            let destination = segue.destinationViewController as! MainViewController
             destination.data = data
         } else if segue.identifier == "Remove" {
-            var destination = segue.destinationViewController as! RemoveViewController
+            let destination = segue.destinationViewController as! RemoveViewController
             destination.data = data
         }
         

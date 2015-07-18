@@ -321,7 +321,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" fixedFrame="YES" text="or" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZ4-he-99h">
-                                <rect key="frame" x="235" y="509" width="16" height="18"/>
+                                <rect key="frame" x="0.0" y="0.0" width="14" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -406,7 +406,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="RMr-eC-jNw"/>
         <segue reference="pB0-7y-Loe"/>
+        <segue reference="RMr-eC-jNw"/>
     </inferredMetricsTieBreakers>
 </document>
