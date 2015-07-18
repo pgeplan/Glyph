@@ -1,10 +1,6 @@
 //
 //  SettingsModalViewController.swift
 //  Glyph
-//
-//  Created by Paige Plander on 6/20/15.
-//  Copyright (c) 2015 Paige Plander. All rights reserved.
-//
 
 import UIKit
 
@@ -12,6 +8,8 @@ class SettingsModalViewController: UIViewController, UIImagePickerControllerDele
     var data = DataModel()
     // Image View attribute
     @IBOutlet var imagePicker: UIImageView!
+    
+    @IBOutlet weak var addButton: UIButton!
     
     let picker = UIImagePickerController()
     
@@ -57,10 +55,10 @@ class SettingsModalViewController: UIViewController, UIImagePickerControllerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         picker.delegate = self
     }
+    
     @IBAction func resign() {
         self.view.endEditing(true)
     }
@@ -70,27 +68,17 @@ class SettingsModalViewController: UIViewController, UIImagePickerControllerDele
         return true
     }
     
-    @IBOutlet weak var addButton: UIButton!
-//    @IBAction func settingsDone(sender: UIButton) {
-//        mainView.data.add(imagePicker.image!, label: textField.text)
-//
-//        dismissViewControllerAnimated(true, completion: nil)
-//    }
-    
+   
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
         if segue.identifier == "backToSettings" {
             var destination = segue.destinationViewController as! ViewController
-            
         }
         else {
             var destination = segue.destinationViewController as! MainViewController
             data.add(imagePicker.image!, label: textField.text!)
             destination.data = data
-            
         }
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -99,16 +87,6 @@ class SettingsModalViewController: UIViewController, UIImagePickerControllerDele
     }
     
     //MARK: Delegates
-    
-//    optional func imagePickerController(picker: UIImagePickerController,
-//        didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-//        if let chosenImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-//            // shrinks image to a viewable size
-//            imagePicker.contentMode = .ScaleAspectFit
-//            imagePicker.image = (chosenImage as UIImage)
-//            }
-//        picker.dismissViewControllerAnimated(true, completion: nil)
-//    }
     func scaleImageWith(newImage:UIImage, and newSize:CGSize)->UIImage{
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
         newImage.drawInRect(CGRectMake(0, 0, newSize.width, newSize.height))
@@ -117,7 +95,7 @@ class SettingsModalViewController: UIViewController, UIImagePickerControllerDele
         return newImage
     }
     
-    // http://stackoverflow.com/questions/27833075/swift-uilabel-programmatically-updates-after-uibutton-pressed
+    // taken from http://stackoverflow.com/questions/27833075/swift-uilabel-programmatically-updates-after-uibutton-pressed
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         let pickedImage: UIImage = (info as NSDictionary).objectForKey(UIImagePickerControllerOriginalImage) as! UIImage
         let smallPicture = scaleImageWith(pickedImage, and: CGSizeMake(250, 250))
@@ -128,26 +106,9 @@ class SettingsModalViewController: UIViewController, UIImagePickerControllerDele
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
     // Executes if the user wants to cancel (inside choose Photo)
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
-        
     }
-    
-    
-    
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

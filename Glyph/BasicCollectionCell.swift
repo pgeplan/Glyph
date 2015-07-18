@@ -3,7 +3,6 @@
 //  Glyph
 //
 //  Created by Anwar Baroudi on 6/21/15.
-//  Copyright (c) 2015 Paige Plander. All rights reserved.
 //
 
 import Foundation
