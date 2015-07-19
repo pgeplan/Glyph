@@ -15,11 +15,14 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var navBarTitle: UINavigationItem!
     @IBOutlet weak var navBarSettingsButton: UIBarButtonItem!
     @IBOutlet weak var mainCollection: UICollectionView!
+    
+    
     var data = DataModel()
+    var filteredData = DataModel()
+    var tempData = DataModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
- 
         if mainCollection != nil {
             mainCollection.reloadData()
         }
@@ -30,19 +33,31 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         // Dispose of any resources that can be recreated.
     }
     
+    func setTempData() -> Void {
+        if filteredData.isEmpty() {
+            tempData = data
+        }
+        else {
+            tempData = filteredData
+        }
+    }
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.count
+        setTempData()
+        return tempData.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        setTempData()
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("basic1", forIndexPath: indexPath) as! BasicCollectionCell
-        cell.imageView?.image = data.getImage(indexPath.row)
-        cell.textLabel.text = data.getLabel(indexPath.row)
+        cell.imageView?.image = tempData.getImage(indexPath.row)
+        cell.textLabel.text = tempData.getLabel(indexPath.row)
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        data.speakAtIndex(indexPath.row)
+        setTempData()
+        tempData.speakAtIndex(indexPath.row)
         collectionView.deselectItemAtIndexPath(indexPath, animated: true)
     }
     

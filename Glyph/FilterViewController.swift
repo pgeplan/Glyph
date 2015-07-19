@@ -53,12 +53,32 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
             }
         } else {
             let cell = collectionView.cellForItemAtIndexPath(indexPath) as! SelectableCell
-            cell.checkmarked.image = UIImage(named: "checkFromNet.png")
+            cell.checkmarked.image = UIImage(named: "checkMark.png")
             dataToFilter.append(indexPath.row)
         }
         collectionView.deselectItemAtIndexPath(indexPath, animated: false)
         println(dataToFilter)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let destination = segue.destinationViewController as! MainViewController
+        if segue.identifier == "FilterToMain" {
+            makeFilteredDataArray()
+        }
+        else if segue.identifier == "CancelFilterToMain" {
+            // Do Nothing (May need to change)
+        }
+        destination.filteredData = filteredData
+        destination.data = data
+    }
+    
+    private func makeFilteredDataArray() -> Void {
+        for i in dataToFilter {
+            filteredData.add(data.getImage(i), label: data.getLabel(i))
+        }
+    }
+    
+    
     
     
 }

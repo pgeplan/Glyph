@@ -23,6 +23,10 @@ class DataModel {
         count = 0
     }
     
+    func isEmpty() -> Bool {
+        return imageData.count == 0
+    }
+    
     func getImage(index: Int) -> UIImage {
         return imageData[index]
     }

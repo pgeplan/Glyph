@@ -14,6 +14,7 @@
 		6C40F35D1B36416700DF17D9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C40F35B1B36416700DF17D9 /* LaunchScreen.xib */; };
 		6C40F3691B36416700DF17D9 /* GlyphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C40F3681B36416700DF17D9 /* GlyphTests.swift */; };
 		6C40F3751B364BF000DF17D9 /* AddIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C40F3741B364BF000DF17D9 /* AddIconViewController.swift */; };
+		6C6AAE431B5B428D0048382C /* checkMark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C6AAE421B5B428D0048382C /* checkMark.png */; };
 		6CBC29B11B50C20900BD6BC4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CBC29B01B50C20900BD6BC4 /* Images.xcassets */; };
 		6CE4DDE21B5B3C9100CB1D80 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4DDE11B5B3C9100CB1D80 /* FilterViewController.swift */; };
 		6CE4DDE41B5B3CB500CB1D80 /* SelectableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4DDE31B5B3CB500CB1D80 /* SelectableCell.swift */; };
@@ -45,6 +46,7 @@
 		6C40F3671B36416700DF17D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C40F3681B36416700DF17D9 /* GlyphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlyphTests.swift; sourceTree = "<group>"; };
 		6C40F3741B364BF000DF17D9 /* AddIconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddIconViewController.swift; path = ../AddIconViewController.swift; sourceTree = "<group>"; };
+		6C6AAE421B5B428D0048382C /* checkMark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkMark.png; sourceTree = "<group>"; };
 		6CBC29B01B50C20900BD6BC4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		6CE4DDE11B5B3C9100CB1D80 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		6CE4DDE31B5B3CB500CB1D80 /* SelectableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableCell.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				6CBC29B01B50C20900BD6BC4 /* Images.xcassets */,
 				6C40F3521B36416700DF17D9 /* AppDelegate.swift */,
 				6C40F3541B36416700DF17D9 /* SettingsViewController.swift */,
+				6C6AAE421B5B428D0048382C /* checkMark.png */,
 				6C40F3741B364BF000DF17D9 /* AddIconViewController.swift */,
 				6C40F3561B36416700DF17D9 /* Main.storyboard */,
 				6C10BADC1B378EF00027A2D6 /* RemoveViewController.swift */,
@@ -219,6 +222,7 @@
 			files = (
 				6C40F3581B36416700DF17D9 /* Main.storyboard in Resources */,
 				6C40F35D1B36416700DF17D9 /* LaunchScreen.xib in Resources */,
+				6C6AAE431B5B428D0048382C /* checkMark.png in Resources */,
 				6CBC29B11B50C20900BD6BC4 /* Images.xcassets in Resources */,
 				E894AEC31B3750AD00B27031 /* addButton.png in Resources */,
 			);

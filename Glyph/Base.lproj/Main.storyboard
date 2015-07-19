@@ -90,7 +90,7 @@
                                     <navigationItem title="Glyph" id="i4M-BG-I5U">
                                         <barButtonItem key="leftBarButtonItem" title="Filter" id="sk5-TK-8CU">
                                             <connections>
-                                                <segue destination="7JY-aA-EG5" kind="presentation" identifier="MainToFilter" id="CNm-uh-aEX"/>
+                                                <segue destination="7JY-aA-EG5" kind="presentation" identifier="MainToFilter" id="p9Q-2p-ejm"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Settings" id="Eax-sn-fkx">
@@ -175,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b97-LC-Vaj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-351" y="151"/>
+            <point key="canvasLocation" x="164" y="1"/>
         </scene>
         <!--Remove View Controller-->
         <scene sceneID="dOO-bp-P6j">
@@ -288,7 +288,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yoo-6u-ahU">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yoo-6u-ahU">
                                 <rect key="frame" x="36" y="88" width="528" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sbn-pH-r8D">
@@ -298,7 +298,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="basic1" id="Jri-8u-giD" customClass="SelectableCell" customModule="Glyph" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="filter" id="Jri-8u-giD" customClass="SelectableCell" customModule="Glyph" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -317,7 +317,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="63c-fX-WNw">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="63c-fX-WNw">
                                                     <rect key="frame" x="70" y="69" width="30" height="30"/>
                                                 </imageView>
                                             </subviews>
@@ -328,7 +328,11 @@
                                             <constraint firstItem="vKZ-ss-fYV" firstAttribute="top" secondItem="Jri-8u-giD" secondAttribute="top" id="2BP-7C-hDE"/>
                                             <constraint firstItem="0KQ-M0-jfe" firstAttribute="leading" secondItem="vKZ-ss-fYV" secondAttribute="leading" id="D5l-By-Ynj"/>
                                             <constraint firstAttribute="bottom" secondItem="0KQ-M0-jfe" secondAttribute="bottom" id="XCk-WN-RMu"/>
+                                            <constraint firstItem="63c-fX-WNw" firstAttribute="trailing" secondItem="0KQ-M0-jfe" secondAttribute="trailing" id="ZKT-9p-8b2"/>
                                             <constraint firstItem="0KQ-M0-jfe" firstAttribute="top" secondItem="vKZ-ss-fYV" secondAttribute="bottom" id="cR2-to-jK3"/>
+                                            <constraint firstItem="0KQ-M0-jfe" firstAttribute="top" secondItem="63c-fX-WNw" secondAttribute="bottom" constant="1" id="lSL-RJ-fpL"/>
+                                            <constraint firstItem="63c-fX-WNw" firstAttribute="leading" secondItem="Jri-8u-giD" secondAttribute="leadingMargin" constant="62" id="lgA-XS-Wc4"/>
+                                            <constraint firstItem="63c-fX-WNw" firstAttribute="top" secondItem="Jri-8u-giD" secondAttribute="topMargin" constant="61" id="nfk-2C-ABp"/>
                                             <constraint firstItem="0KQ-M0-jfe" firstAttribute="leading" secondItem="Jri-8u-giD" secondAttribute="leading" id="sNJ-sF-T97"/>
                                             <constraint firstItem="0KQ-M0-jfe" firstAttribute="trailing" secondItem="vKZ-ss-fYV" secondAttribute="trailing" id="zYK-uL-WRE"/>
                                         </constraints>
@@ -344,15 +348,13 @@
                                     <outlet property="delegate" destination="7JY-aA-EG5" id="lWc-dG-Dqa"/>
                                 </connections>
                             </collectionView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gog-PA-BrE">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gog-PA-BrE">
                                 <rect key="frame" x="-4" y="28" width="609" height="44"/>
                                 <items>
                                     <navigationItem title="Select Images to Filter" id="16g-VA-GFw">
                                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="LSi-4K-hWn">
                                             <connections>
-                                                <segue destination="aMU-jc-qou" kind="popoverPresentation" identifier="CancelFilterToMain" popoverAnchorBarButtonItem="LSi-4K-hWn" id="FVK-ne-Uro">
-                                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                                </segue>
+                                                <segue destination="aMU-jc-qou" kind="presentation" identifier="CancelFilterToMain" id="FVK-ne-Uro"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Filter" id="fGd-pr-Y4s">
@@ -365,6 +367,15 @@
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yoo-6u-ahU" firstAttribute="centerX" secondItem="pIb-9d-LFH" secondAttribute="centerX" id="5gp-cg-f1b"/>
+                            <constraint firstItem="gog-PA-BrE" firstAttribute="leading" secondItem="pIb-9d-LFH" secondAttribute="leadingMargin" constant="-20" id="HlV-A3-B2K"/>
+                            <constraint firstItem="yoo-6u-ahU" firstAttribute="centerX" secondItem="gog-PA-BrE" secondAttribute="centerX" id="N4u-r3-igr"/>
+                            <constraint firstItem="gog-PA-BrE" firstAttribute="top" secondItem="z4a-bm-bqN" secondAttribute="bottom" constant="8" id="Z8l-kZ-zv6"/>
+                            <constraint firstItem="yoo-6u-ahU" firstAttribute="top" secondItem="gog-PA-BrE" secondAttribute="bottom" constant="16" id="sHx-Mk-S2X"/>
+                            <constraint firstAttribute="bottom" secondItem="yoo-6u-ahU" secondAttribute="bottom" constant="20" symbolic="YES" id="u28-eh-eGi"/>
+                            <constraint firstItem="yoo-6u-ahU" firstAttribute="leading" secondItem="pIb-9d-LFH" secondAttribute="leadingMargin" constant="20" id="w5c-7T-ZTO"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="filterCollection" destination="yoo-6u-ahU" id="cwU-O9-529"/>
@@ -372,7 +383,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eEq-it-Dfu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-689" y="-155"/>
+            <point key="canvasLocation" x="-788" y="-153"/>
         </scene>
         <!--Add Icon View Controller-->
         <scene sceneID="GXx-Cq-PGd">
