@@ -54,8 +54,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
         // Need to add to this once Anwar finishes Filter
         else if segue.identifier == "MainToFilter" {
-      
-            
+            let destination = segue.destinationViewController as! FilterViewController
+            destination.data = data
         }
 
         

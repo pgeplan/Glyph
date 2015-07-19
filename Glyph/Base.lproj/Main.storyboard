@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aMU-jc-qou">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aMU-jc-qou">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -88,7 +88,11 @@
                                 <rect key="frame" x="-4" y="20" width="609" height="44"/>
                                 <items>
                                     <navigationItem title="Glyph" id="i4M-BG-I5U">
-                                        <barButtonItem key="leftBarButtonItem" title="Filter" id="sk5-TK-8CU"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Filter" id="sk5-TK-8CU">
+                                            <connections>
+                                                <segue destination="7JY-aA-EG5" kind="presentation" identifier="MainToFilter" id="CNm-uh-aEX"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Settings" id="Eax-sn-fkx">
                                             <connections>
                                                 <segue destination="BYZ-38-t0r" kind="show" identifier="MainToSettings" id="Zob-ke-RNG"/>
@@ -272,6 +276,104 @@
             </objects>
             <point key="canvasLocation" x="-83" y="954"/>
         </scene>
+        <!--Filter View Controller-->
+        <scene sceneID="HAR-Nt-2bp">
+            <objects>
+                <viewController id="7JY-aA-EG5" customClass="FilterViewController" customModule="Glyph" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z4a-bm-bqN"/>
+                        <viewControllerLayoutGuide type="bottom" id="ukg-F8-T4H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pIb-9d-LFH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yoo-6u-ahU">
+                                <rect key="frame" x="36" y="88" width="528" height="492"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sbn-pH-r8D">
+                                    <size key="itemSize" width="100" height="120"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="basic1" id="Jri-8u-giD" customClass="SelectableCell" customModule="Glyph" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vKZ-ss-fYV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0KQ-M0-jfe">
+                                                    <rect key="frame" x="0.0" y="100" width="100" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="3rX-Oc-U6H"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="63c-fX-WNw">
+                                                    <rect key="frame" x="70" y="69" width="30" height="30"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="vKZ-ss-fYV" secondAttribute="trailing" id="0zc-Zb-vFF"/>
+                                            <constraint firstItem="vKZ-ss-fYV" firstAttribute="top" secondItem="Jri-8u-giD" secondAttribute="top" id="2BP-7C-hDE"/>
+                                            <constraint firstItem="0KQ-M0-jfe" firstAttribute="leading" secondItem="vKZ-ss-fYV" secondAttribute="leading" id="D5l-By-Ynj"/>
+                                            <constraint firstAttribute="bottom" secondItem="0KQ-M0-jfe" secondAttribute="bottom" id="XCk-WN-RMu"/>
+                                            <constraint firstItem="0KQ-M0-jfe" firstAttribute="top" secondItem="vKZ-ss-fYV" secondAttribute="bottom" id="cR2-to-jK3"/>
+                                            <constraint firstItem="0KQ-M0-jfe" firstAttribute="leading" secondItem="Jri-8u-giD" secondAttribute="leading" id="sNJ-sF-T97"/>
+                                            <constraint firstItem="0KQ-M0-jfe" firstAttribute="trailing" secondItem="vKZ-ss-fYV" secondAttribute="trailing" id="zYK-uL-WRE"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="checkmarked" destination="63c-fX-WNw" id="qxn-HA-Srf"/>
+                                            <outlet property="imageView" destination="vKZ-ss-fYV" id="i88-CN-x7m"/>
+                                            <outlet property="textLabel" destination="0KQ-M0-jfe" id="7vS-G1-3y6"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="7JY-aA-EG5" id="rh9-p2-XPN"/>
+                                    <outlet property="delegate" destination="7JY-aA-EG5" id="lWc-dG-Dqa"/>
+                                </connections>
+                            </collectionView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gog-PA-BrE">
+                                <rect key="frame" x="-4" y="28" width="609" height="44"/>
+                                <items>
+                                    <navigationItem title="Select Images to Filter" id="16g-VA-GFw">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="LSi-4K-hWn">
+                                            <connections>
+                                                <segue destination="aMU-jc-qou" kind="popoverPresentation" identifier="CancelFilterToMain" popoverAnchorBarButtonItem="LSi-4K-hWn" id="FVK-ne-Uro">
+                                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                </segue>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Filter" id="fGd-pr-Y4s">
+                                            <connections>
+                                                <segue destination="aMU-jc-qou" kind="presentation" identifier="FilterToMain" id="YzA-xI-51L"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="filterCollection" destination="yoo-6u-ahU" id="cwU-O9-529"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eEq-it-Dfu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-689" y="-155"/>
+        </scene>
         <!--Add Icon View Controller-->
         <scene sceneID="GXx-Cq-PGd">
             <objects>
@@ -414,7 +516,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pB0-7y-Loe"/>
-        <segue reference="RMr-eC-jNw"/>
+        <segue reference="FVK-ne-Uro"/>
+        <segue reference="Zob-ke-RNG"/>
     </inferredMetricsTieBreakers>
 </document>
