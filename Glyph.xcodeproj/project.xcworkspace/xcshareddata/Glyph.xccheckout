@@ -11,7 +11,7 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>5F604719A35A3A165AA431AA28B65C169D554C19</key>
-		<string>https://github.com/paigeplan/Glyph.git</string>
+		<string>https://github.com/paigeplan/ImageSpeech.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Glyph.xcodeproj</string>
@@ -21,7 +21,7 @@
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/paigeplan/Glyph.git</string>
+	<string>https://github.com/paigeplan/ImageSpeech.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>5F604719A35A3A165AA431AA28B65C169D554C19</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Glyph</string>
+			<string>ImageSpeech</string>
 		</dict>
 	</array>
 </dict>

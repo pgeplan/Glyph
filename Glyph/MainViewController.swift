@@ -3,7 +3,6 @@
 //  Glyph
 //
 //  Created by Anwar Baroudi on 6/21/15.
-//  Copyright (c) 2015 Paige Plander. All rights reserved.
 //
 
 import Foundation
@@ -11,34 +10,19 @@ import UIKit
 
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var filterButton: UIBarButtonItem!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var navBarTitle: UINavigationItem!
     @IBOutlet weak var navBarSettingsButton: UIBarButtonItem!
     @IBOutlet weak var mainCollection: UICollectionView!
     var data = DataModel()
-    
-    
-    let gradient = CAGradientLayer()
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-       
+ 
         if mainCollection != nil {
             mainCollection.reloadData()
         }
-        
-        let view: UIView = UIView(frame: CGRectMake(0.0, 0.0, 320.0, 50.0))
-        
-        gradient.frame = view.bounds
-        gradient.colors = [UIColor.whiteColor().CGColor, UIColor.blackColor().CGColor]
-        view.layer.insertSublayer(gradient, atIndex: 0)
-        
-        
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
@@ -63,8 +47,18 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destination = segue.destinationViewController as! ViewController
-        destination.data = data
+        
+        if segue.identifier == "MainToSettings" {
+            let destination = segue.destinationViewController as! SettingsViewController
+            destination.data = data
+        }
+        // Need to add to this once Anwar finishes Filter
+        else if segue.identifier == "MainToFilter" {
+      
+            
+        }
+
+        
     }
     
 }

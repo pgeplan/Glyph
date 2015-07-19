@@ -3,7 +3,6 @@
 //  Glyph
 //
 //  Created by Paige Plander on 6/21/15.
-//  Copyright (c) 2015 Paige Plander. All rights reserved.
 //
 
 import Foundation
@@ -16,10 +15,7 @@ class RemoveViewController: UIViewController, UICollectionViewDataSource, UIColl
     @IBOutlet weak var navBarSettingsButton: UIBarButtonItem!
     @IBOutlet weak var mainCollection: UICollectionView!
     var data = DataModel()
-    
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         if mainCollection != nil {
@@ -43,28 +39,21 @@ class RemoveViewController: UIViewController, UICollectionViewDataSource, UIColl
         cell.textLabel.text = data.getLabel(indexPath.row)
         return cell
     }
-    
-    
-    
+
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         let removeActionHandler = { (action:UIAlertAction!) -> Void in
             self.data.remove(indexPath.row)
             self.mainCollection.reloadData()
-            
         }
-        
-        
-        let alertController = UIAlertController(title: "Remove Icon", message:
-            "Delete this Icon?", preferredStyle: UIAlertControllerStyle.Alert)
+
+        let alertController = UIAlertController(title: "Remove Icon", message: "Delete this Icon?", preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Remove", style: UIAlertActionStyle.Default,handler: removeActionHandler))
         alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default,handler: nil))
-        
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
         let destination = segue.destinationViewController as! MainViewController
         destination.data = data
     }

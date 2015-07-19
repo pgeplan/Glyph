@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aMU-jc-qou">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aMU-jc-qou">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Glyph" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SettingsViewController" customModule="Glyph" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -46,7 +46,7 @@
                                 </constraints>
                                 <state key="normal" title="Add Icon"/>
                                 <connections>
-                                    <segue destination="Zps-DQ-cQG" kind="presentation" identifier="Settings" id="WRB-JO-qF7"/>
+                                    <segue destination="Zps-DQ-cQG" kind="presentation" identifier="AddIcon" id="WRB-JO-qF7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -87,10 +87,11 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6P8-7Q-OMz">
                                 <rect key="frame" x="-4" y="20" width="609" height="44"/>
                                 <items>
-                                    <navigationItem title="Image Speech" id="i4M-BG-I5U">
+                                    <navigationItem title="Glyph" id="i4M-BG-I5U">
+                                        <barButtonItem key="leftBarButtonItem" title="Filter" id="sk5-TK-8CU"/>
                                         <barButtonItem key="rightBarButtonItem" title="Settings" id="Eax-sn-fkx">
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="Zob-ke-RNG"/>
+                                                <segue destination="BYZ-38-t0r" kind="show" identifier="MainToSettings" id="Zob-ke-RNG"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -161,6 +162,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="filterButton" destination="sk5-TK-8CU" id="Hww-ov-IvM"/>
                         <outlet property="mainCollection" destination="aec-Nh-Tfy" id="vEo-jA-F4E"/>
                         <outlet property="navBar" destination="6P8-7Q-OMz" id="NB5-14-uje"/>
                         <outlet property="navBarSettingsButton" destination="Eax-sn-fkx" id="y2s-QQ-2iG"/>
@@ -270,10 +272,10 @@
             </objects>
             <point key="canvasLocation" x="-83" y="954"/>
         </scene>
-        <!--Settings Modal View Controller-->
+        <!--Add Icon View Controller-->
         <scene sceneID="GXx-Cq-PGd">
             <objects>
-                <viewController id="Zps-DQ-cQG" customClass="SettingsModalViewController" customModule="Glyph" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Zps-DQ-cQG" customClass="AddIconViewController" customModule="Glyph" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2BC-dq-T10"/>
                         <viewControllerLayoutGuide type="bottom" id="IFq-vu-INd"/>
@@ -320,8 +322,8 @@
                                     <action selector="shootPhoto:" destination="Zps-DQ-cQG" eventType="touchUpInside" id="Oe6-cq-03b"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" fixedFrame="YES" text="or" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZ4-he-99h">
-                                <rect key="frame" x="0.0" y="0.0" width="14" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="or" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZ4-he-99h">
+                                <rect key="frame" x="242" y="506" width="16" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -364,19 +366,25 @@
                             <constraint firstItem="Wca-zJ-FR5" firstAttribute="top" secondItem="qS3-11-oGG" secondAttribute="bottom" constant="8" symbolic="YES" id="4TT-it-llH"/>
                             <constraint firstItem="Wca-zJ-FR5" firstAttribute="trailing" secondItem="RYv-zA-Ryo" secondAttribute="trailing" id="78H-ll-Cqi"/>
                             <constraint firstItem="Ls6-Vr-GId" firstAttribute="leading" secondItem="xPi-a4-9vd" secondAttribute="leadingMargin" constant="-19" id="9Uw-kG-sE0"/>
-                            <constraint firstItem="C3B-Aq-IkE" firstAttribute="top" secondItem="9sN-l2-gC8" secondAttribute="bottom" constant="33" id="Anm-I0-epD"/>
                             <constraint firstItem="C3B-Aq-IkE" firstAttribute="centerY" secondItem="xPi-a4-9vd" secondAttribute="centerY" id="CHN-K0-xiD"/>
+                            <constraint firstItem="C3B-Aq-IkE" firstAttribute="top" secondItem="Ls6-Vr-GId" secondAttribute="bottom" constant="77" id="Hb9-dr-Az1"/>
                             <constraint firstItem="Wca-zJ-FR5" firstAttribute="centerX" secondItem="C3B-Aq-IkE" secondAttribute="centerX" id="JUc-LG-JP1"/>
                             <constraint firstItem="Wca-zJ-FR5" firstAttribute="centerX" secondItem="Ls6-Vr-GId" secondAttribute="centerX" id="NBl-mt-f8Y"/>
                             <constraint firstItem="Wca-zJ-FR5" firstAttribute="leading" secondItem="qS3-11-oGG" secondAttribute="leading" id="OMB-fg-zzx"/>
                             <constraint firstItem="vaR-Tj-S2n" firstAttribute="baseline" secondItem="9sN-l2-gC8" secondAttribute="baseline" id="P4d-Wf-kVM"/>
                             <constraint firstItem="9sN-l2-gC8" firstAttribute="top" secondItem="Ls6-Vr-GId" secondAttribute="bottom" constant="14" id="PSr-mb-fqe"/>
+                            <constraint firstItem="vaR-Tj-S2n" firstAttribute="top" secondItem="Ls6-Vr-GId" secondAttribute="bottom" constant="20" id="QMz-cv-wlY"/>
+                            <constraint firstItem="vaR-Tj-S2n" firstAttribute="top" secondItem="2BC-dq-T10" secondAttribute="bottom" constant="64" id="TGd-ze-BlU"/>
                             <constraint firstItem="Wca-zJ-FR5" firstAttribute="centerX" secondItem="xPi-a4-9vd" secondAttribute="centerX" id="UIn-gV-mSj"/>
                             <constraint firstItem="9sN-l2-gC8" firstAttribute="leading" secondItem="vaR-Tj-S2n" secondAttribute="trailing" constant="8" symbolic="YES" id="cDI-bK-M9n"/>
                             <constraint firstItem="Wca-zJ-FR5" firstAttribute="trailing" secondItem="9sN-l2-gC8" secondAttribute="trailing" constant="-8" id="g9X-QU-V61"/>
                             <constraint firstItem="Ls6-Vr-GId" firstAttribute="top" secondItem="2BC-dq-T10" secondAttribute="bottom" id="mDr-CW-YvW"/>
+                            <constraint firstItem="CZ4-he-99h" firstAttribute="leading" secondItem="qS3-11-oGG" secondAttribute="trailing" constant="15" id="mxU-h0-0yk"/>
                             <constraint firstItem="Wca-zJ-FR5" firstAttribute="top" secondItem="RYv-zA-Ryo" secondAttribute="bottom" constant="8" symbolic="YES" id="nJ0-wH-5KV"/>
+                            <constraint firstItem="CZ4-he-99h" firstAttribute="centerY" secondItem="qS3-11-oGG" secondAttribute="centerY" id="noo-HC-8kG"/>
+                            <constraint firstItem="RYv-zA-Ryo" firstAttribute="leading" secondItem="CZ4-he-99h" secondAttribute="trailing" constant="8" symbolic="YES" id="qi6-FW-K0H"/>
                             <constraint firstItem="IFq-vu-INd" firstAttribute="top" secondItem="Wca-zJ-FR5" secondAttribute="bottom" constant="8" symbolic="YES" id="uuu-AF-0nQ"/>
+                            <constraint firstItem="Wca-zJ-FR5" firstAttribute="top" secondItem="CZ4-he-99h" secondAttribute="bottom" constant="11" id="wZQ-gm-nDw"/>
                             <constraint firstAttribute="bottom" secondItem="Wca-zJ-FR5" secondAttribute="bottom" constant="20" symbolic="YES" id="xdx-aG-3z5"/>
                             <constraint firstItem="Ls6-Vr-GId" firstAttribute="centerX" secondItem="C3B-Aq-IkE" secondAttribute="centerX" id="zaP-UA-E0R"/>
                         </constraints>
@@ -402,7 +410,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1316" y="-109"/>
+            <point key="canvasLocation" x="1258" y="-196"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
