@@ -20,6 +20,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     var data = DataModel()
     var filteredData = DataModel()
     var tempData = DataModel()
+    var dataToFilter: [Int] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +72,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         else if segue.identifier == "MainToFilter" {
             let destination = segue.destinationViewController as! FilterViewController
             destination.data = data
+            destination.dataToFilter = dataToFilter
         }
 
         

@@ -36,6 +36,9 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("filter", forIndexPath: indexPath) as! SelectableCell
         cell.imageView.image = data.getImage(indexPath.row)
         cell.textLabel.text = data.getLabel(indexPath.row)
+        if contains(dataToFilter, indexPath.row) {
+            cell.checkmarked.image = UIImage(named: "checkMark.png")
+        }
         return cell
     }
     
@@ -64,12 +67,14 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
         let destination = segue.destinationViewController as! MainViewController
         if segue.identifier == "FilterToMain" {
             makeFilteredDataArray()
+            destination.dataToFilter = dataToFilter
         }
         else if segue.identifier == "CancelFilterToMain" {
             // Do Nothing (May need to change)
         }
         destination.filteredData = filteredData
         destination.data = data
+        
     }
     
     private func makeFilteredDataArray() -> Void {
