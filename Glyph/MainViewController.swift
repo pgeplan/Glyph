@@ -16,17 +16,17 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var navBarSettingsButton: UIBarButtonItem!
     @IBOutlet weak var mainCollection: UICollectionView!
     
-    
-    var data = DataModel()
-    var filteredData = DataModel()
-    var tempData = DataModel()
+    var data = DataModel(isNewEmptyDataModel: false)
+    var filteredData = DataModel(isNewEmptyDataModel: true)
+    var tempData = DataModel(isNewEmptyDataModel: true)
     var dataToFilter: [Int] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if mainCollection != nil {
             mainCollection.reloadData()
         }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,16 +65,16 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "MainToSettings" {
-            let destination = segue.destinationViewController as! SettingsViewController
-            destination.data = data
+            //            let destination = segue.destinationViewController as! SettingsViewController
+            //            destination.data = data
         }
-        // Need to add to this once Anwar finishes Filter
+            // Need to add to this once Anwar finishes Filter
         else if segue.identifier == "MainToFilter" {
             let destination = segue.destinationViewController as! FilterViewController
             destination.data = data
             destination.dataToFilter = dataToFilter
         }
-
+        
         
     }
     

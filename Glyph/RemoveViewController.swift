@@ -14,8 +14,8 @@ class RemoveViewController: UIViewController, UICollectionViewDataSource, UIColl
     @IBOutlet weak var navBarTitle: UINavigationItem!
     @IBOutlet weak var navBarSettingsButton: UIBarButtonItem!
     @IBOutlet weak var mainCollection: UICollectionView!
-    var data = DataModel()
-
+    var data = DataModel(isNewEmptyDataModel: false)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if mainCollection != nil {
@@ -39,14 +39,15 @@ class RemoveViewController: UIViewController, UICollectionViewDataSource, UIColl
         cell.textLabel.text = data.getLabel(indexPath.row)
         return cell
     }
-
+    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         let removeActionHandler = { (action:UIAlertAction!) -> Void in
             self.data.remove(indexPath.row)
-            self.mainCollection.reloadData()
+            self.mainCollection.deleteItemsAtIndexPaths([indexPath])
+            //            self.mainCollection.reloadData()
         }
-
+        
         let alertController = UIAlertController(title: "Remove Icon", message: "Delete this Icon?", preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Remove", style: UIAlertActionStyle.Default,handler: removeActionHandler))
         alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default,handler: nil))
@@ -58,7 +59,6 @@ class RemoveViewController: UIViewController, UICollectionViewDataSource, UIColl
         destination.data = data
     }
 }
-
 
 
 

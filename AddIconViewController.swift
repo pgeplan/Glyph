@@ -5,7 +5,7 @@
 import UIKit
 
 class AddIconViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate {
-    var data = DataModel()
+    var data = DataModel(isNewEmptyDataModel: false)
     // Image View attribute
     @IBOutlet var imagePicker: UIImageView!
     
@@ -17,7 +17,7 @@ class AddIconViewController: UIViewController, UIImagePickerControllerDelegate,U
     
     // Text Field for User to add Picture Label
     @IBOutlet var textField: UITextField!
-   
+    
     @IBAction func shootPhoto(sender: UIButton) {
         if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
             picker.allowsEditing = false
@@ -69,16 +69,16 @@ class AddIconViewController: UIViewController, UIImagePickerControllerDelegate,U
         textField.resignFirstResponder()
         return true
     }
-
-    func notifyUserOfError(popUpTitle: String, popUpMessage: String, popUpButtonLabel: String) -> Void {
-            let removeActionHandler = { (action:UIAlertAction!) -> Void in
-            }
-            let alertController = UIAlertController(title: popUpTitle, message: popUpMessage, preferredStyle: UIAlertControllerStyle.Alert)
-            alertController.addAction(UIAlertAction(title: popUpButtonLabel, style: UIAlertActionStyle.Default,handler: nil))
-            self.presentViewController(alertController, animated: true, completion: nil)
-        }
     
-
+    func notifyUserOfError(popUpTitle: String, popUpMessage: String, popUpButtonLabel: String) -> Void {
+        let removeActionHandler = { (action:UIAlertAction!) -> Void in
+        }
+        let alertController = UIAlertController(title: popUpTitle, message: popUpMessage, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: popUpButtonLabel, style: UIAlertActionStyle.Default,handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -113,8 +113,8 @@ class AddIconViewController: UIViewController, UIImagePickerControllerDelegate,U
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "backToSettings" {
-            var destination = segue.destinationViewController as! SettingsViewController
-            destination.data = data
+            //            var destination = segue.destinationViewController as! SettingsViewController
+            //            destination.data = data
         }
         else {
             if let img = imagePicker.image {
@@ -132,5 +132,5 @@ class AddIconViewController: UIViewController, UIImagePickerControllerDelegate,U
             }
         }
     }
-
+    
 }
