@@ -23,7 +23,7 @@
                                     <navigationItem title="Settings" id="BGG-xO-WVq">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="7qI-ge-5am">
                                             <connections>
-                                                <segue destination="aMU-jc-qou" kind="show" identifier="backToMain" id="RmW-nj-WsP"/>
+                                                <segue destination="aMU-jc-qou" kind="custom" identifier="backToMain" customClass="HorizontalSegueRight" customModule="Glyph" customModuleProvider="target" id="RmW-nj-WsP"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -35,7 +35,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="9ia-46-GDw" kind="show" identifier="Remove" id="mKu-fv-2yh"/>
+                                    <segue destination="9ia-46-GDw" kind="custom" identifier="Remove" customClass="HorizontalSegueRight" customModule="Glyph" customModuleProvider="target" id="mKu-fv-2yh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygd-VT-1lE">
@@ -46,7 +46,7 @@
                                 </constraints>
                                 <state key="normal" title="Add Icon"/>
                                 <connections>
-                                    <segue destination="Zps-DQ-cQG" kind="presentation" identifier="AddIcon" id="WRB-JO-qF7"/>
+                                    <segue destination="Zps-DQ-cQG" kind="custom" identifier="AddIcon" customClass="HorizontalSegueLeft" customModule="Glyph" customModuleProvider="target" id="WRB-JO-qF7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -90,12 +90,12 @@
                                     <navigationItem title="Glyph" id="i4M-BG-I5U">
                                         <barButtonItem key="leftBarButtonItem" title="Filter" id="sk5-TK-8CU">
                                             <connections>
-                                                <segue destination="7JY-aA-EG5" kind="presentation" identifier="MainToFilter" id="p9Q-2p-ejm"/>
+                                                <segue destination="7JY-aA-EG5" kind="presentation" identifier="MainToFilter" modalTransitionStyle="crossDissolve" id="p9Q-2p-ejm"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Settings" id="Eax-sn-fkx">
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" identifier="MainToSettings" id="Zob-ke-RNG"/>
+                                                <segue destination="BYZ-38-t0r" kind="custom" identifier="MainToSettings" customClass="HorizontalSegueLeft" customModule="Glyph" customModuleProvider="target" id="Zob-ke-RNG"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -189,8 +189,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qG5-2s-Sfg">
+                                <rect key="frame" x="-1" y="20" width="603" height="44"/>
+                                <items>
+                                    <navigationItem title="Image Speech" id="t7N-zE-a82">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="EQd-Ku-KPh">
+                                            <connections>
+                                                <segue destination="aMU-jc-qou" kind="presentation" identifier="RemoveDone" modalTransitionStyle="crossDissolve" id="EfJ-GM-sss"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BXo-IP-to4">
-                                <rect key="frame" x="30" y="88" width="540" height="470"/>
+                                <rect key="frame" x="36" y="88" width="528" height="470"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qDS-fy-lOQ">
                                     <size key="itemSize" width="100" height="120"/>
@@ -241,18 +253,6 @@
                                     <outlet property="delegate" destination="9ia-46-GDw" id="dOI-Gd-FzJ"/>
                                 </connections>
                             </collectionView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qG5-2s-Sfg">
-                                <rect key="frame" x="-1" y="20" width="603" height="44"/>
-                                <items>
-                                    <navigationItem title="Image Speech" id="t7N-zE-a82">
-                                        <barButtonItem key="rightBarButtonItem" title="Done" id="EQd-Ku-KPh">
-                                            <connections>
-                                                <segue destination="aMU-jc-qou" kind="presentation" identifier="RemoveDone" animates="NO" id="EfJ-GM-sss"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -261,7 +261,7 @@
                             <constraint firstItem="qG5-2s-Sfg" firstAttribute="top" secondItem="G30-ma-K5W" secondAttribute="bottom" id="azz-yF-Ib8"/>
                             <constraint firstItem="gaT-kQ-oQT" firstAttribute="top" secondItem="BXo-IP-to4" secondAttribute="bottom" constant="42" id="l37-Qg-Qiw"/>
                             <constraint firstItem="BXo-IP-to4" firstAttribute="top" secondItem="qG5-2s-Sfg" secondAttribute="bottom" constant="24" id="pju-lY-rUa"/>
-                            <constraint firstItem="BXo-IP-to4" firstAttribute="leading" secondItem="oUm-FU-Kae" secondAttribute="leadingMargin" constant="14" id="yFe-O2-Zmm"/>
+                            <constraint firstItem="BXo-IP-to4" firstAttribute="leading" secondItem="oUm-FU-Kae" secondAttribute="leadingMargin" constant="20" id="yFe-O2-Zmm"/>
                             <constraint firstItem="BXo-IP-to4" firstAttribute="centerX" secondItem="qG5-2s-Sfg" secondAttribute="centerX" id="zCe-ev-wny"/>
                         </constraints>
                     </view>
@@ -354,12 +354,12 @@
                                     <navigationItem title="Select Images to Filter" id="16g-VA-GFw">
                                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="LSi-4K-hWn">
                                             <connections>
-                                                <segue destination="aMU-jc-qou" kind="presentation" identifier="CancelFilterToMain" id="FVK-ne-Uro"/>
+                                                <segue destination="aMU-jc-qou" kind="presentation" identifier="CancelFilterToMain" modalTransitionStyle="crossDissolve" id="FVK-ne-Uro"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Filter" id="fGd-pr-Y4s">
                                             <connections>
-                                                <segue destination="aMU-jc-qou" kind="presentation" identifier="FilterToMain" id="YzA-xI-51L"/>
+                                                <segue destination="aMU-jc-qou" kind="presentation" identifier="FilterToMain" modalTransitionStyle="crossDissolve" id="YzA-xI-51L"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -411,7 +411,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="aMU-jc-qou" kind="show" identifier="backToMain" id="RMr-eC-jNw"/>
+                                    <segue destination="aMU-jc-qou" kind="custom" identifier="backToMain" customClass="HorizontalSegueRight" customModule="Glyph" customModuleProvider="target" id="RMr-eC-jNw"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ls6-Vr-GId">
@@ -420,7 +420,7 @@
                                     <navigationItem title="Add Icon" id="Uxe-yx-mlV">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="5hj-BJ-bWW">
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" identifier="backToSettings" id="pB0-7y-Loe"/>
+                                                <segue destination="BYZ-38-t0r" kind="custom" identifier="backToSettings" customClass="HorizontalSegueRight" customModule="Glyph" customModuleProvider="target" id="pB0-7y-Loe"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -527,7 +527,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="EfJ-GM-sss"/>
         <segue reference="Zob-ke-RNG"/>
-        <segue reference="FVK-ne-Uro"/>
     </inferredMetricsTieBreakers>
 </document>
