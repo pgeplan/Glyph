@@ -110,27 +110,49 @@ class AddIconViewController: UIViewController, UIImagePickerControllerDelegate,U
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if segue.identifier == "backToSettings" {
-            //            var destination = segue.destinationViewController as! SettingsViewController
-            //            destination.data = data
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        if identifier == "backToSettings" {
+            return true
         }
         else {
             if let img = imagePicker.image {
                 if textField.text != "" {
-                    var destination = segue.destinationViewController as! MainViewController
                     data.add(imagePicker.image!, label: textField.text!)
-                    destination.data = data
+                    return true
                 }
                 else {
                     notifyUserOfError("Icon must have both an Image and a Name", popUpMessage: "Please add the name of the Image to the 'Image Name' box", popUpButtonLabel: "Okay")
+                    return false
                 }
             }
             else {
                 notifyUserOfError("Icon must have both an Image and a Name", popUpMessage: "Please add a photo by using the 'Take Photo' option, or by selecting an image from your device's Library", popUpButtonLabel: "Okay")
+                return false
             }
         }
     }
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        
+//        if segue.identifier == "backToSettings" {
+//            //            var destination = segue.destinationViewController as! SettingsViewController
+//            //            destination.data = data
+//        }
+//        else {
+//            if let img = imagePicker.image {
+//                if textField.text != "" {
+//                    var destination = segue.destinationViewController as! MainViewController
+//                    data.add(imagePicker.image!, label: textField.text!)
+//                    destination.data = data
+//                }
+//                else {
+//                    notifyUserOfError("Icon must have both an Image and a Name", popUpMessage: "Please add the name of the Image to the 'Image Name' box", popUpButtonLabel: "Okay")
+//                }
+//            }
+//            else {
+//                notifyUserOfError("Icon must have both an Image and a Name", popUpMessage: "Please add a photo by using the 'Take Photo' option, or by selecting an image from your device's Library", popUpButtonLabel: "Okay")
+//            }
+//        }
+//    }
     
 }

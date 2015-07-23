@@ -59,6 +59,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         setTempData()
         tempData.speakAtIndex(indexPath.row)
+//        NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: "timerDidFire", userInfo: nil, repeats: false)
         collectionView.deselectItemAtIndexPath(indexPath, animated: true)
     }
     
