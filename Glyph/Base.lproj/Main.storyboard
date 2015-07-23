@@ -23,7 +23,7 @@
                                     <navigationItem title="Settings" id="BGG-xO-WVq">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="7qI-ge-5am">
                                             <connections>
-                                                <segue destination="aMU-jc-qou" kind="show" identifier="backToMain" id="RmW-nj-WsP"/>
+                                                <segue destination="aMU-jc-qou" kind="presentation" identifier="backToMain" modalTransitionStyle="flipHorizontal" id="RmW-nj-WsP"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -35,7 +35,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="9ia-46-GDw" kind="show" identifier="Remove" id="mKu-fv-2yh"/>
+                                    <segue destination="9ia-46-GDw" kind="custom" identifier="Remove" customClass="HorizontalSegueLeft" customModule="Glyph" customModuleProvider="target" id="mKu-fv-2yh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygd-VT-1lE">
@@ -46,7 +46,7 @@
                                 </constraints>
                                 <state key="normal" title="Add Icon"/>
                                 <connections>
-                                    <segue destination="Zps-DQ-cQG" kind="presentation" identifier="AddIcon" id="WRB-JO-qF7"/>
+                                    <segue destination="Zps-DQ-cQG" kind="custom" identifier="AddIcon" customClass="HorizontalSegueLeft" customModule="Glyph" customModuleProvider="target" id="WRB-JO-qF7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -61,6 +61,7 @@
                             <constraint firstItem="Ygd-VT-1lE" firstAttribute="top" secondItem="vZM-Oh-BO0" secondAttribute="bottom" constant="35" id="zWd-BA-kqR"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="M4K-9Z-wGF"/>
                     <connections>
                         <outlet property="addButton" destination="Ygd-VT-1lE" id="gtq-an-f2A"/>
                         <outlet property="settingsBackButton" destination="7qI-ge-5am" id="Hns-hL-gqv"/>
@@ -70,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="387" y="109"/>
+            <point key="canvasLocation" x="559" y="193"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="GOf-1x-eXO">
@@ -90,12 +91,12 @@
                                     <navigationItem title="Glyph" id="i4M-BG-I5U">
                                         <barButtonItem key="leftBarButtonItem" title="Filter" id="sk5-TK-8CU">
                                             <connections>
-                                                <segue destination="7JY-aA-EG5" kind="presentation" identifier="MainToFilter" id="p9Q-2p-ejm"/>
+                                                <segue destination="7JY-aA-EG5" kind="presentation" identifier="MainToFilter" modalTransitionStyle="crossDissolve" id="p9Q-2p-ejm"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Settings" id="Eax-sn-fkx">
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" identifier="MainToSettings" id="Zob-ke-RNG"/>
+                                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="MainToSettings" modalTransitionStyle="flipHorizontal" id="Zob-ke-RNG"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -175,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b97-LC-Vaj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748" y="933"/>
+            <point key="canvasLocation" x="-360" y="81"/>
         </scene>
         <!--Remove View Controller-->
         <scene sceneID="dOO-bp-P6j">
@@ -247,7 +248,7 @@
                                     <navigationItem title="Image Speech" id="t7N-zE-a82">
                                         <barButtonItem key="rightBarButtonItem" title="Done" id="EQd-Ku-KPh">
                                             <connections>
-                                                <segue destination="aMU-jc-qou" kind="presentation" identifier="RemoveDone" animates="NO" id="EfJ-GM-sss"/>
+                                                <segue destination="aMU-jc-qou" kind="presentation" identifier="RemoveDone" modalTransitionStyle="crossDissolve" id="EfJ-GM-sss"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -274,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRe-8a-jHI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-83" y="954"/>
+            <point key="canvasLocation" x="1501" y="1214"/>
         </scene>
         <!--Filter View Controller-->
         <scene sceneID="HAR-Nt-2bp">
@@ -349,17 +350,17 @@
                                 </connections>
                             </collectionView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gog-PA-BrE">
-                                <rect key="frame" x="-4" y="28" width="609" height="44"/>
+                                <rect key="frame" x="-4" y="20" width="609" height="44"/>
                                 <items>
                                     <navigationItem title="Select Images to Filter" id="16g-VA-GFw">
                                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="LSi-4K-hWn">
                                             <connections>
-                                                <segue destination="aMU-jc-qou" kind="presentation" identifier="CancelFilterToMain" id="FVK-ne-Uro"/>
+                                                <segue destination="aMU-jc-qou" kind="presentation" identifier="CancelFilterToMain" modalTransitionStyle="crossDissolve" id="FVK-ne-Uro"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Filter" id="fGd-pr-Y4s">
                                             <connections>
-                                                <segue destination="aMU-jc-qou" kind="presentation" identifier="FilterToMain" id="YzA-xI-51L"/>
+                                                <segue destination="aMU-jc-qou" kind="presentation" identifier="FilterToMain" modalTransitionStyle="crossDissolve" id="YzA-xI-51L"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -371,8 +372,8 @@
                             <constraint firstItem="yoo-6u-ahU" firstAttribute="centerX" secondItem="pIb-9d-LFH" secondAttribute="centerX" id="5gp-cg-f1b"/>
                             <constraint firstItem="gog-PA-BrE" firstAttribute="leading" secondItem="pIb-9d-LFH" secondAttribute="leadingMargin" constant="-20" id="HlV-A3-B2K"/>
                             <constraint firstItem="yoo-6u-ahU" firstAttribute="centerX" secondItem="gog-PA-BrE" secondAttribute="centerX" id="N4u-r3-igr"/>
-                            <constraint firstItem="gog-PA-BrE" firstAttribute="top" secondItem="z4a-bm-bqN" secondAttribute="bottom" constant="8" id="Z8l-kZ-zv6"/>
-                            <constraint firstItem="yoo-6u-ahU" firstAttribute="top" secondItem="gog-PA-BrE" secondAttribute="bottom" constant="16" id="sHx-Mk-S2X"/>
+                            <constraint firstItem="gog-PA-BrE" firstAttribute="top" secondItem="z4a-bm-bqN" secondAttribute="bottom" id="Z8l-kZ-zv6"/>
+                            <constraint firstItem="yoo-6u-ahU" firstAttribute="top" secondItem="gog-PA-BrE" secondAttribute="bottom" constant="24" id="sHx-Mk-S2X"/>
                             <constraint firstAttribute="bottom" secondItem="yoo-6u-ahU" secondAttribute="bottom" constant="20" symbolic="YES" id="u28-eh-eGi"/>
                             <constraint firstItem="yoo-6u-ahU" firstAttribute="leading" secondItem="pIb-9d-LFH" secondAttribute="leadingMargin" constant="20" id="w5c-7T-ZTO"/>
                         </constraints>
@@ -383,7 +384,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eEq-it-Dfu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-412" y="119"/>
+            <point key="canvasLocation" x="-376" y="1255"/>
         </scene>
         <!--Add Icon View Controller-->
         <scene sceneID="GXx-Cq-PGd">
@@ -411,7 +412,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="aMU-jc-qou" kind="show" identifier="backToMain" id="RMr-eC-jNw"/>
+                                    <segue destination="aMU-jc-qou" kind="custom" identifier="backToMain" customClass="HorizontalSegueRight" customModule="Glyph" customModuleProvider="target" id="RMr-eC-jNw"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ls6-Vr-GId">
@@ -420,7 +421,7 @@
                                     <navigationItem title="Add Icon" id="Uxe-yx-mlV">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="5hj-BJ-bWW">
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" identifier="backToSettings" id="pB0-7y-Loe"/>
+                                                <segue destination="BYZ-38-t0r" kind="custom" identifier="backToSettings" customClass="HorizontalSegueRight" customModule="Glyph" customModuleProvider="target" id="pB0-7y-Loe"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -523,11 +524,11 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1258" y="-196"/>
+            <point key="canvasLocation" x="1038" y="-532"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="RMr-eC-jNw"/>
         <segue reference="Zob-ke-RNG"/>
-        <segue reference="FVK-ne-Uro"/>
     </inferredMetricsTieBreakers>
 </document>

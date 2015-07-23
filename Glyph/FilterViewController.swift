@@ -11,8 +11,8 @@ import UIKit
 
 class FilterViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var filterCollection: UICollectionView!
-    var data = DataModel()
-    var filteredData = DataModel()
+    var data = DataModel(isNewEmptyDataModel: false)
+    var filteredData = DataModel(isNewEmptyDataModel: true)
     var dataToFilter: [Int] = []
     
     override func viewDidLoad() {
@@ -73,7 +73,7 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
             // Do Nothing (May need to change)
         }
         destination.filteredData = filteredData
-        destination.data = data
+//        destination.data = data
         
     }
     

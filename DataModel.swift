@@ -9,49 +9,117 @@
 import Foundation
 import UIKit
 import AVFoundation
+import CoreData
 
 class DataModel {
+    var iconStorage = [NSManagedObject]()
     var imageData: [UIImage]
     var labelData: [String]
     let speaker: AVSpeechSynthesizer
     var count: Int
+    let independent: Bool
     
-    init() {
-        imageData = []
-        labelData = []
+    init(isNewEmptyDataModel: Bool) {
+        independent = isNewEmptyDataModel
         speaker = AVSpeechSynthesizer()
         count = 0
+        if independent {
+            imageData = []
+            labelData = []
+        } else {
+            imageData = []
+            labelData = []
+            iconStorage = fetchFromCoreData()
+            count = iconStorage.count
+        }
+    }
+    
+    func fetchFromCoreData() -> [NSManagedObject] {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext!
+        let fetchRequest = NSFetchRequest(entityName: "IconData")
+        var error: NSError?
+        let fetchResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as! [NSManagedObject]
+        let results = fetchResults as [NSManagedObject]?
+        return results!
+        
+        
     }
     
     func isEmpty() -> Bool {
-        return imageData.count == 0
+        return iconStorage.count == 0 && imageData.count == 0
     }
     
     func getImage(index: Int) -> UIImage {
-        return imageData[index]
+        if independent {
+            return imageData[index]
+        }
+        let image = UIImage(data: (iconStorage[index].valueForKey("iconImage") as? NSData)!)
+        if image == nil {
+            println("error with getImage")
+            return image!
+        } else {
+            return image!
+        }
     }
     
     func getLabel(index: Int) -> String {
-        if labelData.isEmpty {
-            return "nil"
+        if independent {
+            if labelData.isEmpty {
+                return "nil"
+            }
+            return labelData[index]
         }
-        return labelData[index]
+
+        return (iconStorage[index].valueForKey("iconLabel") as? String)!
+
     }
     
     func add(image: UIImage, label: String) {
-        imageData.append(image)
-        labelData.append(label)
+        if independent {
+            imageData.append(image)
+            labelData.append(label)
+        } else {
+            addToIconStorage(image, label: label)
+        }
         count += 1
     }
     
+    func addToIconStorage(image: UIImage, label: String) {
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext!
+        let entity =  NSEntityDescription.entityForName("IconData",
+            inManagedObjectContext:
+            managedContext)
+        let icon = NSManagedObject(entity: entity!,
+            insertIntoManagedObjectContext:managedContext)
+        let imageInBinaryData = UIImagePNGRepresentation(image)
+        icon.setValue(imageInBinaryData, forKey: "iconImage")
+        icon.setValue(label, forKey: "iconLabel")
+        var error: NSError?
+        if !managedContext.save(&error) {
+            println("Could not save \(error), \(error?.userInfo)")
+        }
+        iconStorage.append(icon)
+    }
+    
     func remove(index: Int) {
-        imageData.removeAtIndex(index)
-        labelData.removeAtIndex(index)
+        if independent {
+            imageData.removeAtIndex(index)
+            labelData.removeAtIndex(index)
+        } else {
+            let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let context:NSManagedObjectContext = appDel.managedObjectContext!
+            context.deleteObject(iconStorage[index] as NSManagedObject)
+            iconStorage.removeAtIndex(index)
+            context.save(nil)
+        }
         count -= 1
     }
     
     func speakAtIndex(index: Int) {
-        let speech = AVSpeechUtterance(string: labelData[index])
+        let speech = AVSpeechUtterance(string: getLabel(index))
         speech.rate = 0.1
         speaker.speakUtterance(speech)
     }

@@ -14,7 +14,7 @@ class RemoveViewController: UIViewController, UICollectionViewDataSource, UIColl
     @IBOutlet weak var navBarTitle: UINavigationItem!
     @IBOutlet weak var navBarSettingsButton: UIBarButtonItem!
     @IBOutlet weak var mainCollection: UICollectionView!
-    var data = DataModel()
+    var data = DataModel(isNewEmptyDataModel: false)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,8 @@ class RemoveViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         let removeActionHandler = { (action:UIAlertAction!) -> Void in
             self.data.remove(indexPath.row)
-            self.mainCollection.reloadData()
+            self.mainCollection.deleteItemsAtIndexPaths([indexPath])
+//            self.mainCollection.reloadData()
         }
 
         let alertController = UIAlertController(title: "Remove Icon", message: "Delete this Icon?", preferredStyle: UIAlertControllerStyle.Alert)

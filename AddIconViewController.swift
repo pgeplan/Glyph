@@ -5,7 +5,7 @@
 import UIKit
 
 class AddIconViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate {
-    var data = DataModel()
+    var data = DataModel(isNewEmptyDataModel: false)
     // Image View attribute
     @IBOutlet var imagePicker: UIImageView!
     
@@ -113,8 +113,8 @@ class AddIconViewController: UIViewController, UIImagePickerControllerDelegate,U
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "backToSettings" {
-            var destination = segue.destinationViewController as! SettingsViewController
-            destination.data = data
+//            var destination = segue.destinationViewController as! SettingsViewController
+//            destination.data = data
         }
         else {
             if let img = imagePicker.image {

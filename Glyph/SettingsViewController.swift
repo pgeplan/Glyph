@@ -12,7 +12,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var settingsNavBar: UINavigationBar!
     @IBOutlet weak var settingsNavItem: UINavigationItem!
     @IBOutlet weak var settingsBackButton: UIBarButtonItem!
-    var data = DataModel()
+    var data = DataModel(isNewEmptyDataModel: false)
     
     
     
@@ -26,20 +26,20 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "AddIcon" {
-            let destination = segue.destinationViewController as! AddIconViewController
-            destination.data = data
-        } else if segue.identifier == "backToMain" {
-            let destination = segue.destinationViewController as! MainViewController
-            destination.data = data
-        } else if segue.identifier == "Remove" {
-            let destination = segue.destinationViewController as! RemoveViewController
-            destination.data = data
-        }
-        
-        
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "AddIcon" {
+//            let destination = segue.destinationViewController as! AddIconViewController
+//            destination.data = data
+//        } else if segue.identifier == "backToMain" {
+//            let destination = segue.destinationViewController as! MainViewController
+//            destination.data = data
+//        } else if segue.identifier == "Remove" {
+//            let destination = segue.destinationViewController as! RemoveViewController
+//            destination.data = data
+//        }
+//        
+//        
+//    }
 
 }
 
