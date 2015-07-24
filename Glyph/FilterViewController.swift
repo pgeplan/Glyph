@@ -3,7 +3,6 @@
 //  Glyph
 //
 //  Created by Anwar Baroudi on 7/18/15.
-//  Copyright (c) 2015 Paige Plander. All rights reserved.
 //
 
 import Foundation
@@ -14,12 +13,20 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
     var data = DataModel(isNewEmptyDataModel: false)
     var filteredData = DataModel(isNewEmptyDataModel: true)
     var dataToFilter: [Int] = []
+    @IBOutlet var navBar: UINavigationBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if filterCollection != nil {
             filterCollection.reloadData()
         }
+        navBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        // Sets shadow (line below the bar) to a blank image
+        navBar.shadowImage = UIImage()
+        // Sets the translucent background color
+        navBar.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0)
+        // Set translucent. (Default value is already true, so this can be removed if desired.)
+        navBar.translucent = true
         // Do any additional setup after loading the view, typically from a nib.
     }
     
