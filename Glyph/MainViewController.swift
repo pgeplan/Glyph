@@ -21,6 +21,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     var tempData = DataModel(isNewEmptyDataModel: true)
     var dataToFilter: [Int] = []
     
+    var screenSize: CGRect!
+    var screenWidth: CGFloat!
+    var screenHeight: CGFloat!
+    
 
     
     
@@ -36,6 +40,18 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         navBar.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0)
         // Set translucent. (Default value is already true, so this can be removed if desired.)
         navBar.translucent = true
+        
+        screenSize = UIScreen.mainScreen().bounds
+        screenWidth = screenSize.width
+        screenHeight = screenSize.height
+        
+        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
+        layout.itemSize = CGSize(width: screenWidth/3, height: screenWidth/3)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        
         
     }
     
