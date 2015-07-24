@@ -142,7 +142,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundImage" highlightedImage="BackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="XMS-ry-rO9">
                                 <rect key="frame" x="-22" y="-22" width="645" height="644"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Button Background" highlightedImage="6D38958E-5BD4-475E-8775-E60684059AFB" translatesAutoresizingMaskIntoConstraints="NO" id="p4C-Yo-bTw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Button Background" highlightedImage="C66C47A7-B808-4315-9B44-91FBC278B85E" translatesAutoresizingMaskIntoConstraints="NO" id="p4C-Yo-bTw">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <navigationBar opaque="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="6P8-7Q-OMz">
@@ -228,6 +228,15 @@
                                     <outlet property="delegate" destination="aMU-jc-qou" id="L5a-32-STp"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7Z-xA-HpI">
+                                <rect key="frame" x="277" y="550" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Cxf-RR-Ikk" kind="showDetail" id="rhl-rH-ftV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -245,7 +254,9 @@
                             <constraint firstItem="6P8-7Q-OMz" firstAttribute="top" secondItem="qm1-tA-wfM" secondAttribute="bottom" id="Pxq-7m-GPA"/>
                             <constraint firstItem="2i2-PP-y0d" firstAttribute="centerX" secondItem="6P8-7Q-OMz" secondAttribute="centerX" id="QDq-Yp-yvI"/>
                             <constraint firstAttribute="trailing" secondItem="p4C-Yo-bTw" secondAttribute="trailing" id="ZJW-T5-Mwx"/>
+                            <constraint firstAttribute="bottom" secondItem="I7Z-xA-HpI" secondAttribute="bottom" constant="20" symbolic="YES" id="cVt-F4-Y4s"/>
                             <constraint firstItem="aec-Nh-Tfy" firstAttribute="top" secondItem="2i2-PP-y0d" secondAttribute="bottom" constant="13" id="hUM-xN-HJm"/>
+                            <constraint firstItem="I7Z-xA-HpI" firstAttribute="centerX" secondItem="aec-Nh-Tfy" secondAttribute="centerX" id="to2-6F-uas"/>
                             <constraint firstItem="XMS-ry-rO9" firstAttribute="top" secondItem="XYz-ig-jMU" secondAttribute="topMargin" constant="-22" id="v22-mC-yYn"/>
                             <constraint firstItem="XMS-ry-rO9" firstAttribute="leading" secondItem="XYz-ig-jMU" secondAttribute="leadingMargin" constant="-38" id="wkE-3d-DP5"/>
                             <constraint firstItem="2i2-PP-y0d" firstAttribute="top" secondItem="XYz-ig-jMU" secondAttribute="topMargin" constant="17" id="xmw-NF-g43"/>
@@ -262,6 +273,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b97-LC-Vaj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="952" y="1065"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eyL-9e-ZZt">
+            <objects>
+                <viewController id="Cxf-RR-Ikk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0cc-UC-LWP"/>
+                        <viewControllerLayoutGuide type="bottom" id="z9r-zH-l7F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4vd-88-yGm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="akk-Bl-Nzo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="938" y="1774"/>
         </scene>
         <!--Remove View Controller-->
         <scene sceneID="dOO-bp-P6j">
@@ -391,6 +420,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="faX-nK-ViL">
+                                <rect key="frame" x="16" y="350" width="300" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Button Background" translatesAutoresizingMaskIntoConstraints="NO" id="v8a-VC-FQF">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
@@ -659,7 +692,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="6D38958E-5BD4-475E-8775-E60684059AFB" width="320" height="568">
+        <image name="BackgroundImage" width="320" height="568"/>
+        <image name="Button Background" width="320" height="568"/>
+        <image name="C66C47A7-B808-4315-9B44-91FBC278B85E" width="320" height="568">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -12849,13 +12884,11 @@ AAsmeAALJocACyaLAAsmkgALJpoACyanAAsmrAALJq4ACyawAAsmtQALJr0ACybAAAsmxQALJs0ACybQ
 AAsm4gALJuUACybqAAAAAAAABAEAAAAAAAAAPwAAAAAAAAAAAAAAAAALJuw
 </mutableData>
         </image>
-        <image name="BackgroundImage" width="320" height="568"/>
-        <image name="Button Background" width="320" height="568"/>
         <image name="General Background" width="320" height="568"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pB0-7y-Loe"/>
-        <segue reference="RMr-eC-jNw"/>
+        <segue reference="YzA-xI-51L"/>
+        <segue reference="Zob-ke-RNG"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
