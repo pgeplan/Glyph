@@ -142,7 +142,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundImage" highlightedImage="BackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="XMS-ry-rO9">
                                 <rect key="frame" x="-22" y="-22" width="645" height="644"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Button Background" highlightedImage="D8327BF6-C2CA-46E2-996F-08604F560D33" translatesAutoresizingMaskIntoConstraints="NO" id="p4C-Yo-bTw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Button Background" highlightedImage="6D38958E-5BD4-475E-8775-E60684059AFB" translatesAutoresizingMaskIntoConstraints="NO" id="p4C-Yo-bTw">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <navigationBar opaque="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="6P8-7Q-OMz">
@@ -659,9 +659,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BackgroundImage" width="320" height="568"/>
-        <image name="Button Background" width="320" height="568"/>
-        <image name="D8327BF6-C2CA-46E2-996F-08604F560D33" width="320" height="568">
+        <image name="6D38958E-5BD4-475E-8775-E60684059AFB" width="320" height="568">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -12851,6 +12849,8 @@ AAsmeAALJocACyaLAAsmkgALJpoACyanAAsmrAALJq4ACyawAAsmtQALJr0ACybAAAsmxQALJs0ACybQ
 AAsm4gALJuUACybqAAAAAAAABAEAAAAAAAAAPwAAAAAAAAAAAAAAAAALJuw
 </mutableData>
         </image>
+        <image name="BackgroundImage" width="320" height="568"/>
+        <image name="Button Background" width="320" height="568"/>
         <image name="General Background" width="320" height="568"/>
     </resources>
     <inferredMetricsTieBreakers>
