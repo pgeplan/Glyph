@@ -27,11 +27,11 @@
 		6CF1FB871B619B96001F9691 /* HorizontalSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF1FB861B619B96001F9691 /* HorizontalSegue.swift */; };
 		6CF1FB891B619BC1001F9691 /* HorizontalSegueRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF1FB881B619BC1001F9691 /* HorizontalSegueRight.swift */; };
 		6CF1FB901B619F0C001F9691 /* IconStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6CF1FB8E1B619F0C001F9691 /* IconStorage.xcdatamodeld */; };
-		6CF1FB921B61B08C001F9691 /* Rectangle 1 Copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CF1FB911B61B08C001F9691 /* Rectangle 1 Copy.png */; };
-		6CF1FB961B61B1FC001F9691 /* 5C.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CF1FB951B61B1FC001F9691 /* 5C.png */; };
 		6CF1FB981B61BAAE001F9691 /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF1FB971B61BAAE001F9691 /* Toolbar.swift */; };
+		6CF1FB9A1B61C2A5001F9691 /* DK Lemon Yellow Sun.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6CF1FB991B61C2A5001F9691 /* DK Lemon Yellow Sun.otf */; };
+		6CF1FB9E1B61C73F001F9691 /* MainBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CF1FB9D1B61C73F001F9691 /* MainBG.png */; };
+		6CF1FBA01B61C75D001F9691 /* BackgroundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CF1FB9F1B61C75D001F9691 /* BackgroundImage.png */; };
 		E894AEBD1B372C0400B27031 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E894AEBC1B372C0400B27031 /* DataModel.swift */; };
-		E894AEC31B3750AD00B27031 /* addButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E894AEC21B3750AD00B27031 /* addButton.png */; };
 		E894AEC51B37577800B27031 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E894AEC41B37577800B27031 /* MainViewController.swift */; };
 		E894AEC71B375BE900B27031 /* BasicCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E894AEC61B375BE900B27031 /* BasicCollectionCell.swift */; };
 /* End PBXBuildFile section */
@@ -70,11 +70,11 @@
 		6CF1FB861B619B96001F9691 /* HorizontalSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalSegue.swift; sourceTree = "<group>"; };
 		6CF1FB881B619BC1001F9691 /* HorizontalSegueRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalSegueRight.swift; sourceTree = "<group>"; };
 		6CF1FB8F1B619F0C001F9691 /* IconStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IconStorage.xcdatamodel; sourceTree = "<group>"; };
-		6CF1FB911B61B08C001F9691 /* Rectangle 1 Copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rectangle 1 Copy.png"; sourceTree = "<group>"; };
-		6CF1FB951B61B1FC001F9691 /* 5C.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5C.png; sourceTree = "<group>"; };
 		6CF1FB971B61BAAE001F9691 /* Toolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
+		6CF1FB991B61C2A5001F9691 /* DK Lemon Yellow Sun.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DK Lemon Yellow Sun.otf"; sourceTree = "<group>"; };
+		6CF1FB9D1B61C73F001F9691 /* MainBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainBG.png; sourceTree = "<group>"; };
+		6CF1FB9F1B61C75D001F9691 /* BackgroundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackgroundImage.png; sourceTree = "<group>"; };
 		E894AEBC1B372C0400B27031 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		E894AEC21B3750AD00B27031 /* addButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addButton.png; sourceTree = "<group>"; };
 		E894AEC41B37577800B27031 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E894AEC61B375BE900B27031 /* BasicCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,13 +123,14 @@
 				6CBC29B01B50C20900BD6BC4 /* Images.xcassets */,
 				6C1141901B5F57E800743074 /* 640by1136.png */,
 				6C11418C1B5F562100743074 /* 1024-768.png */,
-				6CF1FB951B61B1FC001F9691 /* 5C.png */,
-				6CF1FB911B61B08C001F9691 /* Rectangle 1 Copy.png */,
 				6C40F3521B36416700DF17D9 /* AppDelegate.swift */,
+				6CF1FB9F1B61C75D001F9691 /* BackgroundImage.png */,
+				6CF1FB9D1B61C73F001F9691 /* MainBG.png */,
 				6C40F3541B36416700DF17D9 /* SettingsViewController.swift */,
 				6C6AAE421B5B428D0048382C /* checkMark.png */,
 				6C1141951B5F5D6900743074 /* 1242by2208.png */,
 				6C1141971B5F5DEC00743074 /* 640by960.png */,
+				6CF1FB991B61C2A5001F9691 /* DK Lemon Yellow Sun.otf */,
 				6C40F3741B364BF000DF17D9 /* AddIconViewController.swift */,
 				6C40F3561B36416700DF17D9 /* Main.storyboard */,
 				6C10BADC1B378EF00027A2D6 /* RemoveViewController.swift */,
@@ -141,7 +142,6 @@
 				6C1141931B5F5CF800743074 /* 750by1334.png */,
 				6CE4DDE11B5B3C9100CB1D80 /* FilterViewController.swift */,
 				6CE4DDE31B5B3CB500CB1D80 /* SelectableCell.swift */,
-				E894AEC21B3750AD00B27031 /* addButton.png */,
 				6C40F35B1B36416700DF17D9 /* LaunchScreen.xib */,
 				6C40F3501B36416700DF17D9 /* Supporting Files */,
 			);
@@ -255,18 +255,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CF1FBA01B61C75D001F9691 /* BackgroundImage.png in Resources */,
 				6C1141911B5F57E800743074 /* 640by1136.png in Resources */,
 				6C11418E1B5F562100743074 /* 1024-768.png in Resources */,
 				6C1141941B5F5CF800743074 /* 750by1334.png in Resources */,
 				6C1141981B5F5DEC00743074 /* 640by960.png in Resources */,
 				6C40F3581B36416700DF17D9 /* Main.storyboard in Resources */,
-				6CF1FB961B61B1FC001F9691 /* 5C.png in Resources */,
+				6CF1FB9E1B61C73F001F9691 /* MainBG.png in Resources */,
 				6C40F35D1B36416700DF17D9 /* LaunchScreen.xib in Resources */,
 				6C6AAE431B5B428D0048382C /* checkMark.png in Resources */,
 				6C1141961B5F5D6900743074 /* 1242by2208.png in Resources */,
 				6CBC29B11B50C20900BD6BC4 /* Images.xcassets in Resources */,
-				6CF1FB921B61B08C001F9691 /* Rectangle 1 Copy.png in Resources */,
-				E894AEC31B3750AD00B27031 /* addButton.png in Resources */,
+				6CF1FB9A1B61C2A5001F9691 /* DK Lemon Yellow Sun.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
