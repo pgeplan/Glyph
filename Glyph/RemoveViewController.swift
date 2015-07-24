@@ -15,13 +15,19 @@ class RemoveViewController: UIViewController, UICollectionViewDataSource, UIColl
     @IBOutlet weak var navBarSettingsButton: UIBarButtonItem!
     @IBOutlet weak var mainCollection: UICollectionView!
     var data = DataModel(isNewEmptyDataModel: false)
+    var currentScroll = 0
+    var maxScroll = 0
+    var itemsPerPage = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if mainCollection != nil {
             mainCollection.reloadData()
+            let width = mainCollection.frame.width
+            let height = mainCollection.frame.height
+            itemsPerPage = Int(floor(width / CGFloat(100.0))) + Int(floor(height / CGFloat(100.0)))
+            maxScroll = Int(ceil(Double(data.count) / Double(itemsPerPage)))
         }
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,6 +59,45 @@ class RemoveViewController: UIViewController, UICollectionViewDataSource, UIColl
         alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default,handler: nil))
         self.presentViewController(alertController, animated: true, completion: nil)
     }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        let width = mainCollection.frame.width
+        let width2 = mainCollection.bounds.size.width
+        var itemsPerHorizontalRow: Int = Int(floor(width / CGFloat(100.0)))
+        var leftover = width % CGFloat(100.0)
+        if leftover < CGFloat(30) {
+            itemsPerHorizontalRow -= 1
+            leftover += CGFloat(100.0)
+        }
+        print(leftover / CGFloat(itemsPerHorizontalRow))
+        return leftover / CGFloat(itemsPerHorizontalRow)
+        
+    }
+    
+    @IBAction func scrollRight(sender: UIButton) {
+        if currentScroll < maxScroll {
+            currentScroll += 1
+        }
+        let width = mainCollection.frame.width
+        let width2 = mainCollection.bounds.size.width
+        let height = mainCollection.frame.height
+        let height2 = mainCollection.bounds.size.width
+        var newPoint = CGPoint(x: width * CGFloat(currentScroll), y: 0.0)
+        mainCollection.setContentOffset(newPoint, animated: false)
+    }
+    
+    @IBAction func scrollLeft(sender: UIButton) {
+        if currentScroll > 0 {
+            currentScroll -= 1
+        }
+        let width = mainCollection.frame.width
+        let width2 = mainCollection.bounds.size.width
+        let height = mainCollection.frame.height
+        let height2 = mainCollection.bounds.size.width
+        var newPoint = CGPoint(x: width * CGFloat(currentScroll), y: 0.0)
+        mainCollection.setContentOffset(newPoint, animated: false)
+    }
+
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let destination = segue.destinationViewController as! MainViewController

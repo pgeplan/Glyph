@@ -16,17 +16,24 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var navBarSettingsButton: UIBarButtonItem!
     @IBOutlet weak var mainCollection: UICollectionView!
     
+    @IBOutlet weak var scrollButtonRight: UIButton!
     var data = DataModel(isNewEmptyDataModel: false)
     var filteredData = DataModel(isNewEmptyDataModel: true)
     var tempData = DataModel(isNewEmptyDataModel: true)
     var dataToFilter: [Int] = []
+    var currentScroll = 0
+    var maxScroll = 0
+    var itemsPerPage = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if mainCollection != nil {
             mainCollection.reloadData()
+            let width = mainCollection.frame.width
+            let height = mainCollection.frame.height
+            itemsPerPage = Int(floor(width / CGFloat(100.0))) + Int(floor(height / CGFloat(100.0)))
+            maxScroll = Int(ceil(Double(data.count) / Double(itemsPerPage)))
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -48,6 +55,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         return tempData.count
     }
     
+    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         setTempData()
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("basic1", forIndexPath: indexPath) as! BasicCollectionCell
@@ -61,6 +69,44 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         tempData.speakAtIndex(indexPath.row)
 //        NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: "timerDidFire", userInfo: nil, repeats: false)
         collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        let width = mainCollection.frame.width
+        let width2 = mainCollection.bounds.size.width
+        var itemsPerHorizontalRow: Int = Int(floor(width / CGFloat(100.0)))
+        var leftover = width % CGFloat(100.0)
+        if leftover < CGFloat(30) {
+            itemsPerHorizontalRow -= 1
+            leftover += CGFloat(100.0)
+        }
+        print(leftover / CGFloat(itemsPerHorizontalRow))
+        return leftover / CGFloat(itemsPerHorizontalRow)
+        
+    }
+    
+    @IBAction func scrollRight(sender: UIButton) {
+        if currentScroll < maxScroll {
+            currentScroll += 1
+        }
+        let width = mainCollection.frame.width
+        let width2 = mainCollection.bounds.size.width
+        let height = mainCollection.frame.height
+        let height2 = mainCollection.bounds.size.width
+        var newPoint = CGPoint(x: width * CGFloat(currentScroll), y: 0.0)
+        mainCollection.setContentOffset(newPoint, animated: false)
+    }
+    
+    @IBAction func scrollLeft(sender: UIButton) {
+        if currentScroll > 0 {
+            currentScroll -= 1
+        }
+        let width = mainCollection.frame.width
+        let width2 = mainCollection.bounds.size.width
+        let height = mainCollection.frame.height
+        let height2 = mainCollection.bounds.size.width
+        var newPoint = CGPoint(x: width * CGFloat(currentScroll), y: 0.0)
+        mainCollection.setContentOffset(newPoint, animated: false)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
