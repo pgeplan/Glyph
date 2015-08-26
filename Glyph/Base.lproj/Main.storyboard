@@ -132,33 +132,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar opaque="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="6P8-7Q-OMz">
-                                <rect key="frame" x="-4" y="30" width="609" height="44"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" name="DKLemonYellowSun" family="DK Lemon Yellow Sun" pointSize="0.0"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem id="i4M-BG-I5U">
-                                        <barButtonItem key="leftBarButtonItem" title="Filter" id="sk5-TK-8CU">
-                                            <connections>
-                                                <segue destination="7JY-aA-EG5" kind="presentation" identifier="MainToFilter" modalTransitionStyle="crossDissolve" id="p9Q-2p-ejm"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Settings" id="Eax-sn-fkx">
-                                            <connections>
-                                                <segue destination="BYZ-38-t0r" kind="custom" identifier="MainToSettings" customClass="HorizontalSegueLeft" customModule="Glyph" customModuleProvider="target" id="Zob-ke-RNG"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- Glyph -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2i2-PP-y0d">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Glyph -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2i2-PP-y0d">
                                 <rect key="frame" x="193" y="30" width="214" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="214" id="935-Ee-ifv"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="DKLemonYellowSun" family="DK Lemon Yellow Sun" pointSize="33"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aec-Nh-Tfy">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aec-Nh-Tfy">
                                 <rect key="frame" x="16" y="82" width="568" height="412"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZP8-p9-IhO">
@@ -212,8 +195,52 @@
                                     <outlet property="delegate" destination="aMU-jc-qou" id="L5a-32-STp"/>
                                 </connections>
                             </collectionView>
+                            <navigationBar opaque="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="6P8-7Q-OMz">
+                                <rect key="frame" x="-4" y="30" width="608" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="1" green="0.03014565537" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="DKLemonYellowSun" family="DK Lemon Yellow Sun" pointSize="0.0"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem id="i4M-BG-I5U">
+                                        <barButtonItem key="leftBarButtonItem" title="Filter" id="sk5-TK-8CU">
+                                            <connections>
+                                                <segue destination="7JY-aA-EG5" kind="presentation" identifier="MainToFilter" modalTransitionStyle="crossDissolve" id="p9Q-2p-ejm"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Settings" id="Eax-sn-fkx">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="custom" identifier="MainToSettings" customClass="HorizontalSegueLeft" customModule="Glyph" customModuleProvider="target" id="Zob-ke-RNG"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aec-Nh-Tfy" firstAttribute="trailing" secondItem="XYz-ig-jMU" secondAttribute="trailingMargin" id="8Np-uD-vob"/>
+                            <constraint firstItem="6P8-7Q-OMz" firstAttribute="leading" secondItem="XYz-ig-jMU" secondAttribute="leadingMargin" constant="-20" id="9L4-cT-luU"/>
+                            <constraint firstItem="6P8-7Q-OMz" firstAttribute="centerX" secondItem="2i2-PP-y0d" secondAttribute="centerX" id="A6U-bB-1UL"/>
+                            <constraint firstItem="6P8-7Q-OMz" firstAttribute="top" secondItem="2i2-PP-y0d" secondAttribute="top" id="DBJ-Xq-t97"/>
+                            <constraint firstItem="u04-4o-Gnv" firstAttribute="top" secondItem="aec-Nh-Tfy" secondAttribute="bottom" constant="106" id="SLz-tk-Z7T"/>
+                            <constraint firstItem="6P8-7Q-OMz" firstAttribute="leading" secondItem="XYz-ig-jMU" secondAttribute="leadingMargin" constant="-20" id="Trs-WI-c6d"/>
+                            <constraint firstItem="6P8-7Q-OMz" firstAttribute="bottom" secondItem="2i2-PP-y0d" secondAttribute="bottom" id="XVl-go-MKM"/>
+                            <constraint firstItem="aec-Nh-Tfy" firstAttribute="top" secondItem="2i2-PP-y0d" secondAttribute="bottom" constant="8" symbolic="YES" id="dj1-9D-rc4"/>
+                            <constraint firstItem="aec-Nh-Tfy" firstAttribute="leading" secondItem="XYz-ig-jMU" secondAttribute="leadingMargin" id="gm6-l7-kqx"/>
+                            <constraint firstItem="6P8-7Q-OMz" firstAttribute="top" secondItem="qm1-tA-wfM" secondAttribute="bottom" constant="10" id="hNK-R0-Zk8"/>
+                            <constraint firstItem="aec-Nh-Tfy" firstAttribute="leading" secondItem="XYz-ig-jMU" secondAttribute="leadingMargin" id="in6-aO-5RI"/>
+                            <constraint firstItem="aec-Nh-Tfy" firstAttribute="trailing" secondItem="XYz-ig-jMU" secondAttribute="trailingMargin" id="mJ5-JB-wPt"/>
+                            <constraint firstItem="6P8-7Q-OMz" firstAttribute="centerX" secondItem="aec-Nh-Tfy" secondAttribute="centerX" id="nv5-Dc-MK9"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9L4-cT-luU"/>
+                                <exclude reference="8Np-uD-vob"/>
+                                <exclude reference="gm6-l7-kqx"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="filterButton" destination="sk5-TK-8CU" id="Hww-ov-IvM"/>
@@ -593,8 +620,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Zob-ke-RNG"/>
         <segue reference="YzA-xI-51L"/>
+        <segue reference="Zob-ke-RNG"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
