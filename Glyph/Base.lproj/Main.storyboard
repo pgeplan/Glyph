@@ -14,7 +14,6 @@
         <!--Settings View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="SettingsViewController" customModule="Glyph" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -117,6 +116,7 @@
                         <outlet property="settingsNavItem" destination="BGG-xO-WVq" id="jaa-9R-r5E"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="387" y="109"/>
         </scene>
@@ -442,12 +442,6 @@
         <!--Add Icon View Controller-->
         <scene sceneID="GXx-Cq-PGd">
             <objects>
-                <tapGestureRecognizer id="aFw-j8-rb8">
-                    <connections>
-                        <action selector="resign" destination="Zps-DQ-cQG" id="0tl-rT-BIx"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="D97-fn-MnT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Zps-DQ-cQG" customClass="AddIconViewController" customModule="Glyph" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2BC-dq-T10"/>
@@ -588,6 +582,12 @@
                         <outlet property="textField" destination="9sN-l2-gC8" id="ydv-jg-ZYA"/>
                     </connections>
                 </viewController>
+                <tapGestureRecognizer id="aFw-j8-rb8">
+                    <connections>
+                        <action selector="resign" destination="Zps-DQ-cQG" id="0tl-rT-BIx"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D97-fn-MnT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1258" y="-196"/>
         </scene>
