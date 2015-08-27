@@ -35,6 +35,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             maxScroll = Int(ceil(Double(data.count) / Double(itemsPerPage)))
             navBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
             navBar.shadowImage = UIImage()
+            self.navBarSettingsButton.title = (NSString(string: "\u{2699}") as String) + " " as String
+            if let font = UIFont(name: "Helvetica", size: 30.0){
+                self.navBarSettingsButton.setTitleTextAttributes([NSFontAttributeName: font], forState: UIControlState.Normal)
+            }
+            
         }
     }
     
