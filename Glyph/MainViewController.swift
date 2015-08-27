@@ -33,6 +33,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             let height = mainCollection.frame.height
             itemsPerPage = Int(floor(width / CGFloat(100.0))) + Int(floor(height / CGFloat(100.0)))
             maxScroll = Int(ceil(Double(data.count) / Double(itemsPerPage)))
+            navBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+            navBar.shadowImage = UIImage()
         }
     }
     
