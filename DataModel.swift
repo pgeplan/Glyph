@@ -38,8 +38,14 @@ class DataModel {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext!
         let fetchRequest = NSFetchRequest(entityName: "IconData")
-        var error: NSError?
-        let fetchResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as! [NSManagedObject]
+        var fetchResults = [NSManagedObject]?()
+        do {
+            fetchResults = try managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+
+        } catch let error {
+            print("Could not cache the response \(error)")
+            
+        }
         let results = fetchResults as [NSManagedObject]?
         return results!
         
@@ -56,7 +62,7 @@ class DataModel {
         }
         let image = UIImage(data: (iconStorage[index].valueForKey("iconImage") as? NSData)!)
         if image == nil {
-            println("error with getImage")
+            print("error with getImage")
             return image!
         } else {
             return image!
@@ -97,10 +103,16 @@ class DataModel {
         let imageInBinaryData = UIImagePNGRepresentation(image)
         icon.setValue(imageInBinaryData, forKey: "iconImage")
         icon.setValue(label, forKey: "iconLabel")
-        var error: NSError?
-        if !managedContext.save(&error) {
-            println("Could not save \(error), \(error?.userInfo)")
+
+        do {
+            try managedContext.save()
         }
+        catch let error {
+            print("Could not cache the response \(error)")
+        }
+        
+        
+    
         iconStorage.append(icon)
     }
     
@@ -113,7 +125,14 @@ class DataModel {
             let context:NSManagedObjectContext = appDel.managedObjectContext!
             context.deleteObject(iconStorage[index] as NSManagedObject)
             iconStorage.removeAtIndex(index)
-            context.save(nil)
+            
+            do {
+                try context.save()
+            }
+            catch let error {
+                print("Could not cache the response \(error)")
+            }
+    
         }
         count -= 1
     }

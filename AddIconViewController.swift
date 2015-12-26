@@ -71,8 +71,6 @@ class AddIconViewController: UIViewController, UIImagePickerControllerDelegate,U
     }
     
     func notifyUserOfError(popUpTitle: String, popUpMessage: String, popUpButtonLabel: String) -> Void {
-        let removeActionHandler = { (action:UIAlertAction!) -> Void in
-        }
         let alertController = UIAlertController(title: popUpTitle, message: popUpMessage, preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: popUpButtonLabel, style: UIAlertActionStyle.Default,handler: nil))
         self.presentViewController(alertController, animated: true, completion: nil)
@@ -93,8 +91,8 @@ class AddIconViewController: UIViewController, UIImagePickerControllerDelegate,U
         return newImage
     }
     
-    // taken from http://stackoverflow.com/questions/27833075/swift-uilabel-programmatically-updates-after-uibutton-pressed
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+     // taken from http://stackoverflow.com/questions/27833075/swift-uilabel-programmatically-updates-after-uibutton-pressed
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         let pickedImage: UIImage = (info as NSDictionary).objectForKey(UIImagePickerControllerOriginalImage) as! UIImage
         let smallPicture = scaleImageWith(pickedImage, and: CGSizeMake(250, 250))
         var sizeOfImageView:CGRect = imagePicker.frame
@@ -104,6 +102,10 @@ class AddIconViewController: UIViewController, UIImagePickerControllerDelegate,U
         img = imagePicker.image
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+   
+    
+    
     
     // Executes if the user wants to cancel (inside choose Photo)
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
@@ -115,7 +117,7 @@ class AddIconViewController: UIViewController, UIImagePickerControllerDelegate,U
             return true
         }
         else {
-            if let img = imagePicker.image {
+            if let _ = imagePicker.image {
                 if textField.text != "" {
                     data.add(imagePicker.image!, label: textField.text!)
                     return true

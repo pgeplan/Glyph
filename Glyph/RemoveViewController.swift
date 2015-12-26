@@ -62,7 +62,7 @@ class RemoveViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
         let width = mainCollection.frame.width
-        let width2 = mainCollection.bounds.size.width
+        _ = mainCollection.bounds.size.width
         var itemsPerHorizontalRow: Int = Int(floor(width / CGFloat(100.0)))
         var leftover = width % CGFloat(100.0)
         if leftover < CGFloat(30) {
@@ -79,10 +79,7 @@ class RemoveViewController: UIViewController, UICollectionViewDataSource, UIColl
             currentScroll += 1
         }
         let width = mainCollection.frame.width
-        let width2 = mainCollection.bounds.size.width
-        let height = mainCollection.frame.height
-        let height2 = mainCollection.bounds.size.width
-        var newPoint = CGPoint(x: width * CGFloat(currentScroll), y: 0.0)
+        let newPoint = CGPoint(x: width * CGFloat(currentScroll), y: 0.0)
         mainCollection.setContentOffset(newPoint, animated: false)
     }
     
@@ -91,10 +88,7 @@ class RemoveViewController: UIViewController, UICollectionViewDataSource, UIColl
             currentScroll -= 1
         }
         let width = mainCollection.frame.width
-        let width2 = mainCollection.bounds.size.width
-        let height = mainCollection.frame.height
-        let height2 = mainCollection.bounds.size.width
-        var newPoint = CGPoint(x: width * CGFloat(currentScroll), y: 0.0)
+        let newPoint = CGPoint(x: width * CGFloat(currentScroll), y: 0.0)
         mainCollection.setContentOffset(newPoint, animated: false)
     }
 

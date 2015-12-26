@@ -42,14 +42,14 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("filter", forIndexPath: indexPath) as! SelectableCell
         cell.imageView.image = data.getImage(indexPath.row)
         cell.textLabel.text = data.getLabel(indexPath.row)
-        if contains(dataToFilter, indexPath.row) {
+        if dataToFilter.contains(indexPath.row) {
             cell.checkmarked.image = UIImage(named: "checkMark.png")
         }
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if contains(dataToFilter, indexPath.row) {
+        if dataToFilter.contains(indexPath.row) {
             let cell = collectionView.cellForItemAtIndexPath(indexPath) as! SelectableCell
             cell.checkmarked.image = nil
             var counter = 0
@@ -66,12 +66,11 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
             dataToFilter.append(indexPath.row)
         }
         collectionView.deselectItemAtIndexPath(indexPath, animated: false)
-        println(dataToFilter)
+        print(dataToFilter)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
         let width = filterCollection.frame.width
-        let width2 = filterCollection.bounds.size.width
         var itemsPerHorizontalRow: Int = Int(floor(width / CGFloat(100.0)))
         var leftover = width % CGFloat(100.0)
         if leftover < CGFloat(30) {
@@ -88,10 +87,7 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
             currentScroll += 1
         }
         let width = filterCollection.frame.width
-        let width2 = filterCollection.bounds.size.width
-        let height = filterCollection.frame.height
-        let height2 = filterCollection.bounds.size.width
-        var newPoint = CGPoint(x: width * CGFloat(currentScroll), y: 0.0)
+        let newPoint = CGPoint(x: width * CGFloat(currentScroll), y: 0.0)
         filterCollection.setContentOffset(newPoint, animated: false)
     }
     
@@ -100,10 +96,7 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
             currentScroll -= 1
         }
         let width = filterCollection.frame.width
-        let width2 = filterCollection.bounds.size.width
-        let height = filterCollection.frame.height
-        let height2 = filterCollection.bounds.size.width
-        var newPoint = CGPoint(x: width * CGFloat(currentScroll), y: 0.0)
+        let newPoint = CGPoint(x: width * CGFloat(currentScroll), y: 0.0)
         filterCollection.setContentOffset(newPoint, animated: false)
     }
 
