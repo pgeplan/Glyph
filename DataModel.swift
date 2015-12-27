@@ -36,7 +36,7 @@ class DataModel {
     
     func fetchFromCoreData() -> [NSManagedObject] {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext!
+        let managedContext = appDelegate.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "IconData")
         var fetchResults = [NSManagedObject]?()
         do {
@@ -94,7 +94,7 @@ class DataModel {
     func addToIconStorage(image: UIImage, label: String) {
         let appDelegate =
         UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext!
+        let managedContext = appDelegate.managedObjectContext
         let entity =  NSEntityDescription.entityForName("IconData",
             inManagedObjectContext:
             managedContext)
@@ -122,7 +122,7 @@ class DataModel {
             labelData.removeAtIndex(index)
         } else {
             let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            let context:NSManagedObjectContext = appDel.managedObjectContext!
+            let context:NSManagedObjectContext = appDel.managedObjectContext
             context.deleteObject(iconStorage[index] as NSManagedObject)
             iconStorage.removeAtIndex(index)
             

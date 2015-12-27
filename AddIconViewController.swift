@@ -141,9 +141,9 @@ class AddIconViewController: UIViewController, UIImagePickerControllerDelegate,U
 //            //            destination.data = data
 //        }
 //        else {
-//            if let img = imagePicker.image {
+//            if let _ = imagePicker.image {
 //                if textField.text != "" {
-//                    var destination = segue.destinationViewController as! MainViewController
+//                    let destination = segue.destinationViewController as! MainViewController
 //                    data.add(imagePicker.image!, label: textField.text!)
 //                    destination.data = data
 //                }
