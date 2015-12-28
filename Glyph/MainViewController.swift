@@ -34,11 +34,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             itemsPerPage = Int(floor(width / CGFloat(100.0))) + Int(floor(height / CGFloat(100.0)))
             maxScroll = Int(ceil(Double(data.count) / Double(itemsPerPage)))
             navBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-            navBar.shadowImage = UIImage()
-            self.navBarSettingsButton.title = (NSString(string: "\u{2699}") as String) + " " as String
-            if let font = UIFont(name: "Helvetica", size: 30.0){
-                self.navBarSettingsButton.setTitleTextAttributes([NSFontAttributeName: font], forState: UIControlState.Normal)
-            }
+           
+            
             
         }
     }
@@ -68,6 +65,12 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("basic1", forIndexPath: indexPath) as! BasicCollectionCell
         cell.imageView?.image = tempData.getImage(indexPath.row)
         cell.textLabel.text = tempData.getLabel(indexPath.row)
+        cell.contentView.layer.cornerRadius = 5
+        cell.contentView.layer.masksToBounds = true
+        cell.textLabel.layer.cornerRadius = 5
+        cell.textLabel.layer.masksToBounds = true
+        
+
         return cell
     }
     
@@ -77,6 +80,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         collectionView.deselectItemAtIndexPath(indexPath, animated: true)
     }
     
+    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
         let width = mainCollection.frame.width
         var itemsPerHorizontalRow: Int = Int(floor(width / CGFloat(100.0)))
@@ -85,10 +89,13 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             itemsPerHorizontalRow -= 1
             leftover += CGFloat(100.0)
         }
+
         print(leftover / CGFloat(itemsPerHorizontalRow))
         return leftover / CGFloat(itemsPerHorizontalRow)
         
     }
+    
+    
     
     @IBAction func scrollRight(sender: UIButton) {
         if currentScroll < maxScroll {
