@@ -17,13 +17,20 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var mainCollection: UICollectionView!
     
     @IBOutlet weak var scrollButtonRight: UIButton!
+    //data source for the collectionView
     var data = DataModel(isNewEmptyDataModel: false)
     var filteredData = DataModel(isNewEmptyDataModel: true)
     var tempData = DataModel(isNewEmptyDataModel: true)
     var dataToFilter: [Int] = []
+    
+    //cell margin stuff
+    var itemsPerPage = 0
+    var spaceBetweenCells: CGFloat = 0
+    
+    //using for scrolling
     var currentScroll = 0
     var maxScroll = 0
-    var itemsPerPage = 0
+    var currentX: CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +52,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         // Dispose of any resources that can be recreated.
     }
     
+    //checking if we just came from the filter menu and have to filter stuff
     func setTempData() -> Void {
         if filteredData.isEmpty() {
             tempData = data
@@ -90,9 +98,12 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             leftover += CGFloat(100.0)
         }
 
-        print(leftover / CGFloat(itemsPerHorizontalRow))
-        return leftover / CGFloat(itemsPerHorizontalRow)
+        print(leftover / CGFloat(itemsPerHorizontalRow + 1))
+        spaceBetweenCells = leftover / CGFloat(itemsPerHorizontalRow + 1)
+        let sectionInset = UIEdgeInsets(top: CGFloat(10), left: spaceBetweenCells, bottom: CGFloat(10), right: spaceBetweenCells)
+        mainCollection.contentInset = sectionInset
         
+        return spaceBetweenCells
     }
     
     
@@ -100,18 +111,31 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBAction func scrollRight(sender: UIButton) {
         if currentScroll < maxScroll {
             currentScroll += 1
+        } else {
+            return
         }
         let width = mainCollection.frame.width
-        let newPoint = CGPoint(x: width * CGFloat(currentScroll), y: 0.0)
+        var newPoint = CGPoint(x: CGFloat(0), y: CGFloat(0))
+        if currentScroll == 1 {
+            currentX = width * CGFloat(currentScroll) - spaceBetweenCells*2
+            newPoint = CGPoint(x: currentX, y: 0.0)
+        } else {
+            currentX = currentX + width - spaceBetweenCells
+            newPoint = CGPoint(x: currentX, y: 0.0)
+        }
         mainCollection.setContentOffset(newPoint, animated: false)
     }
     
     @IBAction func scrollLeft(sender: UIButton) {
         if currentScroll > 0 {
             currentScroll -= 1
+        } else {
+            return
         }
         let width = mainCollection.frame.width
-        let newPoint = CGPoint(x: width * CGFloat(currentScroll), y: 0.0)
+        var newPoint = CGPoint(x: CGFloat(0), y: CGFloat(0))
+        currentX = currentX - width + spaceBetweenCells
+        newPoint = CGPoint(x: currentX, y: 0.0)
         mainCollection.setContentOffset(newPoint, animated: false)
     }
     
