@@ -830,7 +830,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Cards" id="XBf-YC-jhv"/>
+                    <tabBarItem key="tabBarItem" title="Cards" image="tiles" selectedImage="tiles" id="XBf-YC-jhv"/>
                     <connections>
                         <outlet property="filterButton" destination="K4f-VJ-Ynx" id="aB7-ib-RS0"/>
                         <outlet property="mainCollection" destination="SaV-Tj-A1V" id="Xxw-IB-VeR"/>
@@ -907,6 +907,7 @@
         <image name="back" width="34" height="34"/>
         <image name="forward" width="34" height="34"/>
         <image name="settings" width="25" height="25"/>
+        <image name="tiles" width="19" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Efb-Xs-Cq1"/>
