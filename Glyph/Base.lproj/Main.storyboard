@@ -9,79 +9,164 @@
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
-        <!--Settings View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="8DL-ix-5Gk">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SettingsViewController" customModule="Glyph" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vZM-Oh-BO0">
-                                <rect key="frame" x="0.0" y="20" width="606" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="2oj-pF-gPT"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Settings" id="BGG-xO-WVq">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="7qI-ge-5am">
-                                            <connections>
-                                                <segue destination="aMU-jc-qou" kind="custom" identifier="backToMain" customClass="HorizontalSegueRight" customModule="Glyph" customModuleProvider="target" id="RmW-nj-WsP"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaL-jP-ziE">
-                                <rect key="frame" x="133" y="150" width="90" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="a1o-1N-Irb"/>
-                                    <constraint firstAttribute="width" constant="90" id="wNL-WN-dv0"/>
-                                </constraints>
-                                <state key="normal" title="Remove Icon">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="9ia-46-GDw" kind="custom" identifier="Remove" customClass="HorizontalSegueRight" customModule="Glyph" customModuleProvider="target" id="mKu-fv-2yh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygd-VT-1lE">
-                                <rect key="frame" x="133" y="99" width="79" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="79" id="XTQ-cA-rHr"/>
-                                </constraints>
-                                <state key="normal" title="Add Icon"/>
-                                <connections>
-                                    <segue destination="Zps-DQ-cQG" kind="custom" identifier="AddIcon" customClass="HorizontalSegueLeft" customModule="Glyph" customModuleProvider="target" id="WRB-JO-qF7"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eaL-jP-ziE" secondAttribute="bottom" constant="420" id="6dQ-yZ-SJa"/>
-                            <constraint firstItem="vZM-Oh-BO0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Qx5-ST-Ve3"/>
-                            <constraint firstItem="vZM-Oh-BO0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Vil-x5-CPs"/>
-                            <constraint firstItem="eaL-jP-ziE" firstAttribute="leading" secondItem="Ygd-VT-1lE" secondAttribute="leading" id="WNy-zR-CfA"/>
-                            <constraint firstItem="Ygd-VT-1lE" firstAttribute="top" secondItem="vZM-Oh-BO0" secondAttribute="bottom" constant="35" id="eC5-RD-ifS"/>
-                            <constraint firstItem="Ygd-VT-1lE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="133" id="gTD-pJ-jsq"/>
-                            <constraint firstItem="eaL-jP-ziE" firstAttribute="top" secondItem="Ygd-VT-1lE" secondAttribute="bottom" constant="3" id="nCv-p3-T5n"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="vZM-Oh-BO0" secondAttribute="trailing" constant="-26" id="rnT-sY-PJl"/>
-                        </constraints>
-                    </view>
+                <navigationController id="xAI-Q9-KUl" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vb7-TV-egG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
                     <connections>
-                        <outlet property="addButton" destination="Ygd-VT-1lE" id="gtq-an-f2A"/>
-                        <outlet property="settingsBackButton" destination="7qI-ge-5am" id="Hns-hL-gqv"/>
-                        <outlet property="settingsNavBar" destination="vZM-Oh-BO0" id="JOY-CA-1tp"/>
-                        <outlet property="settingsNavItem" destination="BGG-xO-WVq" id="jaa-9R-r5E"/>
+                        <segue destination="yBO-qc-ASS" kind="relationship" relationship="rootViewController" id="SdD-oi-b5N"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RnM-9q-NVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1959" y="465"/>
+            <point key="canvasLocation" x="1694" y="1405"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="slu-qA-9JC">
+            <objects>
+                <tableViewController id="yBO-qc-ASS" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" id="0KC-h1-Bc7">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection headerTitle="Basic Settings" id="T6E-hQ-1A2">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="v2t-E8-3ZQ" userLabel="Add Tab">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v2t-E8-3ZQ" id="LZg-Kn-an6">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tiles" translatesAutoresizingMaskIntoConstraints="NO" id="rZT-3C-vR3">
+                                                    <rect key="frame" x="8" y="5" width="62" height="53"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="62" id="OvJ-6e-WNW"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVL-nw-NoP">
+                                                    <rect key="frame" x="78" y="21" width="31" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rZT-3C-vR3" firstAttribute="top" secondItem="LZg-Kn-an6" secondAttribute="topMargin" constant="-3" id="2fk-bE-mJL"/>
+                                                <constraint firstItem="RVL-nw-NoP" firstAttribute="leading" secondItem="rZT-3C-vR3" secondAttribute="trailing" constant="8" symbolic="YES" id="IOf-QY-aHz"/>
+                                                <constraint firstItem="rZT-3C-vR3" firstAttribute="leading" secondItem="LZg-Kn-an6" secondAttribute="leadingMargin" id="LTE-cO-bkO"/>
+                                                <constraint firstItem="rZT-3C-vR3" firstAttribute="centerY" secondItem="LZg-Kn-an6" secondAttribute="centerY" id="YzB-W9-ITg"/>
+                                                <constraint firstItem="RVL-nw-NoP" firstAttribute="top" secondItem="LZg-Kn-an6" secondAttribute="topMargin" constant="13" id="lMa-A3-2Mg"/>
+                                                <constraint firstItem="RVL-nw-NoP" firstAttribute="centerY" secondItem="rZT-3C-vR3" secondAttribute="centerY" id="nZX-u4-Pc9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Zps-DQ-cQG" kind="showDetail" id="Aux-EZ-798"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="DqM-5A-3Dr" userLabel="Remove Tab">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DqM-5A-3Dr" id="IVG-kn-zDq">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tiles" translatesAutoresizingMaskIntoConstraints="NO" id="shI-rU-oTj">
+                                                    <rect key="frame" x="8" y="5" width="62" height="53"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="62" id="GMN-pw-ztc"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7a8-fR-iAD">
+                                                    <rect key="frame" x="78" y="21" width="62" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="62" id="9vL-DA-xrH"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="shI-rU-oTj" firstAttribute="centerY" secondItem="IVG-kn-zDq" secondAttribute="centerY" id="HN0-ny-bMc"/>
+                                                <constraint firstItem="shI-rU-oTj" firstAttribute="top" secondItem="IVG-kn-zDq" secondAttribute="topMargin" constant="-3" id="McV-3q-4Bf"/>
+                                                <constraint firstItem="shI-rU-oTj" firstAttribute="leading" secondItem="IVG-kn-zDq" secondAttribute="leadingMargin" id="Yw4-gb-ZeT"/>
+                                                <constraint firstItem="7a8-fR-iAD" firstAttribute="centerY" secondItem="shI-rU-oTj" secondAttribute="centerY" id="lBI-aJ-hRB"/>
+                                                <constraint firstItem="7a8-fR-iAD" firstAttribute="leading" secondItem="shI-rU-oTj" secondAttribute="trailing" constant="8" symbolic="YES" id="uDv-VU-pLp"/>
+                                                <constraint firstItem="7a8-fR-iAD" firstAttribute="top" secondItem="IVG-kn-zDq" secondAttribute="topMargin" constant="13" id="vuE-mn-c4S"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="9ia-46-GDw" kind="showDetail" id="yWo-9V-d9W"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Advanced Settings" id="Jbf-we-7D4">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="FMS-83-hpu" userLabel="Basic View Mode Tab">
+                                        <rect key="frame" x="0.0" y="184" width="600" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FMS-83-hpu" id="WDY-LQ-UQl">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="63.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lq0-Bj-mb5">
+                                                    <rect key="frame" x="543" y="16" width="51" height="31"/>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Basic View Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXh-MM-29J">
+                                                    <rect key="frame" x="8" y="12" width="527" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disables Scrolling, and only displays the main tiles page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="LwM-MD-pxu">
+                                                    <rect key="frame" x="8" y="30" width="527" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="cXh-MM-29J" secondAttribute="bottom" constant="22.5" id="0Uh-Se-tq5"/>
+                                                <constraint firstItem="cXh-MM-29J" firstAttribute="leading" secondItem="WDY-LQ-UQl" secondAttribute="leadingMargin" id="1qe-wt-U3S"/>
+                                                <constraint firstItem="Lq0-Bj-mb5" firstAttribute="centerY" secondItem="WDY-LQ-UQl" secondAttribute="centerY" id="Ltt-MS-0PH"/>
+                                                <constraint firstItem="LwM-MD-pxu" firstAttribute="top" secondItem="WDY-LQ-UQl" secondAttribute="topMargin" constant="22" id="a6m-sA-nJq"/>
+                                                <constraint firstItem="Lq0-Bj-mb5" firstAttribute="trailing" secondItem="WDY-LQ-UQl" secondAttribute="trailingMargin" id="fWB-oU-7OH"/>
+                                                <constraint firstItem="cXh-MM-29J" firstAttribute="top" secondItem="WDY-LQ-UQl" secondAttribute="topMargin" constant="4" id="fvS-K6-Hxm"/>
+                                                <constraint firstItem="Lq0-Bj-mb5" firstAttribute="leading" secondItem="LwM-MD-pxu" secondAttribute="trailing" constant="8" symbolic="YES" id="wQp-Hu-6b5"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="LwM-MD-pxu" secondAttribute="bottom" constant="4.5" id="yWg-Me-tV5"/>
+                                                <constraint firstItem="Lq0-Bj-mb5" firstAttribute="leading" secondItem="cXh-MM-29J" secondAttribute="trailing" constant="8" symbolic="YES" id="yhq-ma-cgv"/>
+                                                <constraint firstItem="cXh-MM-29J" firstAttribute="leading" secondItem="LwM-MD-pxu" secondAttribute="leading" id="zPU-zq-dbT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="yBO-qc-ASS" id="2ge-KA-ak3"/>
+                            <outlet property="delegate" destination="yBO-qc-ASS" id="3fY-hC-yQk"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="Settings" id="vyY-1i-wf1">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="l3u-LV-XRt">
+                            <connections>
+                                <segue destination="n1x-23-Qc2" kind="show" id="Tqj-9F-gJm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gsz-Yb-zau" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2373" y="1405"/>
         </scene>
         <!--Basic Main View Controller-->
         <scene sceneID="GOf-1x-eXO">
@@ -116,7 +201,7 @@
                                                 </barButtonItem>
                                                 <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Eax-sn-fkx">
                                                     <connections>
-                                                        <segue destination="BYZ-38-t0r" kind="custom" identifier="MainToSettings" customClass="HorizontalSegueLeft" customModule="Glyph" customModuleProvider="target" id="Zob-ke-RNG"/>
+                                                        <segue destination="xAI-Q9-KUl" kind="show" id="qhp-iQ-rWW"/>
                                                     </connections>
                                                 </barButtonItem>
                                             </navigationItem>
@@ -275,7 +360,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b97-LC-Vaj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1041" y="894"/>
+            <point key="canvasLocation" x="947" y="912"/>
         </scene>
         <!--Remove View Controller-->
         <scene sceneID="dOO-bp-P6j">
@@ -398,6 +483,7 @@
                             <constraint firstItem="BXo-IP-to4" firstAttribute="leading" secondItem="oUm-FU-Kae" secondAttribute="leadingMargin" constant="16" id="w2D-Dl-9eq"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="mainCollection" destination="BXo-IP-to4" id="xwL-9X-LxO"/>
                         <outlet property="navBar" destination="qG5-2s-Sfg" id="Kc3-vV-cEw"/>
@@ -407,7 +493,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRe-8a-jHI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1959" y="1254"/>
+            <point key="canvasLocation" x="3140" y="1389"/>
         </scene>
         <!--Filter View Controller-->
         <scene sceneID="HAR-Nt-2bp">
@@ -549,7 +635,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eEq-it-Dfu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="-13"/>
+            <point key="canvasLocation" x="1694" y="691"/>
         </scene>
         <!--Add Icon View Controller-->
         <scene sceneID="GXx-Cq-PGd">
@@ -584,7 +670,7 @@
                                     <navigationItem title="Add Icon" id="Uxe-yx-mlV">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="5hj-BJ-bWW">
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="custom" identifier="backToSettings" customClass="HorizontalSegueRight" customModule="Glyph" customModuleProvider="target" id="pB0-7y-Loe"/>
+                                                <segue destination="yBO-qc-ASS" kind="custom" customClass="HorizontalSegueRight" id="ha0-7Y-Tnf"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -691,7 +777,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1954" y="-292"/>
+            <point key="canvasLocation" x="2368" y="691"/>
         </scene>
         <!--Cards-->
         <scene sceneID="JS2-0N-e16">
@@ -724,7 +810,7 @@
                                                 <rightBarButtonItems>
                                                     <barButtonItem image="settings" id="IDJ-kr-cUc">
                                                         <connections>
-                                                            <segue destination="BYZ-38-t0r" kind="custom" customClass="HorizontalSegueLeft" customModule="Glyph" customModuleProvider="target" id="Efb-Xs-Cq1"/>
+                                                            <segue destination="xAI-Q9-KUl" kind="show" id="m2u-3x-SNP"/>
                                                         </connections>
                                                     </barButtonItem>
                                                     <barButtonItem systemItem="organize" id="DA5-Kx-wRI"/>
@@ -907,10 +993,12 @@
         <image name="back" width="34" height="34"/>
         <image name="forward" width="34" height="34"/>
         <image name="settings" width="25" height="25"/>
-        <image name="tiles" width="19" height="19"/>
+        <image name="tiles" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Efb-Xs-Cq1"/>
-        <segue reference="RMr-eC-jNw"/>
+        <segue reference="ha0-7Y-Tnf"/>
+        <segue reference="Tqj-9F-gJm"/>
+        <segue reference="EfJ-GM-sss"/>
+        <segue reference="qhp-iQ-rWW"/>
     </inferredMetricsTieBreakers>
 </document>

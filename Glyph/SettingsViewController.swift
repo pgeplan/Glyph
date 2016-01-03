@@ -14,6 +14,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var settingsBackButton: UIBarButtonItem!
     var data = DataModel(isNewEmptyDataModel: false)
     
+    @IBOutlet weak var basicModeSwitch: UISwitch!
     
     
     override func viewDidLoad() {
