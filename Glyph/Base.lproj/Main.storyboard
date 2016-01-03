@@ -82,10 +82,10 @@
             </objects>
             <point key="canvasLocation" x="387" y="109"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Basic Main View Controller-->
         <scene sceneID="GOf-1x-eXO">
             <objects>
-                <viewController id="aMU-jc-qou" customClass="MainViewController" customModule="Glyph" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aMU-jc-qou" customClass="BasicMainViewController" customModule="Glyph" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qm1-tA-wfM"/>
                         <viewControllerLayoutGuide type="bottom" id="u04-4o-Gnv"/>

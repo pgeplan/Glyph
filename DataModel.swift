@@ -139,7 +139,7 @@ class DataModel {
     
     func speakAtIndex(index: Int) {
         let speech = AVSpeechUtterance(string: getLabel(index))
-        speech.rate = 0.1
+        speech.rate = 0.5
         speaker.speakUtterance(speech)
     }
     
