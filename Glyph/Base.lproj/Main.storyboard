@@ -964,7 +964,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Text Speech" id="QaO-PS-zQt"/>
+                    <tabBarItem key="tabBarItem" title="Text Speech" image="keyboard" id="QaO-PS-zQt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QI7-Gh-9Bp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -992,13 +992,14 @@
     <resources>
         <image name="back" width="34" height="34"/>
         <image name="forward" width="34" height="34"/>
+        <image name="keyboard" width="31" height="31"/>
         <image name="settings" width="25" height="25"/>
         <image name="tiles" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ha0-7Y-Tnf"/>
-        <segue reference="Tqj-9F-gJm"/>
         <segue reference="EfJ-GM-sss"/>
         <segue reference="qhp-iQ-rWW"/>
+        <segue reference="3sN-MF-S5d"/>
     </inferredMetricsTieBreakers>
 </document>
