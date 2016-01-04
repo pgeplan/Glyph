@@ -4,11 +4,13 @@
 
 import UIKit
 
-class AddIconViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate {
+class AddIconViewController: UITableViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate {
     var data = DataModel(isNewEmptyDataModel: false)
     // Image View attribute
     @IBOutlet var imagePicker: UIImageView!
     
+    @IBOutlet weak var previewLabel: UILabel!
+   
     var img: UIImage?
     
     @IBOutlet weak var addButton: UIButton!
@@ -42,6 +44,10 @@ class AddIconViewController: UIViewController, UIImagePickerControllerDelegate,U
         let okAction = UIAlertAction(title: "OK", style:.Default, handler: nil)
         alertVC.addAction(okAction)
         presentViewController(alertVC, animated: true, completion: nil)
+    }
+
+    @IBAction func textEdited(sender: UITextField) {
+        previewLabel.text = sender.text
     }
     
     @IBAction func chooseFromLibrary(sender: UIButton) {
@@ -94,11 +100,11 @@ class AddIconViewController: UIViewController, UIImagePickerControllerDelegate,U
      // taken from http://stackoverflow.com/questions/27833075/swift-uilabel-programmatically-updates-after-uibutton-pressed
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         let pickedImage: UIImage = (info as NSDictionary).objectForKey(UIImagePickerControllerOriginalImage) as! UIImage
-        let smallPicture = scaleImageWith(pickedImage, and: CGSizeMake(250, 250))
-        var sizeOfImageView:CGRect = imagePicker.frame
-        sizeOfImageView.size = smallPicture.size
+    
+        let sizeOfImageView:CGRect = imagePicker.frame
+      
         imagePicker.frame = sizeOfImageView
-        imagePicker.image = smallPicture
+        imagePicker.image = pickedImage
         img = imagePicker.image
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -117,7 +123,7 @@ class AddIconViewController: UIViewController, UIImagePickerControllerDelegate,U
             return true
         }
         else {
-            if let _ = imagePicker.image {
+            if let _ = imagePicker?.image {
                 if textField.text != "" {
                     data.add(imagePicker.image!, label: textField.text!)
                     return true
@@ -133,28 +139,5 @@ class AddIconViewController: UIViewController, UIImagePickerControllerDelegate,U
             }
         }
     }
-    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        
-//        if segue.identifier == "backToSettings" {
-//            //            var destination = segue.destinationViewController as! SettingsViewController
-//            //            destination.data = data
-//        }
-//        else {
-//            if let _ = imagePicker.image {
-//                if textField.text != "" {
-//                    let destination = segue.destinationViewController as! MainViewController
-//                    data.add(imagePicker.image!, label: textField.text!)
-//                    destination.data = data
-//                }
-//                else {
-//                    notifyUserOfError("Icon must have both an Image and a Name", popUpMessage: "Please add the name of the Image to the 'Image Name' box", popUpButtonLabel: "Okay")
-//                }
-//            }
-//            else {
-//                notifyUserOfError("Icon must have both an Image and a Name", popUpMessage: "Please add a photo by using the 'Take Photo' option, or by selecting an image from your device's Library", popUpButtonLabel: "Okay")
-//            }
-//        }
-//    }
     
 }

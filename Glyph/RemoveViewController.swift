@@ -94,8 +94,18 @@ class RemoveViewController: UIViewController, UICollectionViewDataSource, UIColl
 
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destination = segue.destinationViewController as! MainViewController
-        destination.data = data
+        
+        // Executes if we are in Basic Mode
+        if let destination = segue.destinationViewController as? MainViewController {
+            destination.data = data
+        }
+        
+        // Executes if we are in normal mode
+        else {
+            let tabBarDest = segue.destinationViewController as? UITabBarController
+            let cardsDest = tabBarDest?.viewControllers![0] as? MainViewController
+            cardsDest?.data = data
+        }
     }
 }
 
