@@ -23,7 +23,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     //cell margin stuff
     var itemsPerPage = 0
-    var spaceBetweenCells: CGFloat = 0
+    
+    //the ultimate spacing variable, play with this if you want different margins
+    var spaceBetweenCells: CGFloat = 15
+    //minimum size of any cell
+    var sizeOfCells = CGSize(width: 100.0, height: 120.0)
     
     //using for scrolling
     var currentScroll = 0
@@ -36,7 +40,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             mainCollection.reloadData()
             let width = mainCollection.frame.width
             let height = mainCollection.frame.height
-            itemsPerPage = Int(floor(width / CGFloat(100.0))) + Int(floor(height / CGFloat(100.0)))
+            itemsPerPage = Int(floor(width / CGFloat(100.0))) * Int(floor(height / CGFloat(120.0)))
             maxScroll = Int(ceil(Double(data.count) / Double(itemsPerPage)))
             navBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
             
@@ -76,8 +80,29 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.textLabel.layer.cornerRadius = 5
         cell.textLabel.layer.masksToBounds = true
         
-        
         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+            let width = mainCollection.frame.width
+            var itemsPerRow = 2
+            var addedWidth = CGFloat(0.0)
+            var leftover: CGFloat
+            while (addedWidth == 0) {
+                leftover = width - (CGFloat(itemsPerRow * 100) + CGFloat(itemsPerRow + 1) * spaceBetweenCells)
+                if leftover < CGFloat(100) + spaceBetweenCells {
+                    addedWidth = leftover / CGFloat(itemsPerRow)
+                } else {
+                    itemsPerRow += 1
+                }
+            }
+            let finalWidth = 100 + addedWidth
+            let finalHeight = finalWidth * 1.2
+            let size = CGSize(width: finalWidth, height: finalHeight)
+            sizeOfCells = size
+            return size
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -88,23 +113,27 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-        let width = mainCollection.frame.width
-        var itemsPerHorizontalRow: Int = Int(floor(width / CGFloat(100.0)))
-        var leftover = width % CGFloat(100.0)
-        if leftover < CGFloat(30) {
-            itemsPerHorizontalRow -= 1
-            leftover += CGFloat(100.0)
-        }
-        
-        print(leftover / CGFloat(itemsPerHorizontalRow + 1))
-        spaceBetweenCells = leftover / CGFloat(itemsPerHorizontalRow + 1)
-        let sectionInset = UIEdgeInsets(top: CGFloat(10), left: spaceBetweenCells, bottom: CGFloat(10), right: spaceBetweenCells)
+//        let width = mainCollection.frame.width
+//        var itemsPerHorizontalRow: Int = Int(floor(width / CGFloat(100.0)))
+//        var leftover = width % CGFloat(100.0)
+//        if leftover < CGFloat(30) {
+//            itemsPerHorizontalRow -= 1
+//            leftover += CGFloat(100.0)
+//        }
+//        
+//        print(leftover / CGFloat(itemsPerHorizontalRow + 1))
+//        spaceBetweenCells = leftover / CGFloat(itemsPerHorizontalRow + 1)
+        let sectionInset = UIEdgeInsets(top: spaceBetweenCells, left: spaceBetweenCells, bottom: spaceBetweenCells, right: spaceBetweenCells)
         mainCollection.contentInset = sectionInset
-        
+//
         return spaceBetweenCells
     }
     
-    
+    func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+            return spaceBetweenCells
+    }
     
 
     
