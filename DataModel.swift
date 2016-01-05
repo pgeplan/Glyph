@@ -30,6 +30,7 @@ class DataModel {
             imageData = []
             labelData = []
             iconStorage = fetchFromCoreData()
+            loadImages()
             count = iconStorage.count
         }
     }
@@ -56,17 +57,24 @@ class DataModel {
         return iconStorage.count == 0 && imageData.count == 0
     }
     
+    func loadImages() {
+        for item in iconStorage {
+            imageData.append(UIImage(data: (item.valueForKey("iconImage") as? NSData)!)!)
+        }
+    }
+    
     func getImage(index: Int) -> UIImage {
-        if independent {
-            return imageData[index]
-        }
-        let image = UIImage(data: (iconStorage[index].valueForKey("iconImage") as? NSData)!)
-        if image == nil {
-            print("error with getImage")
-            return image!
-        } else {
-            return image!
-        }
+//        if independent {
+//            return imageData[index]
+//        }
+//        let image = UIImage(data: (iconStorage[index].valueForKey("iconImage") as? NSData)!)
+//        if image == nil {
+//            print("error with getImage")
+//            return image!
+//        } else {
+//            return image!
+//        }
+        return imageData[index]
     }
     
     func getLabel(index: Int) -> String {

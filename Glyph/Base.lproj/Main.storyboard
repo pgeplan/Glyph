@@ -66,7 +66,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="thF-Dc-QMq" kind="show" id="zYg-Ct-lTL"/>
+                                            <segue destination="thF-Dc-QMq" kind="show" customClass="HorizontalSegueLeft" customModule="Glyph" customModuleProvider="target" id="zYg-Ct-lTL"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="DqM-5A-3Dr" userLabel="Remove Tab">
@@ -102,7 +102,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="9ia-46-GDw" kind="showDetail" id="yWo-9V-d9W"/>
+                                            <segue destination="9ia-46-GDw" kind="showDetail" customClass="HorizontalSegueRight" customModule="Glyph" customModuleProvider="target" id="yWo-9V-d9W"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -395,12 +395,12 @@
                                                 <barButtonItem key="leftBarButtonItem" title="Back" id="wlY-fC-Opq">
                                                     <color key="tintColor" red="1" green="0.092421955149999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
-                                                        <segue destination="yBO-qc-ASS" kind="showDetail" id="V0d-eT-OMV"/>
+                                                        <segue destination="yBO-qc-ASS" kind="showDetail" customClass="HorizontalSegueLeft" customModule="Glyph" customModuleProvider="target" id="V0d-eT-OMV"/>
                                                     </connections>
                                                 </barButtonItem>
                                                 <barButtonItem key="rightBarButtonItem" title="Done" id="UzZ-9a-7o7">
                                                     <connections>
-                                                        <segue destination="LgM-Kx-QJl" kind="showDetail" id="iw9-Wp-gCc"/>
+                                                        <segue destination="LgM-Kx-QJl" kind="presentation" modalTransitionStyle="crossDissolve" id="iw9-Wp-gCc"/>
                                                     </connections>
                                                 </barButtonItem>
                                             </navigationItem>
@@ -496,7 +496,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRe-8a-jHI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2345" y="2425"/>
+            <point key="canvasLocation" x="2189" y="2519"/>
         </scene>
         <!--Filter View Controller-->
         <scene sceneID="HAR-Nt-2bp">
@@ -1107,7 +1107,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <state key="normal" title="Add Icon"/>
                                                     <connections>
-                                                        <segue destination="LgM-Kx-QJl" kind="presentation" id="x8o-OM-whW"/>
+                                                        <segue destination="LgM-Kx-QJl" kind="presentation" customClass="HorizontalSegueRight" customModule="Glyph" customModuleProvider="target" id="x8o-OM-whW"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1131,7 +1131,7 @@
                     <navigationItem key="navigationItem" title="Add Icon" id="F03-cW-aAD">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="qWf-UR-Pfp">
                             <connections>
-                                <segue destination="yBO-qc-ASS" kind="show" identifier="backToSettings" id="F0H-1C-ZAY"/>
+                                <segue destination="yBO-qc-ASS" kind="show" identifier="backToSettings" customClass="HorizontalSegueRight" customModule="Glyph" customModuleProvider="target" id="F0H-1C-ZAY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1156,9 +1156,9 @@
         <image name="tiles" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SdD-oi-b5N"/>
-        <segue reference="qhp-iQ-rWW"/>
-        <segue reference="wAX-Pj-gST"/>
+        <segue reference="m2u-3x-SNP"/>
+        <segue reference="iw9-Wp-gCc"/>
+        <segue reference="V0d-eT-OMV"/>
         <segue reference="2kh-Na-8kJ"/>
     </inferredMetricsTieBreakers>
 </document>
