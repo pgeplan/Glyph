@@ -28,7 +28,7 @@
         <!--Settings-->
         <scene sceneID="slu-qA-9JC">
             <objects>
-                <tableViewController id="yBO-qc-ASS" sceneMemberID="viewController">
+                <tableViewController id="yBO-qc-ASS" customClass="SettingsViewController" customModule="Glyph" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" id="0KC-h1-Bc7">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,9 +116,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="63.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lq0-Bj-mb5">
-                                                    <rect key="frame" x="543" y="16" width="51" height="31"/>
-                                                </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Basic View Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXh-MM-29J">
                                                     <rect key="frame" x="8" y="12" width="527" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -131,6 +128,9 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lq0-Bj-mb5">
+                                                    <rect key="frame" x="543" y="16" width="51" height="31"/>
+                                                </switch>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="cXh-MM-29J" secondAttribute="bottom" constant="22.5" id="0Uh-Se-tq5"/>
@@ -158,11 +158,16 @@
                     <navigationItem key="navigationItem" title="Settings" id="vyY-1i-wf1">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="l3u-LV-XRt">
                             <connections>
-                                <segue destination="LgM-Kx-QJl" kind="show" customClass="HorizontalSegueRight" customModule="Glyph" customModuleProvider="target" id="Sht-we-axo"/>
+                                <action selector="backButton:" destination="yBO-qc-ASS" id="xj0-Rz-Ede"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="basicModeSwitch" destination="Lq0-Bj-mb5" id="nIj-yH-eLA"/>
+                        <segue destination="LgM-Kx-QJl" kind="show" identifier="settingsToMain" customClass="HorizontalSegueRight" customModule="Glyph" customModuleProvider="target" id="pQ6-bS-7Ov"/>
+                        <segue destination="aMU-jc-qou" kind="custom" identifier="settingsToBasic" customClass="HorizontalSegueRight" customModule="Glyph" customModuleProvider="target" id="zgz-TQ-JV4"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gsz-Yb-zau" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -855,6 +860,7 @@
         <scene sceneID="gYo-Cp-ChJ">
             <objects>
                 <tabBarController id="LgM-Kx-QJl" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="KWY-TM-eLA"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="vD5-bP-ekl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1150,9 +1156,9 @@
         <image name="tiles" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="V0d-eT-OMV"/>
+        <segue reference="SdD-oi-b5N"/>
+        <segue reference="qhp-iQ-rWW"/>
         <segue reference="wAX-Pj-gST"/>
-        <segue reference="p9Q-2p-ejm"/>
-        <segue reference="m2u-3x-SNP"/>
+        <segue reference="2kh-Na-8kJ"/>
     </inferredMetricsTieBreakers>
 </document>
