@@ -103,15 +103,16 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destination = segue.destinationViewController as! MainViewController
+        let destination = segue.destinationViewController as! UITabBarController
+        let cardsDest = destination.viewControllers![0] as? MainViewController
         if segue.identifier == "FilterToMain" {
             makeFilteredDataArray()
-            destination.dataToFilter = dataToFilter
+            cardsDest!.dataToFilter = dataToFilter
         }
         else if segue.identifier == "CancelFilterToMain" {
             // Do Nothing (May need to change)
         }
-        destination.filteredData = filteredData
+        cardsDest!.filteredData = filteredData
         //        destination.data = data
         
     }
