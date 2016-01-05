@@ -10,7 +10,7 @@ import UIKit
 
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var filterButton: UIBarButtonItem!
+
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var navBarTitle: UINavigationItem!
     @IBOutlet weak var navBarSettingsButton: UIBarButtonItem!
@@ -42,7 +42,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             let height = mainCollection.frame.height
             itemsPerPage = Int(floor(width / CGFloat(100.0))) * Int(floor(height / CGFloat(120.0)))
             maxScroll = Int(ceil(Double(data.count) / Double(itemsPerPage)))
-            navBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+            
             
             
             
@@ -113,19 +113,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-//        let width = mainCollection.frame.width
-//        var itemsPerHorizontalRow: Int = Int(floor(width / CGFloat(100.0)))
-//        var leftover = width % CGFloat(100.0)
-//        if leftover < CGFloat(30) {
-//            itemsPerHorizontalRow -= 1
-//            leftover += CGFloat(100.0)
-//        }
-//        
-//        print(leftover / CGFloat(itemsPerHorizontalRow + 1))
-//        spaceBetweenCells = leftover / CGFloat(itemsPerHorizontalRow + 1)
         let sectionInset = UIEdgeInsets(top: spaceBetweenCells, left: spaceBetweenCells, bottom: spaceBetweenCells, right: spaceBetweenCells)
         mainCollection.contentInset = sectionInset
-//
         return spaceBetweenCells
     }
     
