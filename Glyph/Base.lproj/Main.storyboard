@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LgM-Kx-QJl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LgM-Kx-QJl">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -355,7 +355,6 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="filterButton" destination="sk5-TK-8CU" id="Hww-ov-IvM"/>
                         <outlet property="mainCollection" destination="aec-Nh-Tfy" id="wn1-GE-hTo"/>
                         <outlet property="navBar" destination="6P8-7Q-OMz" id="NB5-14-uje"/>
                         <outlet property="navBarSettingsButton" destination="Eax-sn-fkx" id="y2s-QQ-2iG"/>
@@ -1131,7 +1130,7 @@
                     <navigationItem key="navigationItem" title="Add Icon" id="F03-cW-aAD">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="qWf-UR-Pfp">
                             <connections>
-                                <segue destination="yBO-qc-ASS" kind="show" identifier="backToSettings" customClass="HorizontalSegueRight" customModule="Glyph" customModuleProvider="target" id="F0H-1C-ZAY"/>
+                                <segue destination="xAI-Q9-KUl" kind="show" identifier="backToSettings" customClass="HorizontalSegueRight" customModule="Glyph" customModuleProvider="target" id="6MX-ja-vH4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1156,9 +1155,9 @@
         <image name="tiles" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="m2u-3x-SNP"/>
-        <segue reference="iw9-Wp-gCc"/>
+        <segue reference="6MX-ja-vH4"/>
         <segue reference="V0d-eT-OMV"/>
-        <segue reference="2kh-Na-8kJ"/>
+        <segue reference="p9Q-2p-ejm"/>
+        <segue reference="x8o-OM-whW"/>
     </inferredMetricsTieBreakers>
 </document>
