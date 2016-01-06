@@ -16,6 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainView = mainStoryboard.instantiateViewControllerWithIdentifier("main")
+        let basicView = mainStoryboard.instantiateViewControllerWithIdentifier("basic")
+        if userDefaults.boolForKey("basicMode") {
+            self.window!.rootViewController = basicView
+        } else {
+            self.window!.rootViewController = mainView
+        }
+        self.window!.makeKeyAndVisible()
         return true
     }
     
