@@ -40,10 +40,18 @@ class RemoveViewController: MainViewController {
         alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default,handler: nil))
         self.presentViewController(alertController, animated: true, completion: nil)
     }
-
+    
+    @IBAction func doneButton(sender: UIButton) {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let basic = userDefaults.boolForKey("basicMode")
+        if basic {
+            performSegueWithIdentifier("removeToBasic", sender: self)
+        } else {
+            performSegueWithIdentifier("removeToMain", sender: self)
+        }
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
         // Executes if we are in Basic Mode
         if let destination = segue.destinationViewController as? MainViewController {
             destination.data = data

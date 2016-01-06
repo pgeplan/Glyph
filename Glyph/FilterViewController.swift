@@ -100,20 +100,40 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
         filterCollection.setContentOffset(newPoint, animated: false)
     }
 
+    @IBAction func filterButton(sender: UIButton) {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let basic = userDefaults.boolForKey("basicMode")
+        if basic {
+            performSegueWithIdentifier("filterToBasic", sender: self)
+        } else {
+            performSegueWithIdentifier("filterToMain", sender: self)
+        }
+    }
     
+    @IBAction func cancelButton(sender: UIButton) {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let basic = userDefaults.boolForKey("basicMode")
+        if basic {
+            performSegueWithIdentifier("cancelFilterToBasic", sender: self)
+        } else {
+            performSegueWithIdentifier("cancelFilterToMain", sender: self)
+        }
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destination = segue.destinationViewController as! UITabBarController
-        let cardsDest = destination.viewControllers![0] as? MainViewController
-        if segue.identifier == "FilterToMain" {
+        
+        if segue.identifier == "filterToMain" {
+            let tempDestination = segue.destinationViewController as! UITabBarController
+            let destination = (tempDestination.viewControllers![0] as? MainViewController)!
             makeFilteredDataArray()
-            cardsDest!.dataToFilter = dataToFilter
+            destination.dataToFilter = dataToFilter
+            destination.filteredData = filteredData
+        } else if segue.identifier == "filterToBasic" {
+            let destination = segue.destinationViewController as! BasicMainViewController
+            makeFilteredDataArray()
+            destination.dataToFilter = dataToFilter
+            destination.filteredData = filteredData
         }
-        else if segue.identifier == "CancelFilterToMain" {
-            // Do Nothing (May need to change)
-        }
-        cardsDest!.filteredData = filteredData
-        //        destination.data = data
         
     }
     

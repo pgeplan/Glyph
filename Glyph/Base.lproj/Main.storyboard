@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LgM-Kx-QJl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LgM-Kx-QJl">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -23,7 +23,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RnM-9q-NVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1618" y="1697"/>
+            <point key="canvasLocation" x="1628" y="1741"/>
         </scene>
         <!--Settings-->
         <scene sceneID="slu-qA-9JC">
@@ -171,7 +171,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gsz-Yb-zau" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2345" y="1709"/>
+            <point key="canvasLocation" x="2471" y="1735"/>
         </scene>
         <!--Basic Main View Controller-->
         <scene sceneID="GOf-1x-eXO">
@@ -206,7 +206,7 @@
                                                 </barButtonItem>
                                                 <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Eax-sn-fkx">
                                                     <connections>
-                                                        <segue destination="xAI-Q9-KUl" kind="show" id="qhp-iQ-rWW"/>
+                                                        <segue destination="xAI-Q9-KUl" kind="show" customClass="HorizontalSegueLeft" customModule="Glyph" customModuleProvider="target" id="qhp-iQ-rWW"/>
                                                     </connections>
                                                 </barButtonItem>
                                             </navigationItem>
@@ -364,7 +364,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b97-LC-Vaj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="671" y="912"/>
+            <point key="canvasLocation" x="669" y="932"/>
         </scene>
         <!--Remove View Controller-->
         <scene sceneID="dOO-bp-P6j">
@@ -394,12 +394,12 @@
                                                 <barButtonItem key="leftBarButtonItem" title="Back" id="wlY-fC-Opq">
                                                     <color key="tintColor" red="1" green="0.092421955149999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
-                                                        <segue destination="yBO-qc-ASS" kind="showDetail" customClass="HorizontalSegueLeft" customModule="Glyph" customModuleProvider="target" id="V0d-eT-OMV"/>
+                                                        <segue destination="xAI-Q9-KUl" kind="show" customClass="HorizontalSegueLeft" customModule="Glyph" customModuleProvider="target" id="fkB-bj-ncI"/>
                                                     </connections>
                                                 </barButtonItem>
                                                 <barButtonItem key="rightBarButtonItem" title="Done" id="UzZ-9a-7o7">
                                                     <connections>
-                                                        <segue destination="LgM-Kx-QJl" kind="presentation" modalTransitionStyle="crossDissolve" id="iw9-Wp-gCc"/>
+                                                        <action selector="doneButton:" destination="9ia-46-GDw" id="dmM-I0-vTn"/>
                                                     </connections>
                                                 </barButtonItem>
                                             </navigationItem>
@@ -491,11 +491,13 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="mainCollection" destination="0J1-sA-d9B" id="Zug-u9-mY6"/>
+                        <segue destination="LgM-Kx-QJl" kind="presentation" identifier="removeToMain" modalTransitionStyle="crossDissolve" id="Nnc-C2-M3c"/>
+                        <segue destination="aMU-jc-qou" kind="presentation" identifier="removeToBasic" modalTransitionStyle="crossDissolve" id="aaN-ha-iS0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRe-8a-jHI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2189" y="2519"/>
+            <point key="canvasLocation" x="1862" y="2559"/>
         </scene>
         <!--Filter View Controller-->
         <scene sceneID="HAR-Nt-2bp">
@@ -515,12 +517,12 @@
                                     <navigationItem title="Select Images to Filter" id="16g-VA-GFw">
                                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="LSi-4K-hWn">
                                             <connections>
-                                                <segue destination="LgM-Kx-QJl" kind="presentation" identifier="CancelFilterToMain" modalTransitionStyle="crossDissolve" id="giC-JF-RG2"/>
+                                                <action selector="cancelButton:" destination="7JY-aA-EG5" id="RrO-yw-zbF"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Filter" id="fGd-pr-Y4s">
                                             <connections>
-                                                <segue destination="LgM-Kx-QJl" kind="presentation" identifier="FilterToMain" modalTransitionStyle="crossDissolve" id="wAX-Pj-gST"/>
+                                                <action selector="filterButton:" destination="7JY-aA-EG5" id="pxX-ds-ebk"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -633,11 +635,15 @@
                     </view>
                     <connections>
                         <outlet property="filterCollection" destination="yoo-6u-ahU" id="cwU-O9-529"/>
+                        <segue destination="LgM-Kx-QJl" kind="presentation" identifier="filterToMain" modalTransitionStyle="crossDissolve" id="ahq-qE-1YD"/>
+                        <segue destination="LgM-Kx-QJl" kind="presentation" identifier="cancelFilterToMain" modalTransitionStyle="crossDissolve" id="nx2-hj-1gF"/>
+                        <segue destination="aMU-jc-qou" kind="presentation" identifier="filterToBasic" modalTransitionStyle="crossDissolve" id="a2p-he-euZ"/>
+                        <segue destination="aMU-jc-qou" kind="presentation" identifier="cancelFilterToBasic" modalTransitionStyle="crossDissolve" id="Idq-D4-V0K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eEq-it-Dfu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="671" y="209"/>
+            <point key="canvasLocation" x="479" y="161"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eZq-Ff-Bsa">
@@ -687,7 +693,7 @@
                                                 <barButtonItem key="leftBarButtonItem" title="Filter" id="K4f-VJ-Ynx">
                                                     <color key="tintColor" red="1" green="0.092421955149999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
-                                                        <segue destination="7JY-aA-EG5" kind="presentation" id="2kh-Na-8kJ"/>
+                                                        <segue destination="7JY-aA-EG5" kind="presentation" modalTransitionStyle="crossDissolve" id="2kh-Na-8kJ"/>
                                                     </connections>
                                                 </barButtonItem>
                                                 <rightBarButtonItems>
@@ -1106,7 +1112,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <state key="normal" title="Add Icon"/>
                                                     <connections>
-                                                        <segue destination="LgM-Kx-QJl" kind="presentation" customClass="HorizontalSegueRight" customModule="Glyph" customModuleProvider="target" id="x8o-OM-whW"/>
+                                                        <action selector="doneButton:" destination="kJ5-RO-XY5" eventType="touchUpInside" id="uDJ-7F-muC"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1140,11 +1146,13 @@
                         <outlet property="imagePicker" destination="IBz-Wf-eeI" id="xe6-nh-OP6"/>
                         <outlet property="previewLabel" destination="mkx-bn-VUb" id="qJA-r1-vaE"/>
                         <outlet property="textField" destination="UZG-pK-0oT" id="zmk-Uq-VS0"/>
+                        <segue destination="aMU-jc-qou" kind="presentation" identifier="addToBasic" customClass="HorizontalSegueRight" customModule="Glyph" customModuleProvider="target" id="Zm5-a5-gqS"/>
+                        <segue destination="LgM-Kx-QJl" kind="presentation" identifier="addToMain" customClass="HorizontalSegueRight" customModule="Glyph" customModuleProvider="target" id="j8F-ca-ydw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b2S-ML-JjF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3017" y="1009"/>
+            <point key="canvasLocation" x="3201" y="661"/>
         </scene>
     </scenes>
     <resources>
@@ -1155,9 +1163,9 @@
         <image name="tiles" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6MX-ja-vH4"/>
-        <segue reference="V0d-eT-OMV"/>
         <segue reference="p9Q-2p-ejm"/>
-        <segue reference="x8o-OM-whW"/>
+        <segue reference="Idq-D4-V0K"/>
+        <segue reference="qhp-iQ-rWW"/>
+        <segue reference="nx2-hj-1gF"/>
     </inferredMetricsTieBreakers>
 </document>

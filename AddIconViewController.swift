@@ -3,6 +3,7 @@
 //  Glyph
 
 import UIKit
+import Foundation
 
 class AddIconViewController: UITableViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate {
     var data = DataModel(isNewEmptyDataModel: false)
@@ -116,6 +117,19 @@ class AddIconViewController: UITableViewController, UIImagePickerControllerDeleg
     // Executes if the user wants to cancel (inside choose Photo)
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func doneButton(sender: UIButton) {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let basic = userDefaults.boolForKey("basicMode")
+        //identifier doesn't matter here
+        if shouldPerformSegueWithIdentifier("", sender: self) {
+            if basic {
+                performSegueWithIdentifier("addToBasic", sender: self)
+            } else {
+                performSegueWithIdentifier("addToMain", sender: self)
+            }
+        }
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
