@@ -139,7 +139,8 @@ class AddIconViewController: UITableViewController, UIImagePickerControllerDeleg
         else {
             if let _ = imagePicker?.image {
                 if textField.text != "" {
-                    data.add(imagePicker.image!, label: textField.text!)
+                    //folder stuff
+                    data.add(imagePicker.image!, label: textField.text!, folder: "General")
                     return true
                 }
                 else {

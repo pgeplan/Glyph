@@ -17,6 +17,7 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
     var currentScroll = 0
     var maxScroll = 0
     var itemsPerPage = 0
+    var folder: String = "gerneral"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +41,8 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("filter", forIndexPath: indexPath) as! SelectableCell
-        cell.imageView.image = data.getImage(indexPath.row)
-        cell.textLabel.text = data.getLabel(indexPath.row)
+        cell.imageView.image = data.getImage(indexPath.row, folder: folder)
+        cell.textLabel.text = data.getLabel(indexPath.row, folder: folder)
         if dataToFilter.contains(indexPath.row) {
             cell.checkmarked.image = UIImage(named: "checkMark.png")
         }
@@ -139,7 +140,7 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     private func makeFilteredDataArray() -> Void {
         for i in dataToFilter {
-            filteredData.add(data.getImage(i), label: data.getLabel(i))
+            filteredData.add(data.getImage(i, folder: folder), label: data.getLabel(i, folder: folder), folder: folder)
         }
     }
     

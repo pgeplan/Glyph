@@ -12,7 +12,7 @@ class FolderTableViewController: UITableViewController {
 
     
     // temporary folder names for testing
-    var folders = ["Greetings", "Food", "Places", "Activities", "Drinks", "Friends", "Daily Tasks"]
+    var folders = ["General", "Greetings", "Food", "Places", "Activities", "Drinks", "Friends", "Daily Tasks"]
     
 
     

@@ -27,6 +27,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     var filteredData = DataModel(isNewEmptyDataModel: true)
     var tempData = DataModel(isNewEmptyDataModel: true)
     var dataToFilter: [Int] = []
+    var folder: String = "General"
     
     //cell margin stuff
     var itemsPerPage = 0
@@ -80,8 +81,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         setTempData()
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("basic1", forIndexPath: indexPath) as! BasicCollectionCell
-        cell.imageView?.image = tempData.getImage(indexPath.row)
-        cell.textLabel.text = tempData.getLabel(indexPath.row)
+        cell.imageView?.image = tempData.getImage(indexPath.row, folder: folder)
+        cell.textLabel.text = tempData.getLabel(indexPath.row, folder: folder)
         cell.contentView.layer.cornerRadius = 5
         cell.contentView.layer.masksToBounds = true
         cell.textLabel.layer.cornerRadius = 5
@@ -114,7 +115,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         setTempData()
-        tempData.speakAtIndex(indexPath.row)
+        tempData.speakAtIndex(indexPath.row, folder: folder)
         collectionView.deselectItemAtIndexPath(indexPath, animated: true)
     }
     
