@@ -8,13 +8,20 @@
 import Foundation
 import UIKit
 
-class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate {
+class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate {
     
-
+    //MARK: - Outlets
+    
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var navBarTitle: UINavigationItem!
     @IBOutlet weak var navBarSettingsButton: UIBarButtonItem!
     @IBOutlet weak var mainCollection: UICollectionView!
+    
+    @IBOutlet weak var folderButton: UIBarButtonItem!
+
+
+    //MARK: - DataSource
+    
     //data source for the collectionView
     var data = DataModel(isNewEmptyDataModel: false)
     var filteredData = DataModel(isNewEmptyDataModel: true)
@@ -34,6 +41,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     var maxScroll = 0
     var currentX: CGFloat = 0
     
+    //MARK: - ViewController LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if mainCollection != nil {
@@ -42,10 +51,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             let height = mainCollection.frame.height
             itemsPerPage = Int(floor(width / CGFloat(100.0))) * Int(floor(height / CGFloat(120.0)))
             maxScroll = Int(ceil(Double(data.count) / Double(itemsPerPage)))
-            
-            
-            
-            
         }
     }
     
@@ -63,6 +68,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             tempData = filteredData
         }
     }
+    
+    //MARK: CollectionView methods
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         setTempData()
@@ -124,22 +131,29 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             return spaceBetweenCells
     }
     
-
+    //MARK: Segues
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if segue.identifier == "MainToSettings" {
-            //            let destination = segue.destinationViewController as! SettingsViewController
-            //            destination.data = data
+        if let identifier = segue.identifier {
+            switch identifier {
+                case "MainToFilter":
+                    let destination = segue.destinationViewController as! FilterViewController
+                    destination.data = data
+                    destination.dataToFilter = dataToFilter
+                case "PopOver":
+                    
+                    let popoverViewController = segue.destinationViewController as! FolderTableViewController
+                   
+                    popoverViewController.modalPresentationStyle = UIModalPresentationStyle.Popover
+                    popoverViewController.popoverPresentationController!.delegate = self
+                default: break
+            
+            }
         }
-            // Need to add to this once Anwar finishes Filter
-        else if segue.identifier == "MainToFilter" {
-            let destination = segue.destinationViewController as! FilterViewController
-            destination.data = data
-            destination.dataToFilter = dataToFilter
-        }
-        
-        
     }
     
+    // Delegate method of Popover Presenter Delegate
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.None
+    }
 }
