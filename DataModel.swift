@@ -59,19 +59,20 @@ class DataModel {
     func fillDict() {
         for item in iconStorage {
             let temp = item.valueForKey("folder") as! String
-            print("++++++++")
-            print(temp)
-            print("+++++++")
             if folderDict[temp] == nil {
                 folderDict[temp] = (images: [UIImage](), labels: [String]())
             }
             folderDict[temp]!.labels.append(item.valueForKey("iconLabel") as! String)
             folderDict[temp]!.images.append(UIImage(data: (item.valueForKey("iconImage") as? NSData)!)!)
-            
         }
-        print("fillDict")
-        print(folderDict)
-        print("fillDict")
+    }
+    
+    func countForFolder(folder: String) -> Int {
+        if folderDict[folder] == nil {
+            return 0
+        } else {
+            return folderDict[folder]!.labels.count
+        }
     }
 
     
@@ -122,13 +123,6 @@ class DataModel {
             }
             folderDict[folder]!.images.append(image)
             folderDict[folder]!.labels.append(label)
-            print(folder)
-            print("\n")
-            print(folderDict)
-            print("\n")
-            print(folderDict[folder])
-            print("\n")
-            print(folderDict[folder]!)
         }
         count += 1
     }
@@ -153,9 +147,6 @@ class DataModel {
         catch let error {
             print("Could not cache the response \(error)")
         }
-        
-        
-    
         iconStorage.append(icon)
     }
     

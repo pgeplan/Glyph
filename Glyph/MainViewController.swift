@@ -74,7 +74,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         setTempData()
-        return tempData.count
+        return tempData.countForFolder(folder)
     }
     
     
