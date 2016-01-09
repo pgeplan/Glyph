@@ -29,10 +29,10 @@ class DataModel {
         labelData = []
         if independent == false {
             iconStorage = fetchFromCoreData()
-//            loadImages()
+
             fillDict()
             count = iconStorage.count
-//            removeAll()
+
         }
     }
     

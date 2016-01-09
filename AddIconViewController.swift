@@ -5,8 +5,13 @@
 import UIKit
 import Foundation
 
-class AddIconViewController: UITableViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate {
+class AddIconViewController: UITableViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     var data = DataModel(isNewEmptyDataModel: false)
+    
+    // delete when we get folders working
+    var folders = ["please", "delete", "me", "soon"];
+    
+    @IBOutlet weak var folderTextField: UITextField!
     // Image View attribute
     @IBOutlet var imagePicker: UIImageView!
     
@@ -32,14 +37,31 @@ class AddIconViewController: UITableViewController, UIImagePickerControllerDeleg
         }
     }
     
+    
     func returnImage() -> UIImage {
         return imagePicker.image!
     }
     
-    func returnImageName() -> String {
-        return textField.text!
+    func returnImageName() -> String? {
+        if textField.text == "" {
+            return nil
+        }
+        return textField.text
     }
     
+    func returnFolderName() -> String {
+        if let folderName = folderTextField.text {
+            if folderName == "" {
+                return "General"
+            }
+            else {
+                return folderName
+            }
+        }
+        return "General"
+    }
+    
+    // Alert if device doesn't have camera button
     func noCamera(){
         let alertVC = UIAlertController(title: "Camera Feature Not Available", message: "This device does not have a camera", preferredStyle: .Alert)
         let okAction = UIAlertAction(title: "OK", style:.Default, handler: nil)
@@ -66,6 +88,10 @@ class AddIconViewController: UITableViewController, UIImagePickerControllerDeleg
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         picker.delegate = self
+        let folderPicker = UIPickerView()
+        folderPicker.dataSource = self
+        folderPicker.delegate = self
+        self.folderTextField.inputView = folderPicker
     }
     
     @IBAction func resign() {
@@ -89,7 +115,7 @@ class AddIconViewController: UITableViewController, UIImagePickerControllerDeleg
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: Delegates
+    //MARK: Image Picker Delegate Methods
     func scaleImageWith(newImage:UIImage, and newSize:CGSize)->UIImage{
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
         newImage.drawInRect(CGRectMake(0, 0, newSize.width, newSize.height))
@@ -110,10 +136,7 @@ class AddIconViewController: UITableViewController, UIImagePickerControllerDeleg
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
     
-   
-    
-    
-    
+
     // Executes if the user wants to cancel (inside choose Photo)
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -132,15 +155,37 @@ class AddIconViewController: UITableViewController, UIImagePickerControllerDeleg
         }
     }
     
+    //MARK: Folder Picker delegate/dataSource methods
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int
+    {
+        return 1;
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    {
+        return self.folders.count;
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.folders[row];
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+        self.folderTextField.text = self.folders[row];
+        self.folderTextField.endEditing(true)
+    }
+    
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
         if identifier == "backToSettings" {
             return true
         }
         else {
             if let _ = imagePicker?.image {
-                if textField.text != "" {
+                if let text = returnImageName() {
                     //folder stuff
-                    data.add(imagePicker.image!, label: textField.text!, folder: "General")
+                    data.add(imagePicker.image!, label: text, folder: returnFolderName())
                     return true
                 }
                 else {
