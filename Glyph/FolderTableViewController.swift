@@ -7,18 +7,25 @@
 //
 
 import UIKit
+import Foundation
 
 class FolderTableViewController: UITableViewController {
 
     
-    // temporary folder names for testing
-    var folders = ["General", "Greetings", "Food", "Places", "Activities", "Drinks", "Friends", "Daily Tasks"]
+   
+    var folders = ["General"]
+    let userDefaults = NSUserDefaults.standardUserDefaults()
     
-
+    //breaking rules here, need to learn how to properly do this...
+    var source = MainViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if userDefaults.arrayForKey("folders") == nil {
+            userDefaults.setObject(folders, forKey: "folders")
+        } else {
+            folders = userDefaults.arrayForKey("folders") as! [String]
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -54,6 +61,12 @@ class FolderTableViewController: UITableViewController {
         // Configure the cell...
 
         return folderCell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        userDefaults.setValue(folders[indexPath.row], forKey: "currentFolder")
+        source.folderChanged = true
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     

@@ -9,7 +9,7 @@ class AddIconViewController: UITableViewController, UIImagePickerControllerDeleg
     var data = DataModel(isNewEmptyDataModel: false)
     
     // delete when we get folders working
-    var folders = ["please", "delete", "me", "soon"];
+    var folders = NSUserDefaults.standardUserDefaults().arrayForKey("folders") as! [String];
     
     @IBOutlet weak var folderTextField: UITextField!
     // Image View attribute

@@ -10,7 +10,7 @@ import UIKit
 
 class AddFolderViewController: UIViewController {
     
-    var folders = ["replacee me"]
+    var folders = NSUserDefaults.standardUserDefaults().arrayForKey("folders") as! [String]
     
     @IBOutlet weak var folderTextField: UITextField!
     
@@ -18,6 +18,7 @@ class AddFolderViewController: UIViewController {
     @IBAction func addFolder(sender: UIButton) {
         if let text = folderTextField.text {
             folders += [text]
+            NSUserDefaults.standardUserDefaults().setObject(folders, forKey: "folders")
         }
     }
     

@@ -27,7 +27,20 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     var filteredData = DataModel(isNewEmptyDataModel: true)
     var tempData = DataModel(isNewEmptyDataModel: true)
     var dataToFilter: [Int] = []
+    
+    //folder stuff
+    let userDefaults = NSUserDefaults.standardUserDefaults()
     var folder: String = "General"
+    
+//    this is for reacting to a change in folders
+    var folderChanged = false {
+        didSet {
+            folder = NSUserDefaults.standardUserDefaults().valueForKey("currentFolder") as! String
+            mainCollection.reloadData()
+            mainCollection.setNeedsDisplay()
+            folderChanged = false
+        }
+    }
     
     //cell margin stuff
     var itemsPerPage = 0
@@ -52,6 +65,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             let height = mainCollection.frame.height
             itemsPerPage = Int(floor(width / CGFloat(100.0))) * Int(floor(height / CGFloat(120.0)))
             maxScroll = Int(ceil(Double(data.count) / Double(itemsPerPage)))
+            if userDefaults.valueForKey("currentFolder") != nil {
+                folder = userDefaults.valueForKey("currentFolder") as! String
+            }
         }
     }
     
@@ -147,6 +163,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                    
                     popoverViewController.modalPresentationStyle = UIModalPresentationStyle.Popover
                     popoverViewController.popoverPresentationController!.delegate = self
+                    popoverViewController.source = self
                 default: break
             
             }

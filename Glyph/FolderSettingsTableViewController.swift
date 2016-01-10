@@ -11,7 +11,7 @@ import UIKit
 class FolderSettingsTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate {
     
     // temporary folder names for testing
-    var folders = ["General", "Greetings", "Food", "Places", "Activities", "Drinks", "Friends", "Daily Tasks"]
+    var folders = NSUserDefaults.standardUserDefaults().arrayForKey("folders") as! [String]
     
     
     override func viewDidLoad() {
