@@ -47,19 +47,5 @@ class SettingsViewController: UITableViewController {
         }
     }
     
-    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    //        if segue.identifier == "AddIcon" {
-    //            let destination = segue.destinationViewController as! AddIconViewController
-    //            destination.data = data
-    //        } else if segue.identifier == "backToMain" {
-    //            let destination = segue.destinationViewController as! MainViewController
-    //            destination.data = data
-    //        } else if segue.identifier == "Remove" {
-    //            let destination = segue.destinationViewController as! RemoveViewController
-    //            destination.data = data
-    //        }
-    //        
-    //        
-    //    }
     
 }

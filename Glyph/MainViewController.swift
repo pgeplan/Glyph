@@ -32,7 +32,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     let userDefaults = NSUserDefaults.standardUserDefaults()
     var folder: String = "General"
     
-//    this is for reacting to a change in folders
+    // this is for reacting to a change in folders
     var folderChanged = false {
         didSet {
             folder = NSUserDefaults.standardUserDefaults().valueForKey("currentFolder") as! String
@@ -69,6 +69,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                 folder = userDefaults.valueForKey("currentFolder") as! String
             }
         }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        mainCollection.reloadData()
     }
     
     override func didReceiveMemoryWarning() {

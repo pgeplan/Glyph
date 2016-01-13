@@ -74,28 +74,11 @@ class DataModel {
             return folderDict[folder]!.labels.count
         }
     }
-
-    
-//    func loadImages() {
-//        for item in iconStorage {
-//            imageData.append(UIImage(data: (item.valueForKey("iconImage") as? NSData)!)!)
-//        }
-//    }
     
     func getImage(index: Int, folder: String) -> UIImage {
         if independent {
             return imageData[index]
         }
-//        let image = UIImage(data: (iconStorage[index].valueForKey("iconImage") as? NSData)!)
-//        if image == nil {
-//            print("error with getImage")
-//            return image!
-//        } else {
-//            return image!
-//        }
-//        print(index)
-//        print(folder)
-//        print(folderDict[folder])
         return folderDict[folder]!.images[index]
     }
     
@@ -150,11 +133,39 @@ class DataModel {
         iconStorage.append(icon)
     }
     
-    func remove(index: Int) {
+    // Find the Index of the Icon that we want to remove
+    func findIndex(folderName: String, labelName: String) -> Int {
+        var index = 0
+        for element in iconStorage {
+            let label = element.valueForKey("iconLabel") as! String
+            let folder = element.valueForKey("folder") as! String
+            if (label == labelName)&&(folderName == folder){
+                return index
+            }
+            else {
+                index++
+            }
+        }
+        
+        return index
+    }
+    
+    func remove(folderName: String, labelName: String) {
+        let index = findIndex(folderName, labelName: labelName)
         if independent {
             imageData.removeAtIndex(index)
             labelData.removeAtIndex(index)
+            
+            
         } else {
+            
+            // var folderDict: [String: (images: [UIImage], labels: [String])]
+            let tuple = folderDict[folderName]
+            let arrayOfLabels = tuple!.1
+            let labelIndex = arrayOfLabels.indexOf(labelName)
+            // fix this mess later
+            folderDict[folderName]!.0.removeAtIndex(labelIndex!)
+            folderDict[folderName]!.1.removeAtIndex(labelIndex!)
             let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let context:NSManagedObjectContext = appDel.managedObjectContext
             context.deleteObject(iconStorage[index] as NSManagedObject)
@@ -171,13 +182,13 @@ class DataModel {
         count -= 1
     }
     
-    func removeAll() {
-        var i = 0
-        while i < count {
-            remove(i)
-            i += 1
-        }
-    }
+//    func removeAll() {
+//        var i = 0
+//        while i < count {
+//            remove(i)
+//            i += 1
+//        }
+//    }
     
     func speakAtIndex(index: Int, folder: String) {
         let speech = AVSpeechUtterance(string: getLabel(index, folder: folder))

@@ -11,7 +11,8 @@ import UIKit
 class FolderSettingsTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate {
     
     // temporary folder names for testing
-    var folders = NSUserDefaults.standardUserDefaults().arrayForKey("folders") as! [String]
+    var folders: [String] = NSUserDefaults.standardUserDefaults().arrayForKey("folders") as? [String] ?? ["General"]
+    
     
     
     override func viewDidLoad() {
@@ -114,7 +115,6 @@ class FolderSettingsTableViewController: UITableViewController, UIPopoverPresent
         if let identifier = segue.identifier {
             switch identifier{
                 case "AddFolderPopOver":
-                    print("******** Making a Popover *********")
                     let popoverViewController = segue.destinationViewController as! AddFolderViewController
                     // disable modal view for iPhones
                     popoverViewController.modalPresentationStyle = UIModalPresentationStyle.Popover

@@ -8,16 +8,12 @@
 import Foundation
 import UIKit
 
+// Like the Main View, except replaces scrolling with left/right buttons
 class BasicMainViewController: MainViewController {
-    
-
     
     @IBOutlet weak var scrollButtonRight: UIButton!
     //data source for the collectionView
 
-    
-    
-    
     @IBAction func scrollRight(sender: UIButton) {
         if currentScroll < maxScroll {
             currentScroll += 1

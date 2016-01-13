@@ -10,7 +10,7 @@ import UIKit
 
 class AddFolderViewController: UIViewController {
     
-    var folders = NSUserDefaults.standardUserDefaults().arrayForKey("folders") as! [String]
+    var folders: [String] = NSUserDefaults.standardUserDefaults().arrayForKey("folders") as? [String] ?? ["General"]
     
     @IBOutlet weak var folderTextField: UITextField!
     

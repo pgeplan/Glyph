@@ -26,13 +26,23 @@ class RemoveViewController: MainViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        setTempData()
+        return tempData.countForFolder(folder)
+    }
+    
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let cell = self.collectionView(collectionView, cellForItemAtIndexPath: indexPath) as! BasicCollectionCell
         
         let removeActionHandler = { (action:UIAlertAction!) -> Void in
-            self.data.remove(indexPath.row)
+            self.data.remove(self.folder, labelName: cell.textLabel.text!)
             self.mainCollection.deleteItemsAtIndexPaths([indexPath])
-            //            self.mainCollection.reloadData()
+            
+            //collectionView.deleteItemsAtIndexPaths([indexPath])
+            
+            self.mainCollection.reloadData()
+        
         }
         
         let alertController = UIAlertController(title: "Remove Icon", message: "Delete this Icon?", preferredStyle: UIAlertControllerStyle.Alert)

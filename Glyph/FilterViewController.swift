@@ -9,47 +9,38 @@
 import Foundation
 import UIKit
 
-class FilterViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class FilterViewController: MainViewController {
     @IBOutlet weak var filterCollection: UICollectionView!
-    var data = DataModel(isNewEmptyDataModel: false)
-    var filteredData = DataModel(isNewEmptyDataModel: true)
-    var dataToFilter: [Int] = []
-    var currentScroll = 0
-    var maxScroll = 0
-    var itemsPerPage = 0
-    var folder: String = "gerneral"
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        if filterCollection != nil {
-            filterCollection.reloadData()
-            let width = filterCollection.frame.width
-            let height = filterCollection.frame.height
+        if mainCollection != nil {
+            mainCollection.reloadData()
+            let width = mainCollection.frame.width
+            let height = mainCollection.frame.height
             itemsPerPage = Int(floor(width / CGFloat(100.0))) + Int(floor(height / CGFloat(100.0)))
             maxScroll = Int(ceil(Double(data.count) / Double(itemsPerPage)))
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.count
-    }
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("filter", forIndexPath: indexPath) as! SelectableCell
-        cell.imageView.image = data.getImage(indexPath.row, folder: folder)
-        cell.textLabel.text = data.getLabel(indexPath.row, folder: folder)
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        setTempData()
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("basic1", forIndexPath: indexPath) as! SelectableCell
+        cell.imageView?.image = tempData.getImage(indexPath.row, folder: folder)
+        cell.textLabel.text = tempData.getLabel(indexPath.row, folder: folder)
+        cell.contentView.layer.cornerRadius = 5
+        cell.contentView.layer.masksToBounds = true
+        cell.textLabel.layer.cornerRadius = 5
+        cell.textLabel.layer.masksToBounds = true
+   
         if dataToFilter.contains(indexPath.row) {
             cell.checkmarked.image = UIImage(named: "checkMark.png")
         }
+        
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    override  func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if dataToFilter.contains(indexPath.row) {
             let cell = collectionView.cellForItemAtIndexPath(indexPath) as! SelectableCell
             cell.checkmarked.image = nil
@@ -70,48 +61,9 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
         print(dataToFilter)
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-        let width = filterCollection.frame.width
-        var itemsPerHorizontalRow: Int = Int(floor(width / CGFloat(100.0)))
-        var leftover = width % CGFloat(100.0)
-        if leftover < CGFloat(30) {
-            itemsPerHorizontalRow -= 1
-            leftover += CGFloat(100.0)
-        }
-        print(leftover / CGFloat(itemsPerHorizontalRow))
-        return leftover / CGFloat(itemsPerHorizontalRow)
-        
-    }
-    
-    @IBAction func scrollRight(sender: UIButton) {
-        if currentScroll < maxScroll {
-            currentScroll += 1
-        }
-        let width = filterCollection.frame.width
-        let newPoint = CGPoint(x: width * CGFloat(currentScroll), y: 0.0)
-        filterCollection.setContentOffset(newPoint, animated: false)
-    }
-    
-    @IBAction func scrollLeft(sender: UIButton) {
-        if currentScroll > 0 {
-            currentScroll -= 1
-        }
-        let width = filterCollection.frame.width
-        let newPoint = CGPoint(x: width * CGFloat(currentScroll), y: 0.0)
-        filterCollection.setContentOffset(newPoint, animated: false)
-    }
 
-    @IBAction func filterButton(sender: UIButton) {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        let basic = userDefaults.boolForKey("basicMode")
-        if basic {
-            performSegueWithIdentifier("filterToBasic", sender: self)
-        } else {
-            performSegueWithIdentifier("filterToMain", sender: self)
-        }
-    }
-    
-    @IBAction func cancelButton(sender: UIButton) {
+
+    @IBAction func cancelButtonAction(sender: UIBarButtonItem) {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         let basic = userDefaults.boolForKey("basicMode")
         if basic {
@@ -120,6 +72,17 @@ class FilterViewController: UIViewController, UICollectionViewDelegate, UICollec
             performSegueWithIdentifier("cancelFilterToMain", sender: self)
         }
     }
+    
+    @IBAction func filterButtonAction(sender: AnyObject) {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let basic = userDefaults.boolForKey("basicMode")
+        if basic {
+            performSegueWithIdentifier("filterToBasic", sender: self)
+        } else {
+            performSegueWithIdentifier("filterToMain", sender: self)
+        }
+    }
+
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
