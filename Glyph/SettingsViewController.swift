@@ -21,7 +21,7 @@ class SettingsViewController: UITableViewController {
         super.viewDidLoad()
         let basicModeSwitchState = userDefaults.boolForKey("basicMode")
         basicModeSwitch.setOn(basicModeSwitchState, animated: false)
-        basicModeSwitch.addTarget(self, action: Selector("stateChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+        basicModeSwitch.addTarget(self, action: #selector(SettingsViewController.stateChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
