@@ -8,12 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6C10BADD1B378EF00027A2D6 /* RemoveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C10BADC1B378EF00027A2D6 /* RemoveViewController.swift */; };
-		6C11418E1B5F562100743074 /* 1024-768.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C11418C1B5F562100743074 /* 1024-768.png */; };
-		6C1141911B5F57E800743074 /* 640by1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C1141901B5F57E800743074 /* 640by1136.png */; };
 		6C1141921B5F591F00743074 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CBC29B01B50C20900BD6BC4 /* Images.xcassets */; };
-		6C1141941B5F5CF800743074 /* 750by1334.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C1141931B5F5CF800743074 /* 750by1334.png */; };
-		6C1141961B5F5D6900743074 /* 1242by2208.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C1141951B5F5D6900743074 /* 1242by2208.png */; };
-		6C1141981B5F5DEC00743074 /* 640by960.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C1141971B5F5DEC00743074 /* 640by960.png */; };
 		6C16E9211CF29A0E00FEC2C5 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C16E9201CF29A0E00FEC2C5 /* DataModel.swift */; };
 		6C1ADC6F1CF298B000B46D97 /* AddIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1ADC6E1CF298B000B46D97 /* AddIconViewController.swift */; };
 		6C40F3531B36416700DF17D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C40F3521B36416700DF17D9 /* AppDelegate.swift */; };
@@ -21,8 +16,7 @@
 		6C40F3581B36416700DF17D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C40F3561B36416700DF17D9 /* Main.storyboard */; };
 		6C40F35D1B36416700DF17D9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C40F35B1B36416700DF17D9 /* LaunchScreen.xib */; };
 		6C40F3691B36416700DF17D9 /* GlyphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C40F3681B36416700DF17D9 /* GlyphTests.swift */; };
-		6C4A58141CF29BDD0008496C /* glyph.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C4A58131CF29BDD0008496C /* glyph.png */; };
-		6C6AAE431B5B428D0048382C /* checkMark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C6AAE421B5B428D0048382C /* checkMark.png */; };
+		6C4A58161CF29C3D0008496C /* glyph.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C4A58151CF29C3D0008496C /* glyph.png */; };
 		6C7317AE1C3EFFE900EAB2F0 /* AddFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7317AD1C3EFFE900EAB2F0 /* AddFolderViewController.swift */; };
 		6CB9E3E11C39E97B00D52F8B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB9E3E01C39E97B00D52F8B /* MainViewController.swift */; };
 		6CBB9AEF1C3DE34D00BE99D9 /* FolderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBB9AEE1C3DE34D00BE99D9 /* FolderTableViewController.swift */; };
@@ -50,11 +44,6 @@
 
 /* Begin PBXFileReference section */
 		6C10BADC1B378EF00027A2D6 /* RemoveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveViewController.swift; sourceTree = "<group>"; };
-		6C11418C1B5F562100743074 /* 1024-768.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1024-768.png"; sourceTree = "<group>"; };
-		6C1141901B5F57E800743074 /* 640by1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 640by1136.png; sourceTree = "<group>"; };
-		6C1141931B5F5CF800743074 /* 750by1334.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 750by1334.png; sourceTree = "<group>"; };
-		6C1141951B5F5D6900743074 /* 1242by2208.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1242by2208.png; sourceTree = "<group>"; };
-		6C1141971B5F5DEC00743074 /* 640by960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 640by960.png; sourceTree = "<group>"; };
 		6C16E9201CF29A0E00FEC2C5 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		6C1ADC6E1CF298B000B46D97 /* AddIconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddIconViewController.swift; sourceTree = "<group>"; };
 		6C40F34D1B36416700DF17D9 /* Glyph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glyph.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,8 +55,7 @@
 		6C40F3621B36416700DF17D9 /* GlyphTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlyphTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C40F3671B36416700DF17D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C40F3681B36416700DF17D9 /* GlyphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlyphTests.swift; sourceTree = "<group>"; };
-		6C4A58131CF29BDD0008496C /* glyph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyph.png; sourceTree = "<group>"; };
-		6C6AAE421B5B428D0048382C /* checkMark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkMark.png; sourceTree = "<group>"; };
+		6C4A58151CF29C3D0008496C /* glyph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyph.png; sourceTree = "<group>"; };
 		6C7317AD1C3EFFE900EAB2F0 /* AddFolderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFolderViewController.swift; sourceTree = "<group>"; };
 		6CB9E3E01C39E97B00D52F8B /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6CBB9AEE1C3DE34D00BE99D9 /* FolderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderTableViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +92,7 @@
 		6C40F3441B36416700DF17D9 = {
 			isa = PBXGroup;
 			children = (
+				6C4A58151CF29C3D0008496C /* glyph.png */,
 				6CF1FB8E1B619F0C001F9691 /* IconStorage.xcdatamodeld */,
 				6C40F34F1B36416700DF17D9 /* Glyph */,
 				6C40F3651B36416700DF17D9 /* GlyphTests */,
@@ -161,12 +150,6 @@
 		6CA89E031C310CF00078D070 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				6C1141971B5F5DEC00743074 /* 640by960.png */,
-				6C11418C1B5F562100743074 /* 1024-768.png */,
-				6C6AAE421B5B428D0048382C /* checkMark.png */,
-				6C1141951B5F5D6900743074 /* 1242by2208.png */,
-				6C1141901B5F57E800743074 /* 640by1136.png */,
-				6C1141931B5F5CF800743074 /* 750by1334.png */,
 				6CBC29B01B50C20900BD6BC4 /* Images.xcassets */,
 			);
 			name = Assets;
@@ -199,7 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				6C40F3561B36416700DF17D9 /* Main.storyboard */,
-				6C4A58131CF29BDD0008496C /* glyph.png */,
 				6C40F35B1B36416700DF17D9 /* LaunchScreen.xib */,
 			);
 			name = "Storyboards & Xibs";
@@ -309,15 +291,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C1141911B5F57E800743074 /* 640by1136.png in Resources */,
-				6C11418E1B5F562100743074 /* 1024-768.png in Resources */,
-				6C1141941B5F5CF800743074 /* 750by1334.png in Resources */,
-				6C1141981B5F5DEC00743074 /* 640by960.png in Resources */,
-				6C4A58141CF29BDD0008496C /* glyph.png in Resources */,
+				6C4A58161CF29C3D0008496C /* glyph.png in Resources */,
 				6C40F3581B36416700DF17D9 /* Main.storyboard in Resources */,
 				6C40F35D1B36416700DF17D9 /* LaunchScreen.xib in Resources */,
-				6C6AAE431B5B428D0048382C /* checkMark.png in Resources */,
-				6C1141961B5F5D6900743074 /* 1242by2208.png in Resources */,
 				6CBC29B11B50C20900BD6BC4 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -143,8 +143,9 @@ class DataModel {
                 return index
             }
             else {
-                index += 1
+                index = index + 1
             }
+
         }
         
         return index
