@@ -12,8 +12,8 @@ class FolderSettingsTableViewController: UITableViewController, UIPopoverPresent
     
     // temporary folder names for testing
     var folders: [String] = NSUserDefaults.standardUserDefaults().arrayForKey("folders") as? [String] ?? ["General"]
-    
-    
+    var data = DataModel(isNewEmptyDataModel: false)
+    let userDefaults = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,8 +81,11 @@ class FolderSettingsTableViewController: UITableViewController, UIPopoverPresent
         
         if editingStyle == .Delete {
             // Delete the row from the data source
+            data.removeFolder(folders[indexPath.row])
             folders.removeAtIndex(indexPath.row)
+            userDefaults.setObject(folders, forKey: "folders")
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
