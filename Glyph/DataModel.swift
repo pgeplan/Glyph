@@ -205,5 +205,4 @@ class DataModel {
         speech.rate = 0.5
         speaker.speakUtterance(speech)
     }
-    
 }

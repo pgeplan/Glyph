@@ -8,13 +8,20 @@
 
 import UIKit
 
+/// View Controller for the view that allows users to add new folders
 class AddFolderViewController: UIViewController {
     
+    /// The user's folders (if none, default to a single "General" folder)
     var folders: [String] = NSUserDefaults.standardUserDefaults().arrayForKey("folders") as? [String] ?? ["General"]
     
+    /// Text field for the folder's name
     @IBOutlet weak var folderTextField: UITextField!
     
-    
+    /**
+     Creates a folder with the text provided from the user in the `folderTextField`
+     
+     - parameter sender: The button to add the folder
+     */
     @IBAction func addFolder(sender: UIButton) {
         if let text = folderTextField.text {
             folders += [text]
@@ -24,8 +31,6 @@ class AddFolderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -39,15 +44,12 @@ class AddFolderViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
     */
-
 }

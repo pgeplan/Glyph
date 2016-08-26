@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  TilesViewController.swift
 //  Glyph
 //
 //  Created by Anwar Baroudi on 6/21/15.
@@ -8,15 +8,22 @@
 import Foundation
 import UIKit
 
-class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate {
+/// The main view controller for the tiles view (the view that presents all of the icon tiles)
+class TilesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate {
     
-    //MARK: - Outlets
-    
+    /// The navigation bar for the main tiles view
     @IBOutlet weak var navBar: UINavigationBar!
+    
+    /// The title for the navigation bar ('Glyph')
     @IBOutlet weak var navBarTitle: UINavigationItem!
+    
+    /// The settings button displayed in the navigation bar
     @IBOutlet weak var navBarSettingsButton: UIBarButtonItem!
+    
+    /// The main collection view for the icon tiles
     @IBOutlet weak var mainCollection: UICollectionView!
     
+    /// Button that presents the folders view popover
     @IBOutlet weak var folderButton: UIBarButtonItem!
 
 
@@ -42,20 +49,20 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
     
-    //cell margin stuff
+    /// Used for determining the cell margin
     var itemsPerPage = 0
     
-    //the ultimate spacing variable, play with this if you want different margins
+    /// the ultimate spacing variable, play with this if you want different margins
     var spaceBetweenCells: CGFloat = 15
-    //minimum size of any cell
+    /// minimum size of any cell
     var sizeOfCells = CGSize(width: 100.0, height: 120.0)
     
-    //using for scrolling
+    /// using for scrolling
     var currentScroll = 0
     var maxScroll = 0
     var currentX: CGFloat = 0
     
-    //MARK: - ViewController LifeCycle
+    // MARK: - ViewController LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

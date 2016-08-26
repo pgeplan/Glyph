@@ -18,7 +18,7 @@ class FolderTableViewController: UITableViewController {
     let userDefaults = NSUserDefaults.standardUserDefaults()
     
     //breaking rules here, need to learn how to properly do this...
-    var source = MainViewController()
+    var source = TilesViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,9 +57,6 @@ class FolderTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("folderCell", forIndexPath: indexPath)
         let folderCell = cell as! FolderTableViewCell
         folderCell.folderLabel.text = folders[indexPath.row]
-        
-        // Configure the cell...
-
         return folderCell
     }
     
