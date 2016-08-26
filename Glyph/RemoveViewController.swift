@@ -8,7 +8,8 @@
 import Foundation
 import UIKit
 
-class RemoveViewController: MainViewController {
+/// View Controller for the view displayed when the user wants to delete an icon
+class RemoveViewController: TilesViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,6 @@ class RemoveViewController: MainViewController {
         return tempData.countForFolder(folder)
     }
     
-
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let cell = self.collectionView(collectionView, cellForItemAtIndexPath: indexPath) as! BasicCollectionCell
         
@@ -44,13 +44,18 @@ class RemoveViewController: MainViewController {
             self.mainCollection.reloadData()
         
         }
-        
         let alertController = UIAlertController(title: "Remove Icon", message: "Delete this Icon?", preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Remove", style: UIAlertActionStyle.Default,handler: removeActionHandler))
         alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default,handler: nil))
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
+    /**
+     Button pressed when the user is finished removing icons. Pressing this
+     button brings the user back to the main tiles screen.
+     
+     - parameter sender: The done button
+     */
     @IBAction func doneButton(sender: UIButton) {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         let basic = userDefaults.boolForKey("basicMode")
@@ -63,19 +68,14 @@ class RemoveViewController: MainViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Executes if we are in Basic Mode
-        if let destination = segue.destinationViewController as? MainViewController {
+        if let destination = segue.destinationViewController as? TilesViewController {
             destination.data = data
         }
-        
         // Executes if we are in normal mode
         else {
             let tabBarDest = segue.destinationViewController as? UITabBarController
-            let cardsDest = tabBarDest?.viewControllers![0] as? MainViewController
+            let cardsDest = tabBarDest?.viewControllers![0] as? TilesViewController
             cardsDest?.data = data
         }
     }
 }
-
-
-
-

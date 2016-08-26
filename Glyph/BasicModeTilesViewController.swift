@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  BasicModeTilesViewController.swift
 //  Glyph
 //
 //  Created by Anwar Baroudi on 6/21/15.
@@ -8,12 +8,17 @@
 import Foundation
 import UIKit
 
-// Like the Main View, except replaces scrolling with left/right buttons
-class BasicMainViewController: MainViewController {
+// Similar to the Main Tiles View, except replaces scrolling with left/right buttons
+class BasicModeTilesViewController: TilesViewController {
     
+    /// Button that updates the scroll offset to the right
     @IBOutlet weak var scrollButtonRight: UIButton!
-    //data source for the collectionView
-
+    
+    /**
+     Scrolls the collection view's content over to the right (forwards).
+     
+     - parameter sender: The right button at the bottom of the screen
+     */
     @IBAction func scrollRight(sender: UIButton) {
         if currentScroll < maxScroll {
             currentScroll += 1
@@ -32,6 +37,11 @@ class BasicMainViewController: MainViewController {
         mainCollection.setContentOffset(newPoint, animated: false)
     }
     
+    /**
+     Scrolls the collection view's content over to the left (backwards).
+     
+     - parameter sender: The left button at the bottom of the screen
+     */
     @IBAction func scrollLeft(sender: UIButton) {
         if currentScroll > 0 {
             currentScroll -= 1
@@ -57,8 +67,5 @@ class BasicMainViewController: MainViewController {
             destination.data = data
             destination.dataToFilter = dataToFilter
         }
-        
-        
     }
-    
 }

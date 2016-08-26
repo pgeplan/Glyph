@@ -397,7 +397,7 @@
         <!--Basic Main View Controller-->
         <scene sceneID="GOf-1x-eXO">
             <objects>
-                <viewController storyboardIdentifier="basic" id="aMU-jc-qou" customClass="BasicMainViewController" customModule="Glyph" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="basic" id="aMU-jc-qou" customClass="BasicModeTilesViewController" customModule="Glyph" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qm1-tA-wfM"/>
                         <viewControllerLayoutGuide type="bottom" id="u04-4o-Gnv"/>
@@ -894,7 +894,7 @@
         <!--Cards-->
         <scene sceneID="JS2-0N-e16">
             <objects>
-                <viewController id="n1x-23-Qc2" customClass="MainViewController" customModule="Glyph" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="n1x-23-Qc2" customClass="TilesViewController" customModule="Glyph" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KQ0-tq-c1V"/>
                         <viewControllerLayoutGuide type="bottom" id="kKU-GJ-inA"/>
