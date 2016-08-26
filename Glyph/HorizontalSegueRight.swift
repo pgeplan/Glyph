@@ -3,13 +3,13 @@
 //  Glyph
 //
 //  Created by Anwar Baroudi on 7/21/15.
-
 //
 
 import Foundation
 import QuartzCore
 import UIKit
 
+/// Custom seque that presents the next view from the right of the screen
 class HorizontalSegueRight: UIStoryboardSegue {
     
     override func perform() {

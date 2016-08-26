@@ -11,7 +11,10 @@ import UIKit
 import AVFoundation
 import CoreData
 
+/// DataModel for the icon tiles
 class DataModel {
+    /// TODO: Redo this file
+    
     var iconStorage = [NSManagedObject]()
     var imageData: [UIImage]
     var labelData: [String]

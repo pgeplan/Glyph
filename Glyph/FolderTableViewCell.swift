@@ -8,22 +8,18 @@
 
 import UIKit
 
+/// Table view cell for the `FolderTableView`
 class FolderTableViewCell: UITableViewCell {
 
+    /// Label displaying the given folder's title
     @IBOutlet weak var folderLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
-    
-    
-    
-
 }
