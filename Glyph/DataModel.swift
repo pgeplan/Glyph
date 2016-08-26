@@ -182,6 +182,13 @@ class DataModel {
         count -= 1
     }
     
+    func removeFolder(folderName: String) {
+        let folder = folderDict[folderName]
+        for label in folder!.1 {
+            remove(folderName, labelName: label)
+        }
+    }
+    
     //    func removeAll() {
     //        var i = 0
     //        while i < count {

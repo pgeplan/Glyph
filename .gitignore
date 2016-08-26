@@ -1,0 +1,6 @@
+.DS_Store
+build
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata
+Glyph.xcodeproj/project.xcworkspace/xcuserdata/paige.xcuserdatad/UserInterfaceState.xcuserstate
