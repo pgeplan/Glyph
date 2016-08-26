@@ -157,7 +157,6 @@ class DataModel {
             imageData.removeAtIndex(index)
             labelData.removeAtIndex(index)
             
-            
         } else {
             
             // var folderDict: [String: (images: [UIImage], labels: [String])]

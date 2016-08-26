@@ -1525,10 +1525,10 @@
         <image name="tiles" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="m2u-3x-SNP"/>
         <segue reference="pQ6-bS-7Ov"/>
-        <segue reference="6MX-ja-vH4"/>
+        <segue reference="2kh-Na-8kJ"/>
         <segue reference="2VX-rw-cg9"/>
         <segue reference="zgz-TQ-JV4"/>
-        <segue reference="2kh-Na-8kJ"/>
     </inferredMetricsTieBreakers>
 </document>
