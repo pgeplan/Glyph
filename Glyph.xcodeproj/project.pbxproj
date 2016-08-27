@@ -23,6 +23,7 @@
 		6CBB9AF11C3DE3E700BE99D9 /* FolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBB9AF01C3DE3E700BE99D9 /* FolderTableViewCell.swift */; };
 		6CBC29B11B50C20900BD6BC4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CBC29B01B50C20900BD6BC4 /* Images.xcassets */; };
 		6CC9B5D41C3EE8F100638CF1 /* FolderSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC9B5D31C3EE8F100638CF1 /* FolderSettingsTableViewController.swift */; };
+		6CD4B1691D70EC210071E5E1 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD4B1681D70EC210071E5E1 /* Tile.swift */; };
 		6CE4DDE21B5B3C9100CB1D80 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4DDE11B5B3C9100CB1D80 /* FilterViewController.swift */; };
 		6CE4DDE41B5B3CB500CB1D80 /* SelectableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4DDE31B5B3CB500CB1D80 /* SelectableCell.swift */; };
 		6CF1FB871B619B96001F9691 /* HorizontalSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF1FB861B619B96001F9691 /* HorizontalSegue.swift */; };
@@ -62,6 +63,7 @@
 		6CBB9AF01C3DE3E700BE99D9 /* FolderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderTableViewCell.swift; sourceTree = "<group>"; };
 		6CBC29B01B50C20900BD6BC4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = SOURCE_ROOT; };
 		6CC9B5D31C3EE8F100638CF1 /* FolderSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderSettingsTableViewController.swift; sourceTree = "<group>"; };
+		6CD4B1681D70EC210071E5E1 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tile.swift; path = Models/Tile.swift; sourceTree = "<group>"; };
 		6CE4DDE11B5B3C9100CB1D80 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		6CE4DDE31B5B3CB500CB1D80 /* SelectableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableCell.swift; sourceTree = "<group>"; };
 		6CF1FB861B619B96001F9691 /* HorizontalSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalSegue.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			children = (
 				6CF1FB861B619B96001F9691 /* HorizontalSegue.swift */,
 				6CBB9AF01C3DE3E700BE99D9 /* FolderTableViewCell.swift */,
+				6CD4B1681D70EC210071E5E1 /* Tile.swift */,
 				6C16E9201CF29A0E00FEC2C5 /* DataModel.swift */,
 				6CF1FB881B619BC1001F9691 /* HorizontalSegueRight.swift */,
 				6CE4DDE31B5B3CB500CB1D80 /* SelectableCell.swift */,
@@ -328,6 +331,7 @@
 				6C16E9211CF29A0E00FEC2C5 /* DataModel.swift in Sources */,
 				6C1ADC6F1CF298B000B46D97 /* AddIconViewController.swift in Sources */,
 				6CBB9AEF1C3DE34D00BE99D9 /* FolderTableViewController.swift in Sources */,
+				6CD4B1691D70EC210071E5E1 /* Tile.swift in Sources */,
 				E894AEC51B37577800B27031 /* BasicMainViewController.swift in Sources */,
 				6CF1FB891B619BC1001F9691 /* HorizontalSegueRight.swift in Sources */,
 			);

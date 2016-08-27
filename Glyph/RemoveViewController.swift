@@ -36,11 +36,11 @@ class RemoveViewController: MainViewController {
         let cell = self.collectionView(collectionView, cellForItemAtIndexPath: indexPath) as! BasicCollectionCell
         
         let removeActionHandler = { (action:UIAlertAction!) -> Void in
-            self.data.remove(self.folder, labelName: cell.textLabel.text!)
+            
+            if let cellText = cell.textLabel.text {
+                self.data.remove(self.folder, tile: Tile(tileName: cellText, tileImage: UIImage(), folderName: self.folder))
+            }
             self.mainCollection.deleteItemsAtIndexPaths([indexPath])
-            
-            //collectionView.deleteItemsAtIndexPaths([indexPath])
-            
             self.mainCollection.reloadData()
         
         }

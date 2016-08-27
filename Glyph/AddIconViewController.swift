@@ -198,7 +198,8 @@ class AddIconViewController: UITableViewController, UIImagePickerControllerDeleg
                 if let text = returnImageName() {
                     //folder stuff
                     let image = scaleDownImage(imagePicker.image!)
-                    data.add(image, label: text, folder: returnFolderName())
+                    let tile = Tile(tileName: text, tileImage: image, folderName: returnFolderName())
+                    data.addTile(tile)
                     return true
                 }
                 else {

@@ -103,11 +103,8 @@ class FilterViewController: MainViewController {
     
     private func makeFilteredDataArray() -> Void {
         for i in dataToFilter {
-            filteredData.add(data.getImage(i, folder: folder), label: data.getLabel(i, folder: folder), folder: folder)
+            let tile = Tile(tileName: data.getLabel(i, folder: folder), tileImage: data.getImage(i, folder: folder), folderName: folder)
+            filteredData.addTile(tile)
         }
     }
-    
-    
-    
-    
 }

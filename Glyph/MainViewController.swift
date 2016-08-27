@@ -84,6 +84,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     func setTempData() -> Void {
         if filteredData.isEmpty() {
             tempData = data
+            print(tempData)
         }
         else {
             tempData = filteredData
@@ -103,6 +104,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("basic1", forIndexPath: indexPath) as! BasicCollectionCell
         cell.imageView?.image = tempData.getImage(indexPath.row, folder: folder)
         cell.textLabel.text = tempData.getLabel(indexPath.row, folder: folder)
+        print(cell.textLabel.text)
         cell.contentView.layer.cornerRadius = 5
         cell.contentView.layer.masksToBounds = true
         cell.textLabel.layer.cornerRadius = 5

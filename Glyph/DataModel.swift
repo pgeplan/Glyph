@@ -1,4 +1,4 @@
-//
+ //
 //  DataModel.swift
 //  Glyph
 //
@@ -12,30 +12,57 @@ import AVFoundation
 import CoreData
 
 /// DataModel for the icon tiles
-class DataModel {
-    /// TODO: Redo this file
+class DataModel: CustomStringConvertible {
     
+    /// TODO: Redo this file its awful i did a little
+    
+    /// The array of icon tile stored in core data
     var iconStorage = [NSManagedObject]()
-    var imageData: [UIImage]
-    var labelData: [String]
-    var folderDict: [String: (images: [UIImage], labels: [String])]
+    
+    /// The array of tiles created by the user
+    var tiles: [Tile]
+    
+    /// Maps folder names to each folder's corresponding tiles
+    var folderDictionary: [String: [Tile]!]
+    
+    /// Speech Synthesizer used to speak out the tile name when a tile is selected
     let speaker: AVSpeechSynthesizer
+    
+    /// Why? Anwar pls
     var count: Int
+    
+    /// No clue what this is cmon Anwar
     let independent: Bool
+    
+    /// Makes printing pretty
+    var description: String {
+        var dataModelToString = "DataModel("
+        for folder in folderDictionary {
+            // add the folder name
+            dataModelToString += "\(folder.0) : ["
+            
+            // print out the tiles in the folder dictionary
+            for tile in folder.1 {
+                dataModelToString += "\(tile), "
+            }
+            // remove the last comma
+            dataModelToString = String(dataModelToString.characters.dropLast(2))
+            dataModelToString += "]"
+        }
+        return dataModelToString
+    }
+    
     
     init(isNewEmptyDataModel: Bool) {
         independent = isNewEmptyDataModel
-        folderDict = [String: (images: [UIImage], labels: [String])]()
+        folderDictionary = NSDictionary() as! [String : [Tile]]
         speaker = AVSpeechSynthesizer()
         count = 0
-        imageData = []
-        labelData = []
+        tiles = []
         if independent == false {
             iconStorage = fetchFromCoreData()
-            
-            fillDict()
+            fillTilesDictionaryFromIconStorage()
             count = iconStorage.count
-            
         }
     }
     
@@ -56,64 +83,95 @@ class DataModel {
     }
     
     func isEmpty() -> Bool {
-        return iconStorage.count == 0 && imageData.count == 0
+        return iconStorage.count == 0 && tiles.count == 0
     }
     
-    func fillDict() {
+    /// Anwar what the hell is this pls no i made it better but still cmon
+    func fillTilesDictionaryFromIconStorage() {
         for item in iconStorage {
-            let temp = item.valueForKey("folder") as! String
-            if folderDict[temp] == nil {
-                folderDict[temp] = (images: [UIImage](), labels: [String]())
+            let foldername = item.valueForKey("folder") as! String
+            if folderDictionary[foldername] == nil {
+                folderDictionary[foldername] = []
             }
-            folderDict[temp]!.labels.append(item.valueForKey("iconLabel") as! String)
-            folderDict[temp]!.images.append(UIImage(data: (item.valueForKey("iconImage") as? NSData)!)!)
+            if let iconTitle = item.valueForKey("iconLabel") as? String,
+              let iconImageData = item.valueForKey("iconImage") as? NSData,
+              let iconImage = UIImage(data: iconImageData) {
+                
+                let newTile = Tile(tileName: iconTitle, tileImage: iconImage, folderName: foldername)
+                folderDictionary[foldername]!.append(newTile)
+            }
         }
     }
     
+    /**
+     Returns the number of tiles within the given folder
+     
+     - parameter folder: The folder we want to check the number of tiles within
+     
+     - returns: The number of tiles within the folder
+     */
     func countForFolder(folder: String) -> Int {
-        if folderDict[folder] == nil {
-            return 0
-        } else {
-            return folderDict[folder]!.labels.count
-        }
+        return (folderDictionary[folder] != nil) ? folderDictionary[folder]!.count : 0
     }
     
+    /**
+     Get the tile's image at the given index within the given folder
+     
+     - parameter index:  The index of the tile within the given folder
+     - parameter folder: The folder that the tile is in
+     
+     - returns: The image of the the tile within the given folder at the given index
+     */
     func getImage(index: Int, folder: String) -> UIImage {
         if independent {
-            return imageData[index]
+            return tiles[index].tileImage
         }
-        return folderDict[folder]!.images[index]
+        if let tileImage = folderDictionary[folder]?[index].tileImage {
+            return tileImage
+        }
+        else {
+            assert(folderDictionary[folder]?[index].tileImage != nil, "Each tile should have an image")
+            return UIImage()
+        }
     }
     
     func getLabel(index: Int, folder: String) -> String {
         if independent {
-            if labelData.isEmpty {
+            if tiles.isEmpty {
+                assert(!tiles.isEmpty, "The tiles array should not be empty")
                 return "nil"
             }
-            return labelData[index]
+            return tiles[index].tileName
         }
-        
-        return folderDict[folder]!.labels[index]
-        
+        if let tileName = folderDictionary[folder]?[index].tileName {
+            return tileName
+        }
+        else {
+            assert(folderDictionary[folder]?[index].tileName != nil, "Each tile should have a name")
+            return String()
+        }
     }
     
-    func add(image: UIImage, label: String, folder: String) {
+    func addTile(tile: Tile) {
         if independent {
-            imageData.append(image)
-            labelData.append(label)
-        } else {
-            addToIconStorage(image, label: label, folder: folder)
-            
-            if folderDict[folder] == nil {
-                folderDict[folder] = (images: [UIImage](), labels: [String]())
+            tiles.append(tile)
+        }
+        else {
+            addToTileStorage(tile)
+            if folderDictionary[tile.folderName] == nil {
+                folderDictionary[tile.folderName] = [Tile()]
             }
-            folderDict[folder]!.images.append(image)
-            folderDict[folder]!.labels.append(label)
+            folderDictionary[tile.folderName]!.append(tile)
         }
         count += 1
     }
     
-    func addToIconStorage(image: UIImage, label: String, folder: String) {
+    /**
+     Saves the newly added tile to Core Data
+     
+     - parameter tile: The tile the user added
+     */
+    private func addToTileStorage(tile: Tile) {
         let appDelegate =
             UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
@@ -122,10 +180,10 @@ class DataModel {
             managedContext)
         let icon = NSManagedObject(entity: entity!,
                                    insertIntoManagedObjectContext:managedContext)
-        let imageInBinaryData = UIImagePNGRepresentation(image)
+        let imageInBinaryData = UIImagePNGRepresentation(tile.tileImage)
         icon.setValue(imageInBinaryData, forKey: "iconImage")
-        icon.setValue(label, forKey: "iconLabel")
-        icon.setValue(folder, forKey: "folder")
+        icon.setValue(tile.tileName, forKey: "iconLabel")
+        icon.setValue(tile.folderName, forKey: "folder")
         
         do {
             try managedContext.save()
@@ -136,70 +194,82 @@ class DataModel {
         iconStorage.append(icon)
     }
     
-    // Find the Index of the Icon that we want to remove
-    func findIndex(folderName: String, labelName: String) -> Int {
+    /**
+     Finds the index of the icon tile within the given folder
+     
+     - parameter folderName: The name of the folder that the tile is in
+     - parameter tile:       The tile that we want to find the index of
+     
+     - returns: The tile's index within the given folder's `tiles` array
+     */
+    func findIndex(folderName: String, tile: Tile) -> Int {
         var index = 0
         for element in iconStorage {
             let label = element.valueForKey("iconLabel") as! String
             let folder = element.valueForKey("folder") as! String
-            if (label == labelName)&&(folderName == folder){
+            if (label == tile.tileName) && (folderName == folder){
                 return index
             }
             else {
                 index = index + 1
             }
-
         }
-        
         return index
     }
     
-    func remove(folderName: String, labelName: String) {
-        let index = findIndex(folderName, labelName: labelName)
+    /**
+     Remove the tile from the given folder
+     
+     - parameter folderName: The name of the folder we want to remove the tile from
+     - parameter tile:       The tile that the user wants to remove
+     */
+    func remove(folderName: String, tile: Tile) {
+        let index = findIndex(folderName, tile: tile)
         if independent {
-            imageData.removeAtIndex(index)
-            labelData.removeAtIndex(index)
-            
-        } else {
-            
+            tiles.removeAtIndex(index)
+        }
+        else {
             // var folderDict: [String: (images: [UIImage], labels: [String])]
-            let tuple = folderDict[folderName]
-            let arrayOfLabels = tuple!.1
-            let labelIndex = arrayOfLabels.indexOf(labelName)
-            // fix this mess later
-            folderDict[folderName]!.0.removeAtIndex(labelIndex!)
-            folderDict[folderName]!.1.removeAtIndex(labelIndex!)
-            let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            let context:NSManagedObjectContext = appDel.managedObjectContext
-            context.deleteObject(iconStorage[index] as NSManagedObject)
-            iconStorage.removeAtIndex(index)
-            
-            do {
-                try context.save()
-            }
-            catch let error {
-                print("Could not cache the response \(error)")
+            if var tiles = folderDictionary[folderName] {
+                let tileIndex = tiles.indexOf(tile)
+                // fix this mess later
+                tiles.removeAtIndex(tileIndex ?? 0)
+                let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                let context:NSManagedObjectContext = appDel.managedObjectContext
+                context.deleteObject(iconStorage[index] as NSManagedObject)
+                iconStorage.removeAtIndex(index)
+                
+                do {
+                    try context.save()
+                }
+                catch let error {
+                    print("Could not cache the response \(error)")
+                }
             }
             
         }
         count -= 1
     }
     
+    /**
+     Remove the folder with the given folder name and the tiles within it
+     
+     - parameter folderName: The name of the folder that we want to remove
+     */
     func removeFolder(folderName: String) {
-        let folder = folderDict[folderName]
-        for label in folder!.1 {
-            remove(folderName, labelName: label)
+        if let folder = folderDictionary[folderName] {
+            for tile in folder {
+                remove(folderName, tile: tile)
+            }
         }
     }
     
-    //    func removeAll() {
-    //        var i = 0
-    //        while i < count {
-    //            remove(i)
-    //            i += 1
-    //        }
-    //    }
-    
+    /**
+     Speak out the label for the tile at the given index within the given folder
+     
+     - parameter index:  The index within the folder for the tile that was tapped
+     - parameter folder: The name of the folder that the user is currently in
+     */
     func speakAtIndex(index: Int, folder: String) {
         let speech = AVSpeechUtterance(string: getLabel(index, folder: folder))
         speech.rate = 0.5
