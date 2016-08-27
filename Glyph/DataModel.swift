@@ -275,5 +275,4 @@ class DataModel: CustomStringConvertible {
         speech.rate = 0.5
         speaker.speakUtterance(speech)
     }
-    
 }

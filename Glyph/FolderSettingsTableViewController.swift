@@ -8,23 +8,16 @@
 
 import UIKit
 
+/// View controller for the view that presents the user with folder settings
 class FolderSettingsTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate {
     
-    // temporary folder names for testing
     var folders: [String] = NSUserDefaults.standardUserDefaults().arrayForKey("folders") as? [String] ?? ["General"]
     var data = DataModel(isNewEmptyDataModel: false)
     let userDefaults = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Use the edit button item provided by the table view controller.
         navigationItem.rightBarButtonItems? += [editButtonItem()]
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,30 +84,9 @@ class FolderSettingsTableViewController: UITableViewController, UIPopoverPresent
         }
     }
     
-
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
- 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         if let identifier = segue.identifier {
             switch identifier{
                 case "AddFolderPopOver":
@@ -131,5 +103,4 @@ class FolderSettingsTableViewController: UITableViewController, UIPopoverPresent
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
         return UIModalPresentationStyle.None
     }
-
 }

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class FilterViewController: MainViewController {
+class FilterViewController: TilesViewController {
     @IBOutlet weak var filterCollection: UICollectionView!
 
     override func viewDidLoad() {
@@ -88,12 +88,12 @@ class FilterViewController: MainViewController {
         
         if segue.identifier == "filterToMain" {
             let tempDestination = segue.destinationViewController as! UITabBarController
-            let destination = (tempDestination.viewControllers![0] as? MainViewController)!
+            let destination = (tempDestination.viewControllers![0] as? TilesViewController)!
             makeFilteredDataArray()
             destination.dataToFilter = dataToFilter
             destination.filteredData = filteredData
         } else if segue.identifier == "filterToBasic" {
-            let destination = segue.destinationViewController as! BasicMainViewController
+            let destination = segue.destinationViewController as! BasicModeTilesViewController
             makeFilteredDataArray()
             destination.dataToFilter = dataToFilter
             destination.filteredData = filteredData

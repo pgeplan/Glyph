@@ -42,7 +42,6 @@ class AddIconViewController: UITableViewController, UIImagePickerControllerDeleg
         }
     }
     
-    
     func returnImage() -> UIImage {
         return imagePicker.image!
     }
@@ -213,5 +212,4 @@ class AddIconViewController: UITableViewController, UIImagePickerControllerDeleg
             }
         }
     }
-    
 }
