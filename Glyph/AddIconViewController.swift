@@ -13,12 +13,11 @@ class AddIconViewController: UITableViewController, UIImagePickerControllerDeleg
     // delete when we get folders working
     var folders: [String] = NSUserDefaults.standardUserDefaults().arrayForKey("folders") as? [String] ?? ["General"]
     
+    @IBOutlet weak var previewTileView: UIView!
     
     @IBOutlet weak var folderTextField: UITextField!
     // Image View attribute
     @IBOutlet var imagePicker: UIImageView!
-    
-    @IBOutlet weak var previewLabel: UILabel!
     
     var img: UIImage?
     
@@ -29,18 +28,7 @@ class AddIconViewController: UITableViewController, UIImagePickerControllerDeleg
     // Text Field for User to add Picture Label
     @IBOutlet var textField: UITextField!
     
-    @IBAction func shootPhoto(sender: UIButton) {
-        if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
-            picker.delegate = self
-            picker.allowsEditing = false
-            picker.sourceType = .Camera
-            picker.cameraCaptureMode = .Photo
-            presentViewController(picker, animated: true, completion: nil)
-            
-        } else {
-            noCamera()
-        }
-    }
+
     
     func returnImage() -> UIImage {
         return imagePicker.image!
@@ -65,19 +53,50 @@ class AddIconViewController: UITableViewController, UIImagePickerControllerDeleg
         return "General"
     }
     
-    // Alert if device doesn't have camera button
-    func noCamera(){
-        let alertVC = UIAlertController(title: "Camera Feature Not Available", message: "This device does not have a camera", preferredStyle: .Alert)
-        let okAction = UIAlertAction(title: "OK", style:.Default, handler: nil)
-        alertVC.addAction(okAction)
-        presentViewController(alertVC, animated: true, completion: nil)
+    @IBAction func changePhoto(sender: UIButton) {
+        let choosePhotoActionSheet = UIAlertController(title: nil, message: "Add Tile Image", preferredStyle: .ActionSheet)
+        
+        let takePhotoAction = UIAlertAction(title: "Take Photo", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            self.takePhoto()
+        })
+        let chooseFromLibraryAction = UIAlertAction(title: "Choose from Library", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            self.chooseFromLibrary(sender)
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+            print("Cancelled")
+        })
+        
+        choosePhotoActionSheet.addAction(takePhotoAction)
+        choosePhotoActionSheet.addAction(chooseFromLibraryAction)
+        choosePhotoActionSheet.addAction(cancelAction)
+        
+        self.presentViewController(choosePhotoActionSheet, animated: true, completion: nil)
     }
     
-    @IBAction func textEdited(sender: UITextField) {
-        previewLabel.text = sender.text
+
+    func takePhoto() {
+        if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
+            picker.delegate = self
+            picker.allowsEditing = false
+            picker.sourceType = .Camera
+            picker.cameraCaptureMode = .Photo
+            presentViewController(picker, animated: true, completion: nil)
+        }
+        
+        // If the device does not have a camera, throw an alert
+        else {
+            let alertVC = UIAlertController(title: "Camera Feature Not Available", message: "This device does not have a camera", preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "OK", style:.Default, handler: nil)
+            alertVC.addAction(okAction)
+            presentViewController(alertVC, animated: true, completion: nil)
+        }
     }
     
-    @IBAction func chooseFromLibrary(sender: UIButton) {
+    func chooseFromLibrary(sender: UIButton) {
         picker.allowsEditing = false
         picker.sourceType = .PhotoLibrary
         picker.modalPresentationStyle = .Popover
@@ -92,7 +111,11 @@ class AddIconViewController: UITableViewController, UIImagePickerControllerDeleg
         let folderPicker = UIPickerView()
         folderPicker.dataSource = self
         folderPicker.delegate = self
-        self.folderTextField.inputView = folderPicker
+        folderTextField.attributedPlaceholder = NSAttributedString(string: "Choose Folder", attributes: [NSForegroundColorAttributeName : UIColor(red: 0.0, green: 122/255, blue: 1.0, alpha: 1)])
+
+        addButton.layer.cornerRadius = 5
+        previewTileView.layer.cornerRadius = 5
+        folderTextField.inputView = folderPicker
     }
     
     @IBAction func resign() {
@@ -136,7 +159,8 @@ class AddIconViewController: UITableViewController, UIImagePickerControllerDeleg
         var newImageSize: CGSize
         if(widthRatio > heightRatio) {
             newImageSize = CGSizeMake(size.width * heightRatio, size.height * heightRatio)
-        } else {
+        }
+        else {
             newImageSize = CGSizeMake(size.width * widthRatio,  size.height * widthRatio)
         }
         let rect = CGRectMake(0, 0, 150, 150)
@@ -184,8 +208,8 @@ class AddIconViewController: UITableViewController, UIImagePickerControllerDeleg
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
-        self.folderTextField.text = self.folders[row];
-        self.folderTextField.endEditing(true)
+        folderTextField.text = self.folders[row];
+        folderTextField.endEditing(true)
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
